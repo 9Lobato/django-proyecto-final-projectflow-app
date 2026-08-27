@@ -1,0 +1,85 @@
+<!-- templates\kanban\includes\_card.html ...
+   ... se utiliza para:
+   representar visualmente cada tarea y mostrar su información principal en el componente parcial del tablero Kanban.
+   ... se utiliza en los archivos:
+   templates\kanban\kanban.html → en la representación de tarjetas de tareas del tablero Kanban.
+   ... enlaza con las url:
+   'task_update' → accede a la edición de la tarea seleccionada.
+   'kanban' → retorna al tablero Kanban después de editar la tarea. -->
+
+<div class="kanban-card {% if compact_mode %}compact{% endif %}"
+  data-task-id="{{ task.id }}"
+  data-title="{{ task.title }}"
+  data-assigned="{{ task.assigned_to|default:'Sin asignar' }}"
+  data-time_remaining="{{ task.time_remaining }}"
+  data-time_estimated="{{ task.time_estimated|default:'-' }}"
+  data-planned="{% if task.is_planned %}true{% else %}false{% endif %}"
+  data-can-move="{% if can_move %}true{% else %}false{% endif %}"
+  data-priority="{{ task.priority }}">
+  <!-- Prioridad y título -->
+  <div class="d-flex align-items-center gap-2 kanban-title-row">
+    <!-- Prioridad -->
+    <span class="kanban-priority">
+      {% if task.priority == "HIGH" %}
+        <i class="bi bi-circle-fill text-danger fs-8 opacity-50"></i>
+      {% elif task.priority == "MEDIUM" %}
+        <i class="bi bi-circle-fill text-warning fs-8 opacity-50"></i>
+      {% else %}
+        <i class="bi bi-circle-fill text-primary fs-8 opacity-50"></i>
+      {% endif %}
+    </span>
+    <!-- Título -->
+    <a href="{% url 'task_update' task.id %}?next={% url 'kanban' %}"
+       class="kanban-title text-decoration-none text-dark fw-semibold">
+      {{ task.title }}
+    </a>
+  </div>
+  <!-- Detalles -->
+  <div class="kanban-details mt-1">
+    <!-- Asignado a -->
+    <div class="d-flex justify-content-between">
+      <small>👤 {{ task.assigned_to|default:"Sin asignar" }}</small>
+    </div>
+    <!-- Fecha y estimado -->
+    <div class="d-flex justify-content-between">
+      <!-- Fecha -->
+      <small>
+        📅 {{ task.due_at|date:"d/m/Y"|default:"Sin fecha" }}
+      </small>
+      <!-- Estimado -->
+      <small>
+        {% if task.is_planned %}
+          {{ task.time_estimated }} |
+          {% if task.time_remaining is None %}
+            - días
+          {% elif task.time_remaining < 0 %}
+            Vencida
+          {% else %}
+            {{ task.time_remaining|floatformat:2 }} días
+          {% endif %}
+        {% else %}
+          Sin planificar
+        {% endif %}
+      </small>
+    </div>
+    <!-- Línea temporal -->
+    <div class="d-flex align-items-center gap-1">
+      <small>⏳</small>
+      <div class="kanban-timeline flex-grow-1">
+        <!-- Tramo estimado -->
+        <div
+          class="timeline-estimated"
+          style="
+            left: {{ task.timeline_estimated_start_percent }}%;
+            width: {{ task.timeline_estimated_percent }}%;
+          ">
+        </div>
+        <!-- Marca del día actual -->
+        <div
+          class="timeline-today"
+          style="left: {{ task.timeline_today_percent }}%;">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<!-- templates\common\403.html ...
+   ... se utiliza para:
+   mostrar un mensaje de acceso denegado mediante una páginas de error 403 y permitir volver a la página anterior o al inicio
+   ... enlaza con las url:
+   'home' vuelve al Dashboard. -->
+
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="alert alert-danger">
+    <h4>Acceso denegado</h4>
+    <p>No tienes permisos para realizar esta acción.</p>
+    {% if request.META.HTTP_REFERER %}
+      <a href="{{ request.META.HTTP_REFERER }}" class="btn btn-dark mt-3">
+        Volver
+      </a>
+    {% else %}
+      <a href="{% url 'home' %}" class="btn btn-dark mt-3">
+        Volver
+      </a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

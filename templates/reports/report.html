@@ -1,0 +1,59 @@
+<!-- templates\reports\report.html ...
+   ... se utiliza para:
+   mostrar la página principal de informes de la aplicación, incluyendo un resumen general, el análisis del estado de los proyectos,
+   las métricas de proyectos y tareas, el análisis del trabajo de los usuarios y sus métricas, permitiendo además exportar
+   los informes en PDF o Excel.
+   ... se utiliza en los archivos:
+   templates\reports\includes_summary_cards.html → contiene las tarjetas de resumen general.
+   templates\reports\includes_project_analysis.html → contiene el análisis del estado de los proyectos.
+   templates\reports\includes_project_metrics.html → contiene las métricas de proyectos y tareas.
+   templates\reports\includes_user_analysis.html → contiene el análisis del estado de trabajo de los usuarios.
+   templates\reports\includes_user_metrics.html → contiene las métricas de participación y productividad de los usuarios.
+   ... enlaza con las url:
+   'report_export_pdf' → exporta el informe en formato PDF.
+   'report_export_xls' → exporta el informe en formato Excel.
+   'task_list' → proporciona la URL de la lista de tareas al código JavaScript para generar los enlaces y filtros correspondientes. -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="mb-5">Mis informes</h1>
+    <!-- Botones para exportar -->
+    <div class="d-flex align-items-center gap-1 mb-5">
+      <button class="btn btn-outline-secondary text-dark" style="width: 90px;" disabled>Exportar:</button>
+      <a href="{% url 'report_export_pdf' %}"
+        class="btn btn-dark"
+        style="width: 38px;">
+        <i class="bi bi-file-earmark-pdf"></i>
+      </a>
+      <a href="{% url 'report_export_xls' %}"
+        class="btn btn-dark"
+        style="width: 38px;">
+        <i class="bi bi-file-earmark-excel"></i>
+      </a>
+    </div>
+  </div>
+  <div class="mb-4">
+    <!-- Resumen -->
+    {% include "reports/includes/_summary_cards.html" %}
+    <!-- Análisis de proyectos -->
+    {% include "reports/includes/_project_analysis.html" %}
+    <!-- Métricas de proyectos y tareas -->
+    {% include "reports/includes/_project_metrics.html" %}
+    <!-- Análisis de equipos -->
+    {% include "reports/includes/_user_analysis.html" %}
+    <!-- Métricas de equipos -->
+    {% include "reports/includes/_user_metrics.html" %}
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  {{ report_data|json_script:"report-data" }}
+  <script>
+    const reportData = JSON.parse(document.getElementById("report-data").textContent);
+  </script>
+  <script src="{% static 'js/report/report.js' %}"></script>
+  <script>
+    const TASK_LIST_URL = "{% url 'task_list' %}";
+  </script>
+{% endblock %}

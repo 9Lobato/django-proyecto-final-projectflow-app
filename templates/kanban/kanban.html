@@ -1,0 +1,117 @@
+<!-- templates\kanban\includes\kanban.html ...
+   ... se utiliza para:
+   visualizar los proyectos y sus tareas organizadas por estado en la página principal del tablero Kanban.
+   ... se utiliza en los archivos:
+   templates\kanban\includes\_card.html
+   static\js\kanban\kanban.js → en la gestión del arrastre, movimiento y copia de tareas entre columnas y proyectos.
+   static\js\kanban\kanban_layout.js → en la gestión del scroll y el ajuste de altura de las filas del tablero.
+   ... enlaza con las url:
+   'task_list' → accede a la consulta de tareas filtradas por estado.
+   'project_follow_toggle' → activa o desactiva el seguimiento de un proyecto.
+   'project_archive_toggle' → archiva o desarchiva un proyecto.
+   'kanban' → accede a la edición del proyecto seleccionado.
+   'project_update' → vuelve el tablero Kanban después de editar el proyecto. -->
+
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+  <h1 class="mb-4">Mi Kanban</h1>
+    {{ row.project.can_follow }}
+    {{ row.project.is_assigned }}
+    {{ row.project.is_followed }}
+  <div class="kanban-board mb-4">
+    <div class="kanban-header">
+      <a class="kanban-project-col"></a>
+      <a href="{% url 'task_list' %}?status=TODO" class="kanban-col text-center text-decoration-none text-dark">To do</a>
+      <a href="{% url 'task_list' %}?status=IN_PROGRESS" class="kanban-col text-center text-decoration-none text-dark">In progress</a>
+      <a href="{% url 'task_list' %}?status=DONE" class="kanban-col text-center text-decoration-none text-dark">Done</a>
+      <a href="{% url 'task_list' %}?status=CANCELLED" class="kanban-col text-center text-decoration-none text-dark">Cancelled</a>
+    </div>
+    {% for row in board %}
+      <div class="kanban-row" data-project="{{ row.project.id }}">
+        <!-- Proyecto -->
+        <div class="kanban-project">
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Código -->
+            <span class="kanban-project-code">{{ row.project.code }}</span>
+            <!-- Iconos -->
+            <div class="kanban-project-icons">
+              <div class="d-flex align-items-center gap-1">
+                <!-- Seguir -->
+                {% if row.project.can_follow %}
+                  <form method="post" action="{% url 'project_follow_toggle' row.project.pk %}">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link p-0 border-0 shadow-none">
+                      {% if row.project.is_followed %}
+                        <i class="bi bi-bookmark text-info"></i>
+                      {% else %}
+                        <i class="bi bi-bookmark text-secondary opacity-25"></i>
+                      {% endif %}
+                    </button>
+                  </form>
+                {% endif %}
+                <!-- Archivar -->
+                {% if row.project.user_role == "OWNER" %}
+                  <a href="{% url 'project_archive_toggle' row.project.pk %}"
+                    class="btn btn-link p-0 border-0 shadow-none">
+                    {% if row.project.is_archived %}
+                      <i class="bi bi-archive text-info"></i>
+                    {% else %}
+                      <i class="bi bi-archive text-secondary opacity-25"></i>
+                    {% endif %}
+                  </a>
+                {% else %}
+                  {% if row.project.is_archived %}
+                    <i class="bi bi-archive text-info"></i>
+                  {% endif %}
+                {% endif %}
+              </div>
+            </div>
+          </div>
+          <div class="kanban-project-name">
+            {% url 'kanban' as kanban_url %}
+            <a href="{% url 'project_update' row.project.pk %}?next={{ kanban_url|urlencode }}"
+              class="text-decoration-none text-reset">
+              {{ row.project.name }}
+            </a>
+          </div>
+        </div>
+        <!-- TODO (no compact) -->
+        <div class="kanban-cell"
+            data-project="{{ row.project.id }}"
+            data-status="TODO">
+          {% for item in row.todo %}
+            {% include "kanban/includes/_card.html" with task=item.task can_move=item.can_move %}
+          {% endfor %}
+        </div>
+        <!-- IN_PROGRESS (no compact) -->
+        <div class="kanban-cell"
+            data-project="{{ row.project.id }}"
+            data-status="IN_PROGRESS">
+          {% for item in row.progress %}
+            {% include "kanban/includes/_card.html" with task=item.task can_move=item.can_move %}
+          {% endfor %}
+        </div>
+        <!-- DONE (compact) -->
+        <div class="kanban-cell kanban-history"
+            data-project="{{ row.project.id }}"
+            data-status="DONE">
+          {% for item in row.done %}
+            {% include "kanban/includes/_card.html" with task=item.task can_move=item.can_move compact_mode=True %}
+          {% endfor %}
+        </div>
+        <!-- CANCELLED (compact) -->
+        <div class="kanban-cell kanban-history"
+            data-project="{{ row.project.id }}"
+            data-status="CANCELLED">
+          {% for item in row.cancelled %}
+            {% include "kanban/includes/_card.html" with task=item.task can_move=item.can_move compact_mode=True %}
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <script src="{% static 'js/kanban/kanban.js' %}"></script>
+  <script src="{% static 'js/kanban/kanban_layout.js' %}"></script>
+{% endblock %}

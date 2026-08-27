@@ -1,0 +1,33 @@
+<!-- templates\registration\login.html ...
+   ... se utiliza para:
+   mostrar el formulario de inicio de sesión de ProjectFlow, permitiendo al usuario introducir sus credenciales para acceder a la aplicación. -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5 col-lg-4">
+        <div class="card shadow-sm">
+          <div class="card-body p-5">
+            <h2 class="text-center mb-4">Iniciar sesión</h2>
+            <form method="post">
+              {% csrf_token %}
+              <div class="mb-4 d-flex align-items-center justify-content-between">
+                <label class="form-label mb-0">Usuario</label>
+                {{ form.username }}
+              </div>
+              <div class="mb-4 d-flex align-items-center justify-content-between">
+                <label class="form-label mb-0">Contraseña</label>
+                {{ form.password }}
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-info" style="width: 100px;">Entrar</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

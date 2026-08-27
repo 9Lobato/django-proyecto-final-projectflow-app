@@ -1,0 +1,289 @@
+<!-- templates\home\home.html ...
+   ... se utiliza para:
+   mostrar proyectos, notificaciones y acciones relacionadas con las tareas y solicitudes en la página principal (Dashboard).
+   ... se utiliza en los archivos:
+   static\js\home\home.js → en la gestión de notificaciones, filtros, solicitudes y comportamiento interactivo del Dashboard.
+   ... enlaza con las url:
+   'start' lleva a la Guía rápida, donde se explica el funcionamiento de ProjectFlow.
+   'templates' lleva a la sección de Gestión de plantillas de proyectos.
+   'task_list' abre la lista de tareas filtrada por el proyecto seleccionado.
+   'task_update' abre la página de edición/detalle de la tarea a la que pertenece el comentario o solicitud.
+   'project_team' abre la página que muestra el equipo asignado al proyecto, incluyendo usuarios y sus roles.
+   'delete_comment' lleva a la pantalla de confirmación de eliminación de la solicitud/comentario. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1 class="mb-5">Dashboard</h1>
+  <div class="mb-5">
+    <div class="card-body">
+      <h3 class="mb-3">Bienvenido a ProjectFlow</h3>
+      <p>
+        Descubre cómo ProjectFlow te puede ayudar a gestionar proyectos, tareas, solicitudes y colaborar entre equipos de trabajo.<br/>
+        Selecciona el botón Empezar para acceder a la guia rápida.
+      </p>
+      <a href="{% url 'start' %}" class="btn btn-info" style="width: 100px;">Empezar</a>
+    </div>
+  </div>
+  <!-- Proyectos -->
+  <div class="mb-5">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+      <h3>Mis proyectos</h3>
+      {% if is_owner %}
+        <a href="{% url 'templates' %}"
+          class="btn btn-dark me-3" style="width: 150px;">Plantillas
+        </a>
+      {% endif %}
+    </div>
+    <div class="card">
+      <div class="card-body">
+        {% if dashboard_projects %}
+          <table class="table table-sm align-middle table-hover">
+            <thead class="table-light">
+              <tr>
+                <th style="width: 35%">Proyecto</th>
+                <th style="width: 30%">Plantilla</th>
+                <th style="width: 25%">Completado</th>
+                <th style="width: 10%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for p in dashboard_projects %}
+                <tr>
+                  <!-- Proyecto -->
+                  <td>
+                    <a href="{% url 'task_list' %}?project={{ p.id }}"
+                      class="text-dark text-decoration-none">
+                      {{ p.code }}
+                      {% if p.is_followed %}
+                        <i class="bi bi-bookmark text-info fs-6"></i>
+                      {% endif %}
+                      {% if p.is_archived %}
+                        <i class="bi bi-archive text-info fs-6"></i>
+                      {% endif %}
+                      {{ p.name|truncatechars:42 }}
+                    </a>
+                  </td>
+                  <!-- Plantilla -->
+                  <td>
+                    {% if p.template %}
+                      {{ p.template.name|truncatechars:42 }}
+                    {% else %}
+                      -
+                    {% endif %}
+                  </td>
+                  <!-- Completado -->
+                  <td>
+                    {% if p.total_tasks %}
+                      {% widthratio p.completed_tasks p.total_tasks 100 as progress %}
+                      <div style="width: 95%" class="progress">
+                        <div class="progress-bar"
+                            role="progressbar"
+                            style="width: {{ progress }}%;">
+                          {{ progress }}%
+                        </div>
+                      </div>
+                    {% else %}
+                      -
+                    {% endif %}
+                  </td>
+                  <!-- Equipo -->
+                  <td>
+                    <a href="{% url 'project_team' p.id %}"
+                      class="btn btn-sm btn-outline-secondary" style="width: 140px;">Equipo</a>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>No existen proyectos</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+  <!-- Notificaciones -->
+  <div class="mb-4">
+    <h3 class="mb-3">Mis notificaciones</h3>
+    {% if notification_projects %}
+      {% for project in notification_projects %}
+        <h4 class="mb-3 d-flex align-items-center gap-2 fs-4">
+          <button
+            class="btn p-0 border-0 bg-transparent fw-semibold text-dark project-toggle fs-4"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#project{{ project.pk }}"
+            data-project="{{ project.pk }}">
+            <i class="bi bi-chevron-right"></i>
+            {{ project.code }}
+            <!-- Seguir proyecto -->
+            {% if project.is_followed %}
+              <i class="bi bi-bookmark text-info fs-6"></i>
+            {% endif %}
+            <i class="bi bi-bell project-bell text-info fs-6"
+              data-project="{{ project.pk }}"
+              style="display:none;"></i>
+          </button>
+          <a href="{% url 'task_list' %}?project={{ project.id }}"
+            class="text-dark text-decoration-none">
+            {{ project.name }}
+          </a>
+        </h4>
+        <div class="collapse mb-3" id="project{{ project.pk }}">
+          <div style="max-height: 450px; overflow-y: auto;">
+            <table class="table table-hover">
+              <thead class="table-light">
+                <tr>
+                  <th style="width: 4%" class="text-center">#
+                    <button class="btn btn-sm p-0 border-0 bg-transparent filter-task"
+                      data-project="{{ project.pk }}"
+                      data-task="ALL">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 38%">Notificación
+                    <button
+                    class="btn btn-sm p-0 border-0 bg-transparent filter-mention"
+                    data-project="{{ project.pk }}"
+                    data-mention="ALL">
+                    <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 9%">Autor
+                    <button class="btn btn-sm p-0 border-0 bg-transparent filter-author"
+                      data-project="{{ project.pk }}"
+                      data-author="ALL">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 8%" class="text-center">Tipo
+                    <button class="btn btn-sm p-0 border-0 bg-transparent filter-type"
+                      data-project="{{ project.pk }}"
+                      data-type="ALL">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 10%" class="text-center">Enmienda
+                    <button class="btn btn-sm p-0 border-0 bg-transparent filter-kind"
+                      data-project="{{ project.pk }}"
+                      data-request-kind="ALL">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 9%" class="text-center">Estado
+                    <button class="btn btn-sm p-0 border-0 bg-transparent filter-status"
+                      data-project="{{ project.pk }}"
+                      data-status="ALL">
+                      <i class="bi bi-funnel"></i>
+                    </button>
+                  </th>
+                  <th style="width: 11%" class="text-center">Abierta el</th>
+                  <th style="width: 11%" class="text-center">Cerrada el</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for comment in project.notifications %}
+                  <tr
+                    data-task="{{ comment.task.sequence_number }}"
+                    data-author="{{ comment.user.username }}"
+                    data-type="{{ comment.type|default:'NONE' }}"
+                    data-request-kind="{% if comment.type == 'REQUEST' %}{{ comment.request_kind }}{% endif %}"
+                    data-status="{% if comment.type == 'REQUEST' %}{% if comment.resolved %}RESOLVED{% else %}OPEN{% endif %}{% endif %}"
+                    data-mentions="{{ comment.mentions_string|default:'NONE' }}">
+                    <!-- Tarea número de orden -->
+                    <td class="text-center">{{ comment.task.sequence_number }}</td>
+                    <!-- Notificación -->
+                    <td>
+                      <i class="bi bi-bell notification-bell"
+                        data-id="{{ comment.id }}"
+                        data-project="{{ project.pk }}"
+                        style="cursor:pointer;"></i>
+                      <a class="text-dark text-decoration-none" href="{% url 'task_update' comment.task.pk %}">
+                        {{ comment.text|truncatechars:60 }}
+                      </a>
+                    </td>
+                    <!-- Autor -->
+                    <td>{{ comment.user.username }}</td>
+                    <!-- Tipo -->
+                    <td class="text-center">
+                      {% if comment.type == "REQUEST" %}
+                      <span class="badge card bg-primary text-white" style="width: 85px">Solicitud</span>
+                      {% else %}
+                      <span class="badge card text-dark" style="width: 85px">Comentario</span>
+                      {% endif %}
+                    </td>
+                    <!-- Enmienda -->
+                    <td class="text-center">
+                      {% if comment.type == "REQUEST" %}
+                        {% if is_owner or is_manager %}
+                          <select class="form-select form-select-sm request-kind" data-id="{{ comment.id }}">
+                            {% for value, label in comment.REQUEST_KIND_CHOICES %}
+                              <option value="{{ value }}"
+                                {% if comment.request_kind == value %}selected{% endif %}>
+                                {{ label }}
+                              </option>
+                            {% endfor %}
+                          </select>
+                        {% else %}
+                          <span class="badge card text-secondary" style="width: 85px">{{ comment.get_request_kind_display }}</span>
+                        {% endif %}
+                      {% else %}
+                        &nbsp;&nbsp;—
+                      {% endif %}
+                    </td>
+                    <!-- Estado -->
+                    <td class="text-center">
+                      {% if comment.type == "REQUEST" %}
+                        {% if comment.can_delete_request_user %}
+                          <a href="{% url 'delete_comment' comment.id %}?next={{ request.get_full_path|urlencode }}"
+                            class="badge card text-danger text-decoration-none"
+                            style="width:85px">Eliminar
+                          </a>
+                        {% elif comment.can_reopen_user %}
+                          <button
+                            class="badge card text-dark toggle-status" style="width: 85px"
+                            data-id="{{ comment.id }}" data-status="RESOLVED">Reabrir
+                          </button>
+                        {% elif comment.can_resolve_user %}
+                          <button
+                            class="badge card text-dark toggle-status" style="width: 85px"
+                            data-id="{{ comment.id }}" data-status="OPEN">Resolver
+                          </button>
+                        {% elif comment.resolved %}
+                          <span class="badge card text-secondary" style="width: 85px">Resuelta</span>
+                        {% else %}
+                          <span class="badge card text-secondary" style="width: 85px">Abierta</span>
+                        {% endif %}
+                      {% else %}
+                        —
+                      {% endif %}
+                    </td>
+                    <!-- Abierta el -->
+                    <td class="text-center">{{ comment.created_at|date:"d/m/y H:i" }}</td>
+                    <!-- Cerrada el -->
+                    <td class="text-center">
+                      {% if comment.resolved_at %}
+                        {{ comment.resolved_at|date:"d/m/y H:i" }}
+                      {% else %}
+                        —
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No tienes notificaciones pendientes.</p>
+    {% endif %}
+  </div>
+  <script>
+    window.ProjectFlow = {
+      userId: "{{ request.user.id }}"
+    };
+  </script>
+  <script src="{% static 'js/home/home.js' %}"></script>
+{% endblock %}

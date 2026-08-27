@@ -1,0 +1,37 @@
+<!-- templates\common\confirm_delete.html ...
+   ... se utiliza para:
+   confirmar la eliminación de objetos y muestrar un aviso cuando la eliminación no está permitida -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+      <h1 class="mb-4">Confirmar suprimir {{ type }}</h1>
+      {% if blocked %}
+        <p class="alert alert-danger">No se puede eliminar {{ gender }} {{ type }} <strong>{{ name }}</strong> porque {{ reason }}</p>
+        {% if next %}
+          <a href="{{ next }}" class="btn btn-secondary" style="width: 100px;">Volver</a>
+        {% else %}
+          <a href="javascript:history.back()" class="btn btn-secondary" style="width: 100px;">Volver</a>
+        {% endif %}
+      {% else %}
+        <p>¿Seguro que quieres eliminar {{ gender }} {{ type }} <strong>{{ name }}</strong>?</p>
+        <form method="POST">
+          {% csrf_token %}
+          <input type="hidden" name="next" value="{{ next }}">
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-outline-danger" style="width: 100px;">Eliminar</button>
+            {% if next %}
+              <a href="{{ next }}" class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+            {% else %}
+              <a href="javascript:history.back()" class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+            {% endif %}
+          </div>
+        </form>
+      {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

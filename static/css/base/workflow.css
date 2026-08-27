@@ -1,0 +1,319 @@
+/* ==========================================================
+   WIDGET DE FLUJO DE TRABAJO
+   ========================================================== */
+
+#workflow-widget {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 312px;
+  z-index: 2000;
+}
+
+/* Panel que aparece encima del botón */
+#workflow-panel {
+  display: none;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
+  align-items: stretch;
+}
+
+/* Panel abierto */
+#workflow-panel.open {
+  display: flex;
+}
+
+
+/* ==========================================================
+   CONTENIDO DEL WIDGET
+   ========================================================== */
+
+/* Contenido central */
+#workflow-content {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 5px;
+}
+
+/* Título del paso */
+#workflow-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#workflow-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#workflow-title a:hover {
+  text-decoration: underline;
+}
+
+/* Texto del paso */
+#workflow-text {
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+#workflow-text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#workflow-text a:hover {
+  text-decoration: underline;
+}
+
+
+/* ==========================================================
+   LISTA DE COMPROBACIÓN
+   ========================================================== */
+
+/* Check list de puntos */
+.workflow-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  line-height: 1.15;
+}
+
+.workflow-check input {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.workflow-check span {
+  display: block;
+  line-height: 1.15;
+}
+
+.workflow-check input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
+/* ==========================================================
+   NAVEGACIÓN DEL WIDGET
+   ========================================================== */
+
+/* Flechas */
+.workflow-arrow {
+  width: 38px;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.workflow-arrow:hover {
+  background: #f1f1f1;
+  color: #212529;
+}
+
+/* Botón Guía */
+#workflow-toggle {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 0 20px;
+}
+
+/* Rol */
+#workflow-role {
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: .85rem;
+  opacity: .8;
+}
+
+/* Contador */
+#workflow-counter {
+  font-size: .85rem;
+  opacity: .8;
+}
+
+
+/* =========================================
+   FLUJO DE TRABAJO
+   ========================================= */
+
+.workflow-steps {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  gap: 12px;
+  width: 100%;
+}
+
+.workflow-step-group {
+  display: flex;
+  align-items: stretch;
+  gap: 12px;
+  flex: 0 0 auto;
+}
+
+.workflow-step-group.active .workflow-step-items {
+  display: flex;
+}
+
+
+/* ==========================================================
+   PASOS DEL FLUJO
+   ========================================================== */
+
+.workflow-step {
+  flex: 0 0 74px;
+  width: 74px;
+  min-width: 74px;
+  display: flex;
+}
+
+.workflow-step > .card {
+  width: 74px;
+  height: 100%;
+}
+
+.workflow-step > .card > .card-body {
+  width: 74px;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   ELEMENTOS DE CADA PASO
+   ========================================================== */
+
+.workflow-step-items {
+  display: none;
+  width: 450px;
+  min-width: 0;
+  padding: 16px;
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, .125);
+  border-radius: .375rem;
+  box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+  align-items: flex-start;
+}
+
+.workflow-step-items ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.workflow-step-items li {
+  margin-bottom: 6px;
+  line-height: 1.15;
+}
+
+.workflow-step-items li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================
+   CABECERA DEL PASO
+   ========================================= */
+
+.workflow-step-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.workflow-step-number {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  min-height: 42px;
+  max-width: 42px;
+  max-height: 42px;
+  box-sizing: border-box;
+  border: 1px solid #dee2e6;
+  border-radius: 50%;
+  background-color: #f8f9fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Elementos seleccionados */
+.workflow-step-group.active .workflow-step-number,
+.workflow-step-group.active .workflow-step-items {
+  display: flex;
+  border: 1px solid #0d6efd;
+  background-color: #f8f9fa;
+}
+
+.workflow-step-number:hover {
+  background-color: #e9ecef;
+}
+
+/* Número */
+.workflow-step-number strong {
+  display: block;
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+
+/* =========================================
+   TÍTULO VERTICAL DEL PASO
+   ========================================= */
+
+.workflow-step-title {
+  width: 42px;
+  height: 100px;
+  flex: 0 0 100px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+  margin-bottom: 10px;
+}
+
+.workflow-step-title a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.workflow-step-title a:hover {
+  text-decoration: underline;
+}
+
+/* Texto girado */
+.workflow-step-title span {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}

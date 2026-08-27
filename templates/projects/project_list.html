@@ -1,0 +1,61 @@
+<!-- templates\projects\project_list.html ...
+   ... se utiliza para:
+   mostrar los proyectos del usuario agrupados por sección y año, permitiendo desplegar los proyectos de cada año y crear
+   nuevos proyectos cuando el usuario dispone de permisos para ello.
+   ... se utiliza en los archivos:
+   templates\projects\includes\_project_card.html → para representar cada proyecto en forma de tarjeta.
+   static\js\projects\project_list.js → para gestionar el comportamiento interactivo de los años y sus secciones.
+   ... enlaza con las url:
+   'project_create' → para crear un nuevo proyecto. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1 class="mb-5">Mis proyectos</h1>
+  <!-- Grid de todos mis proyectos -->
+  {% for title, project_list in sections %}
+    {% if project_list %}
+      {% if title != "Mis proyectos" %}
+        <h2 class="mt-5 mb-3">{{ title }}</h2>
+      {% endif %}
+      {% regroup project_list by code|slice:":2" as year_groups %}
+      {% for year in year_groups %}
+        <div class="mb-4">
+          <h4 class="mb-3">
+            <button
+              style="font-size: inherit;"
+              class="btn p-0 border-0 bg-transparent fw-semibold text-dark"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#year{{ title|slugify }}{{ year.grouper }}"
+              data-section="{{ title|slugify }}"
+              data-year="{{ year.grouper }}"
+              aria-expanded="false">
+              <i class="bi bi-chevron-right"></i>
+              Año 20{{ year.grouper }}
+              <span class="text-muted">({{ year.list|length }})</span>
+            </button>
+          </h4>
+          <div
+            class="collapse"
+            id="year{{ title|slugify }}{{ year.grouper }}">
+            <div class="row g-3">
+              {% for project in year.list %}
+                {% include "projects/includes/_project_card.html" %}
+              {% endfor %}
+            </div>
+            <!-- Botón de nuevo proyecto -->
+            <div class="mt-4">
+              {% if can_create_project %}
+                <a href="{% url 'project_create' %}?year={{ year.grouper }}"
+                  class="btn btn-dark" style="width: 150px;">Nuevo proyecto</a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  {% endfor %}
+  <script src="{% static 'js/projects/project_list.js' %}"></script>
+{% endblock %}

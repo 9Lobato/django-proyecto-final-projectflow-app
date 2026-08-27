@@ -1,0 +1,96 @@
+<!-- templates\manage\project_team.html ...
+   ... se utiliza para:
+   mostrar los miembros asignados a un proyecto, sus datos y rol, y permitir a los usuarios autorizados incluir o excluir miembros del equipo del proyecto.
+   ... se utiliza en los archivos:
+   manage views → para mostrar el equipo correspondiente al proyecto seleccionado.
+   ... enlaza con las url:
+   'project_team' → navega entre los equipos de los proyectos anterior y siguiente.
+   'team_exclude' → excluye un usuario del equipo del proyecto.
+   'team_include' → incluye un usuario en el equipo del proyecto.
+   'report' → regresa al informe cuando se accede al equipo desde un informe.
+   'home' → regresa al Dashboard cuando se accede al equipo desde otro lugar. -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-4">Equipo del proyecto</h1>
+          <div class="d-flex gap-2">
+            <div>
+              {% if previous_project %}
+                <a href="{% url 'project_team' previous_project.pk %}"
+                  class="btn btn-outline-secondary" style="width: 102px;">← Anterior
+                </a>
+              {% endif %}
+            </div>
+            <div>
+              {% if next_project %}
+                <a href="{% url 'project_team' next_project.pk %}"
+                  class="btn btn-outline-secondary" style="width: 110px;">Siguiente →
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <h5 class="mb-4">{{ project.code }} - {{ project.name }}</h5>
+          <table class="table table-sm table-hover">
+            <thead class="table-light">
+              <tr>
+                <th style="width: 19%">Usuario</th>
+                <th style="width: 28%">Nombre</th>
+                <th style="width: 28%">Email</th>
+                <th style="width: 15%">Rol</th>
+                <th style="width: 10%" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for assignment in assignments %}
+                <tr>
+                  <td>{{ assignment.user.username }}</td>
+                  <td>
+                    {{ assignment.user.first_name }}
+                    {{ assignment.user.last_name }}
+                  </td>
+                  <td>{{ assignment.user.email }}</td>
+                  <td>{{ assignment.role.name|title }}</td>
+                  <td class="text-center">
+                    {% if assignment.user != project.owner %}
+                      {% if can_manage_team %}
+                        <a href="{% url 'team_exclude' project.pk assignment.user.pk %}"
+                          class="btn btn-sm btn-outline-danger" style="width: 100px;">Excluir</a>
+                      {% else %}
+                        <span class="text-muted">-</span>
+                      {% endif %}
+                    {% else %}
+                      <span class="text-muted">-</span>
+                    {% endif %}
+                  </td>
+                </tr>
+              {% empty %}
+                <tr>
+                  <td colspan="4">
+                    No hay usuarios asignados al proyecto
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% if from_report %}
+          <a href="{% url 'report' %}" class="btn btn-secondary">Volver</a>
+        {% else %}
+          <a href="{% url 'home' %}" class="btn btn-secondary">Volver</a>
+        {% endif %}
+        {% if can_manage_team %}
+        <a href="{% url 'team_include' project.pk %}"
+          class="btn btn-outline-success" style="width: 100px;">Incluir
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,177 @@
+<!-- templates\projects\project_form.html ...
+   ... se utiliza para:
+   crear y editar proyectos, permitiendo introducir sus datos, seleccionar una plantilla al crear un proyecto, guardar un proyecto como plantilla
+   y realizar acciones relacionadas con el proyecto.
+   ... se utiliza en los archivos:
+   templates\projects\project_list.html → mediante los enlaces de creación y edición de proyectos.
+   templates\projects\includes\_project_card.html → mediante los enlaces al código y nombre del proyecto.
+   templates\kanban\kanban.html → mediante el enlace al nombre del proyecto.
+   ... enlaza con las url:
+   'project_update' → acceder a la edición del proyecto y navegar entre proyectos.
+   'project_to_template' → guardar el proyecto actual como plantilla.
+   'project_create' → crear un nuevo proyecto o limpiar el formulario de edición.
+   'project_delete' → eliminar el proyecto actual.
+   'project_list' → volver al listado de proyectos.
+   'task_create' → crear una nueva tarea para el proyecto. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-4">
+            {% if mode == "edit" %}
+              Editar proyecto
+            {% else %}
+              Nuevo proyecto
+            {% endif %}
+          </h1>
+          {% if mode == "edit" %}
+            <div class="d-flex gap-2">
+              {% if previous_project %}
+                {% if next %}
+                  <a href="{% url 'project_update' previous_project.pk %}?next={{ next|urlencode }}"
+                    class="btn btn-outline-secondary" style="width: 102px;">← Anterior</a>
+                {% else %}
+                  <a href="{% url 'project_update' previous_project.pk %}"
+                    class="btn btn-outline-secondary" style="width: 102px;">← Anterior</a>
+                {% endif %}
+              {% endif %}
+              {% if next_project %}
+                {% if next %}
+                  <a href="{% url 'project_update' next_project.pk %}?next={{ next|urlencode }}"
+                    class="btn btn-outline-secondary" style="width: 110px;">Siguiente →</a>
+                {% else %}
+                  <a href="{% url 'project_update' next_project.pk %}"
+                    class="btn btn-outline-secondary" style="width: 110px;">Siguiente →</a>
+                {% endif %}
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+          {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+          {% endif %}
+          <!-- Código y template -->
+          <div class="d-flex gap-3 align-items-start mb-3">
+            <div class="d-flex align-items-start flex-grow-1">
+              <label class="form-label" style="width: 100px;">Código:</label>
+              <div class="flex-grow-1">
+                {{ form.code }}
+                {% if form.code.errors %}
+                  <div class="text-danger small">
+                    {{ form.code.errors }}
+                  </div>
+                {% endif %}
+              </div>
+            </div>
+            <div class="d-flex align-items-start flex-grow-1">
+              <label class="form-label" style="width: 100px;">Template:</label>
+                <div class="flex-grow-1">
+                  <select
+                    id="id_template"
+                    name="template"
+                    class="form-select"
+                    {% if mode == "edit" %}disabled{% endif %}>
+                    <option value="">---------</option>
+                    {% for t in templates %}
+                      <option
+                        value="{{ t.id }}"
+                        data-name="{{ t.name }}"
+                        data-description="{{ t.description }}"
+                        {% if project.template and project.template.id == t.id %}
+                          selected
+                        {% endif %}>
+                        {{ t.name }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                </div>
+            </div>
+            <div class="d-flex align-items-start">
+              {% if user_role == "OWNER" and mode == "edit" and not readonly %}
+                <a href="{% url 'project_to_template' project.pk %}"
+                  class="btn btn-outline-info" style="width: 220px;">Guardar como template</a>
+              {% endif %}
+            </div>
+          </div>
+          <!-- Nombre -->
+          <div class="mb-3 d-flex align-items-start">
+            <label class="form-label flex-shrink-0" style="width: 100px;">Nombre:</label>
+            {{ form.name }}
+            {% if form.name.errors %}
+              <div class="text-danger small">
+                {{ form.name.errors }}
+              </div>
+            {% endif %}
+          </div>
+          <!-- Descripción -->
+          <div class="mb-3 d-flex align-items-start">
+            <label class="form-label flex-shrink-0" style="width: 100px;">Descripción:</label>
+            {{ form.description }}
+          </div>
+          <!-- Datos adicionales -->
+          {% if mode == "edit" %}
+            <div class="row mb-4" style="margin-left: 93px;">
+              <div class="col-md-4">
+                <label class="form-label">Creado:</label>
+                <input type="text" class="form-control"
+                value="{{ project.created_at|date:'d-m-Y H:i' }}"
+                readonly disabled></div>
+              <div class="col-md-4">
+                <label class="form-label">Última actualización:</label>
+                <input type="text" class="form-control"
+                value="{{ project.updated_at|date:'d-m-Y H:i' }}"
+                readonly disabled></div>
+              <div class="col-md-4">
+                <label class="form-label">Propietario:</label>
+                {% if owners %}
+                  <select name="owner" class="form-select"
+                  {% if readonly or not can_change_owner %}disabled{% endif %}>
+                    {% for u in owners %}
+                      <option value="{{ u.id }}"
+                        {% if project.owner.id == u.id %}selected{% endif %}>
+                        {{ u.username }}
+                      </option>
+                    {% endfor %}
+                  </select>
+                {% else %}
+                  <input type="text" class="form-control" value="Sin owners disponibles" disabled>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+          <!-- Botones -->
+          <div class="d-flex gap-1" style="margin-left: 105px;">
+          {% if not readonly %}
+            {% if user_role != "MEMBER" %}
+              <button type="submit" name="save" value="1" class="btn btn-dark" style="width: 100px;">Guardar</button>
+              <button id="applyBtn" type="submit" name="apply" value="1"
+                      class="btn btn-outline-secondary" style="width: 100px;">Aplicar</button>
+            {% endif %}
+            {% if user_role == "OWNER" and mode == "edit" %}
+              <a href="{% url 'project_create' %}?year={{ project.code|slice:':2' }}"
+                class="btn btn-outline-secondary" style="width: 100px;">Limpiar</a>
+              <a href="{% url 'project_delete' project.pk %}"
+                class="btn btn-outline-danger" style="width: 100px;">Eliminar</a>
+            {% endif %}
+          {% endif %}
+          <a href="{% if next %}{{ next }}{% else %}{% url 'project_list' %}{% endif %}"
+            class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+          {% if mode == "edit" and project.total_tasks == 0 and not readonly %}
+            <a href="{% url 'task_create' form.instance.pk %}"
+              class="btn btn-info" style="width: 115px;">Nueva tarea</a>
+          {% endif %}
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/common/form_changes.js' %}"></script>
+  <script src="{% static 'js/common/template_selector.js' %}"></script>
+{% endblock %}

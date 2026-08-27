@@ -1,0 +1,220 @@
+<!-- templates\home\start.html ...
+   ... se utiliza para:
+   explicar la aplicación, mostrar las funciones disponibles según el rol del usuario y presentar el flujo de trabajo recomendado en la página de guía rápida.
+   ... se utiliza en los archivos:
+   static\js\home\start.js → en la gestión del rol seleccionado, resaltado de áreas disponibles y comportamiento interactivo del flujo de trabajo.
+   ... enlaza con las url:
+   'home' vuelve al Dashboard. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <h1 class="mb-5">Guia rápida</h1>
+  <div class="mb-4">
+    <div class="mb-5">
+      <h3 class="mb-3">¿Qué és ProjectFlow?</h3>
+      <p class="mb-0">
+        ProjectFlow es una aplicación para gestionar proyectos, organizar tareas y facilitar la colaboración entre los miembros de un equipo.<br>
+        Su objetivo es ofrecer una visión clara del trabajo pendiente, mejorar la comunicación y permitir un seguimiento sencillo del progreso de cada proyecto.
+      </p>
+    </div>
+    <div class="mb-5">
+      <h3 class="mb-3">¿Qué puedes hacer en ProjectFlow?</h3>
+      <p class="mb-0">
+        ✓ Crear y gestionar proyectos.<br>
+        ✓ Incorporar miembros de proyecto.<br>
+        ✓ Definir equipos de trabajo de proyecto.<br>
+        ✓ Crear tareas y asignarlas a los miembros del equipo de trabajo.<br>
+        ✓ Controlar el estado, prioridad y fecha límite de cada tarea.<br>
+        ✓ Mantener conversaciones mediante comentarios.<br>
+        ✓ Realizar solicitudes entre los miembros del equipo y gestionar su resolución.<br>
+        ✓ Visualizar el progreso del proyecto desde el Kanban.<br>
+        ✓ Obtener informes de proyecto.<br>
+      </p>
+    </div>
+    <div class="mb-5">
+      <h3 class="mb-3">¿Qué rol ocupas?</h3>
+      <div class="row text-center">
+        <div class="col-md-4 mb-3">
+          <div class="card h-100 shadow-sm
+            {% if selected_role == 'OWNER' %}
+              border-primary bg-light
+            {% endif %}">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                <h5 class="mb-0">Owner</h5>
+                <i class="bi bi-emoji-sunglasses"></i>
+              </div>
+              <p class="mb-0">
+                Administra completamente la aplicación y todos los proyectos.
+                Gestiona equipos y solicitudes.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100 shadow-sm
+            {% if selected_role == 'MANAGER' %}
+              border-primary bg-light
+            {% endif %}">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                <h5 class="mb-0">Manager</h5>
+                <i class="bi bi-emoji-smile"></i>
+              </div>
+              <p class="mb-0">
+                Gestiona proyectos, solicitudes y comentarios, organiza tareas y coordina el trabajo del equipo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-3">
+          <div class="card h-100 shadow-sm
+            {% if selected_role == 'MEMBER' %}
+              border-primary bg-light
+            {% endif %}">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-2">
+                <h5 class="mb-0">Member</h5>
+                <i class="bi bi-emoji-smile-upside-down"></i>
+              </div>
+              <p class="mb-0">
+                Ejecuta las tareas asignadas y colabora con su equipo de trabajo mediante comentarios.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h3 class="mb-3">¿En que secciones intervenienes?</h3>
+      <div class="row text-center">
+        <div class="col-md-3 mb-3">
+          <div id="card-project" class="card shadow-sm mb-3">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-1">
+                <h5 class="mb-1">Proyectos</h5>
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <p class="small mb-0">
+                Agrupa toda la información relacionada con un trabajo o iniciativa.
+              </p>
+            </div>
+          </div>
+          <div id="card-task" class="card shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-1">
+                <h5 class="mb-1">Tareas</h5>
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <p class="small mb-0">
+                Dividen el proyecto en actividades concretas.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div id="card-kanban" class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-1">
+                <h5 class="mb-1">Kanban</h5>
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <p class="mb-0">
+                Permite visualizar todas las tareas del proyecto organizadas por estado, facilitando el seguimiento del trabajo y la planificación del equipo.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div id="card-report" class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-1">
+                <h5 class="mb-1">Informe</h5>
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <p class="small mb-0">
+                Muestra indicadores del proyecto, evolución de las tareas y estadísticas que ayudan a controlar el progreso y detectar incidencias.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 mb-3">
+          <div id="card-management" class="card h-100 shadow-sm">
+            <div class="card-body">
+              <div class="d-flex justify-content-center align-items-center gap-2 mb-1">
+                <h5 class="mb-1">Gestión</h5>
+                <i class="bi bi-folder2-open"></i>
+              </div>
+              <p class="small mb-0">
+                Permite administrar usuarios, proyectos, equipos de trabajo, clientes y la configuración general de la aplicación, según el rol asignado.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mb-5">
+      <h3 class="mb-3">Flujo de trabajo recomendado</h3>
+      {% if workflow_steps %}
+      <div class="workflow-steps">
+        {% for step in workflow_steps %}
+          <div class="workflow-step-group {% if forloop.first %}active{% endif %}">
+            <div class="workflow-step">
+              <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                  <div class="workflow-step-header">
+                    <!-- Título del flujo -->
+                    <div class="workflow-step-title">
+                      <a href="{{ step.href }}" class="text-decoration-none text-dark">
+                        <span>{{ step.title }}</span>
+                      </a>
+                    </div>
+                    <!-- Número del flujo -->
+                    <button
+                      type="button"
+                      class="workflow-step-number"
+                      aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}"
+                      aria-label="Mostrar {{ step.title }}">
+                      <strong>{{ forloop.counter }}</strong>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Lista de items -->
+            <div class="workflow-step-items">
+              <ul>
+                {% for item in step.items %}
+                  <li>{{ item }}</li>
+                {% endfor %}
+              </ul>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      {% else %}
+        <p class="text-muted mb-0">
+          Selecciona un rol para ver el flujo de trabajo recomendado.
+        </p>
+      {% endif %}
+    </div>
+    <div class="d-flex gap-2 mt-4">
+      {% if workflow_steps %}
+        <a href="{{ workflow_steps.0.href }}?workflow=open&workflow_step=0"
+          class="btn btn-info"
+          style="width: 100px;">
+          Guíame
+        </a>
+      {% endif %}
+      <a href="{% url 'home' %}" class="btn btn-secondary" style="width: 100px;">
+        Volver
+      </a>
+    </div>
+  </div>
+  <script>
+    window.selectedRole = "{{ selected_role|default:'MEMBER' }}";
+  </script>
+  <script src="{% static 'js/home/start.js' %}"></script>
+{% endblock %}

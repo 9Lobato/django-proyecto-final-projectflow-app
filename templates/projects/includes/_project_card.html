@@ -1,0 +1,95 @@
+<!-- templates\projects\includes\_project_card.html ...
+   ... se utiliza para:
+   representar visualmente cada proyecto mediante una tarjeta, mostrando su información principal,
+   estado, propietario, manager, estadísticas de tareas y progreso, así como las acciones disponibles
+   para seguir o archivar el proyecto.
+   ... se utiliza en los archivos:
+   templates\projects\project_list.html → para representar cada proyecto de la lista mediante el componente parcial.
+   ... enlaza con las url:
+   'project_update' → accede a la edición del proyecto.
+   'project_follow_toggle' → sigue o deja de seguir el proyecto.
+   'project_archive_toggle' → archiva o desarchiva el proyecto.
+   'task_list' → consulta las tareas asociadas al proyecto. -->
+
+<div class="col-sm-6 col-md-4 col-xl-3">
+  <div class="card h-100 shadow-sm">
+    <div class="card-body d-flex flex-column">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <!-- Código proyecto -->
+        <a href="{% url 'project_update' project.pk %}"
+          class="text-dark text-decoration-none">
+          <h6 class="mb-0"><strong>{{ project.code }}</strong></h6>
+        </a>
+        <div class="d-flex align-items-center gap-1">
+          <!-- Seguir proyecto -->
+          {% if project.can_follow and not project.is_assigned %}
+            <form method="post" action="{% url 'project_follow_toggle' project.pk %}">
+              {% csrf_token %}
+              <button type="submit" class="btn btn-link p-0 border-0 shadow-none">
+                {% if project.is_followed %}
+                <i class="bi bi-bookmark text-info fs-6"></i>
+                {% else %}
+                <i class="bi bi-bookmark text-secondary fs-6 opacity-25"></i>
+                {% endif %}
+              </button>
+            </form>
+          {% endif %}
+          <!-- Archivar proyecto -->
+          {% if project.user_role == "OWNER" %}
+            <a href="{% url 'project_archive_toggle' project.pk %}" class="btn btn-link p-0 border-0 shadow-none">
+            {% if project.is_archived %}
+              <i class="bi bi-archive text-info fs-6"></i>
+            {% else %}
+              <i class="bi bi-archive text-secondary fs-6 opacity-25"></i>
+            {% endif %}</a>
+          {% else %}
+            {% if project.is_archived %}
+              <i class="bi bi-archive text-info fs-6"></i>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <!-- Nombre proyecto -->
+      <a href="{% url 'project_update' project.pk %}"
+        class="nav-link fs-4 fw-semibold mb-2" title="{{ project.name }}">{{ project.name|truncatechars:49 }}</a>
+      <!-- Descripción -->
+      <p class="project-description mb-4">{{ project.description }}</p>
+      <!-- Bloque inferior -->
+      <div class="mt-auto">
+        <div class="mb-3">
+          <!-- Propietario -->
+          <p class="mb-0"><strong>Propietario:</strong> {{ project.owner.username }}</p>
+          <!-- Manager -->
+          <p class="mb-0"><strong>Manager:</strong>
+            {% if project.manager %}
+               {{ project.manager.username }}
+            {% else %}
+              -
+            {% endif %}
+          </p>
+        </div>
+        <!-- Estadísticas -->
+        <div class="d-flex gap-2 mb-3">
+          <a href="{% url 'task_list' %}?project={{ project.id }}"
+            class="badge border border-secondary text-dark py-1 w-50 text-decoration-none">
+            Tareas: {{ project.total_tasks }}</a>
+          <span class="badge border border-secondary text-dark py-1 w-50">
+            Finalizadas: {{ project.completed_tasks }}</span>
+        </div>
+        <!-- Barra progreso -->
+        <div class="progress" style="height: 22px;">
+          <div
+            class="progress-bar"
+            role="progressbar"
+            style="width: {% if project.total_tasks > 0 %}{% widthratio project.completed_tasks project.total_tasks 100 %}{% else %}0{% endif %}%;">
+            {% if project.total_tasks > 0 %}
+              {% widthratio project.completed_tasks project.total_tasks 100 %}%
+            {% else %}
+              0%
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

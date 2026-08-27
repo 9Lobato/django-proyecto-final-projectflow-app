@@ -1,0 +1,37 @@
+<!-- templates\reports\projects.html ...
+   ... se utiliza para:
+   mostrar un informe individual de un proyecto mediante un resumen de sus tareas, indicadores de rendimiento y estado,
+   incluyendo el porcentaje de finalización, entrega, precisión de planificación, tiempos medios, retrasos, tareas vencidas,
+   tareas canceladas y nivel de salud del proyecto. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Project report</title>
+</head>
+<body>
+<h1>{{ name }}</h1>
+<hr>
+<h2>Summary</h2>
+<ul>
+  <li>Total tasks: {{ total_tasks }}</li>
+  <li>Completed tasks: {{ completed_tasks }}</li>
+  <li>Pending tasks: {{ pending_tasks }}</li>
+  <li>Completion: {{ completion_percentage }}%</li>
+</ul>
+<h2>Performance</h2>
+<ul>
+  <li>Delivery: {{ delivery }}%</li>
+  <li>Planning accuracy: {{ planning_accuracy }}</li>
+  <li>Average resolution: {{ average_resolution }}</li>
+  <li>Average delay: {{ average_delay }}</li>
+</ul>
+<h2>Status</h2>
+<ul>
+  <li>Overdue tasks: {{ overdue }}</li>
+  <li>Cancelled tasks: {{ cancelled }}</li>
+  <li>Health score: {{ health }}</li>
+</ul>
+</body>
+</html>

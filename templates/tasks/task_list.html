@@ -1,0 +1,275 @@
+<!-- templates\tasks\task_list.html ...
+   ... se utiliza para:
+   mostrar el listado de tareas agrupadas por proyecto, permitiendo filtrar y buscar tareas por usuario, estado, entrega y prioridad, consultar el estado
+   y la información de cada tarea, acceder al proyecto correspondiente y crear o editar tareas.
+   ... se utiliza en los archivos:
+   templates\projects\includes_project_card.html → mediante el enlace al listado de tareas filtrado por proyecto.
+   templates\projects\project_form.html → mediante el enlace para consultar las tareas de un proyecto.
+   templates\reports\includes_project_analysis.html → mediante los enlaces a las tareas de cada proyecto y sus distintos estados.
+   templates\reports\includes_user_analysis.html → mediante los enlaces a las tareas de cada usuario y sus distintos estados.
+   templates\reports\report.html → mediante la URL proporcionada al código JavaScript para generar enlaces al listado de tareas.
+   ... enlaza con las url:
+   'task_list' → permite cargar el listado, limpiar los filtros y aplicar filtros mediante parámetros GET.
+   'project_update' → accede a la edición o consulta del proyecto seleccionado.
+   'task_update' → accede a la edición o consulta de una tarea.
+   'task_create' → accede a la creación de una nueva tarea para el proyecto seleccionado. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class="mb-5">Mis tareas</h1>
+    <!-- Menú filtro -->
+    <div>
+      {% if filters_active %}
+        <a href="{% url 'task_list' %}" class="btn btn-light mb-5" style="width: 100px;">Limpiar</a>
+      {% endif %}
+      <button class="btn btn-dark mb-5" style="width: 100px;"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#filterPanel"
+      aria-expanded="false"
+      aria-controls="filterPanel">Filtrar</button>
+    </div>
+  </div>
+  <div class="collapse {% if filter_open %}show{% endif %}" id="filterPanel">
+    <form method="GET">
+      <div class="row g-2 align-items-start flex-wrap mb-4">
+        <!-- Creada por -->
+        <div class="col-md-2" style="width: 170px;">
+          <label class="form-label">Creada por:</label>
+          <input value=""
+            id="created_all" type="radio" class="btn-check" name="created_by"
+            {% if not created_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="created_all">Alguien</label>
+          {% for user in created_by_users %}
+            <input value="{{ user.id }}"
+              id="created_{{ user.id }}" type="radio" class="btn-check" name="created_by"
+              {% if created_selected == user.id|stringformat:"s" %}checked{% endif %}>
+            <label class="btn btn-light w-100" for="created_{{ user.id }}">{{ user.username }}</label>
+          {% endfor %}
+        </div>
+        <!-- Asignada a -->
+        <div class="col-md-2" style="width: 170px;">
+          <label class="form-label">Asignada a:</label>
+          <input value=""
+            id="assigned_all" type="radio" class="btn-check" name="assigned_to"
+            {% if not assigned_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="assigned_all">Alguien</label>
+          <input value="unassigned"
+            id="assigned_unassigned" type="radio" class="btn-check" name="assigned_to"
+            {% if assigned_selected == "unassigned" %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="assigned_unassigned">Sin asignar</label>
+          {% for user in assigned_to_users %}
+            <input value="{{ user.id }}"
+              id="assigned_{{ user.id }}" type="radio" class="btn-check" name="assigned_to"
+              {% if assigned_selected == user.id|stringformat:"s" %}checked{% endif %}>
+            <label class="btn btn-light w-100" for="assigned_{{ user.id }}">{{ user.username }}</label>
+          {% endfor %}
+        </div>
+        <!-- Estado -->
+        <div class="col-md-2" style="width: 170px;">
+          <label class="form-label">Estado:</label>
+          <input value=""
+            id="status_all" type="radio" class="btn-check" name="status_all"
+            {% if not status_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="status_all">Todas</label>
+          <input value="TODO"
+            id="status_todo" type="checkbox" class="btn-check status-checkbox" name="status"
+            {% if "TODO" in status_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="status_todo">A realizar</label>
+          <input value="IN_PROGRESS"
+            id="status_progress" type="checkbox" class="btn-check status-checkbox" name="status"
+            {% if "IN_PROGRESS" in status_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="status_progress">En curso</label>
+          <input value="DONE"
+            id="status_done" type="checkbox" class="btn-check status-checkbox" name="status"
+            {% if "DONE" in status_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="status_done">Finalizada</label>
+          <input value="CANCELLED"
+            id="status_cancelled" type="checkbox" class="btn-check status-checkbox" name="status"
+            {% if "CANCELLED" in status_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="status_cancelled">Cancelada</label>
+        </div>
+        <!-- Entrega -->
+        <div class="col-md-2" style="width: 170px;">
+          <label class="form-label">Entrega:</label>
+          <input value=""
+            id="delivery_all" type="radio" class="btn-check" name="delivery_all"
+            {% if not delivery_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="delivery_all">Todas</label>
+          <input value="NO_LIMIT"
+            id="delivery_no_limit" type="checkbox" class="btn-check delivery-checkbox" name="delivery"
+            {% if "NO_LIMIT" in delivery_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="delivery_no_limit">-</label>
+          <input value="ON_TIME"
+            id="delivery_on_time" type="checkbox" class="btn-check delivery-checkbox" name="delivery"
+            {% if "ON_TIME" in delivery_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="delivery_on_time">En plazo</label>
+          <input value="OVERDUE"
+            id="delivery_overdue" type="checkbox" class="btn-check delivery-checkbox" name="delivery"
+            {% if "OVERDUE" in delivery_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="delivery_overdue">Vencidas</label>
+          <input value="ARCHIVED"
+            id="delivery_archived" type="checkbox" class="btn-check delivery-checkbox" name="delivery"
+            {% if "ARCHIVED" in delivery_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="delivery_archived">Archivada</label>
+        </div>
+        <!-- Prioridad -->
+        <div class="col-md-2" style="width: 170px;">
+          <label class="form-label">Prioridad:</label>
+          <input value=""
+            id="priority_all" type="radio" class="btn-check" name="priority_all"
+            {% if not priority_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="priority_all">Todas</label>
+          <input value="LOW"
+            id="priority_low" type="checkbox" class="btn-check priority-checkbox" name="priority"
+            {% if "LOW" in priority_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="priority_low">Baja</label>
+          <input value="MEDIUM"
+            id="priority_medium" type="checkbox" class="btn-check priority-checkbox" name="priority"
+            {% if "MEDIUM" in priority_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="priority_medium">Media</label>
+          <input value="HIGH"
+            id="priority_high" type="checkbox" class="btn-check priority-checkbox" name="priority"
+            {% if "HIGH" in priority_selected %}checked{% endif %}>
+          <label class="btn btn-light w-100" for="priority_high">Alta</label>
+        </div>
+        <!-- Búsqueda -->
+        <div class="col-md-2">
+          <div class="col" style="width: 446px;">
+            <p class="mb-2">Buscar:</p>
+            <div class="d-flex gap-1">
+              <input name="search"
+                type="text" class="form-control" style="width: 342px;" placeholder="Buscar tarea..." value="{{ request.GET.search }}">
+              <button type="submit" class="btn btn-outline-dark" style="width: 100px;">Aplicar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div>
+    <!-- Grid de tareas agrupadas por proyecto -->
+    {% for project in projects %}
+      <div class="mb-4">
+        <!-- Código y nombre de proyecto -->
+        <h4 class="d-flex align-items-center gap-2 mb-3">
+          <button
+            style="font-size: inherit;"
+            class="btn p-0 border-0 bg-transparent fw-semibold text-dark project-toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#project{{ project.pk }}"
+            data-project="{{ project.pk }}"
+            aria-expanded="false">
+            <i class="bi bi-chevron-right"></i>
+            &nbsp;{{ project.code }}
+            <!-- Seguir proyecto -->
+            {% if project.is_followed %}
+              <i class="bi bi-bookmark text-info fs-6"></i>
+            {% endif %}
+            <!-- Archivar proyecto -->
+            {% if project.is_archived %}
+              <i class="bi bi-archive text-info fs-6"></i>
+            {% endif %}
+          </button>
+          <a href="{% url 'project_update' project.pk %}"
+            class="text-dark text-decoration-none">
+            {{ project.name }}
+            {% if filters_active %}
+              ({{ project.filtered_task_count }}/{{ project.task_count }})
+            {% else %}
+              ({{ project.task_count }})
+            {% endif %}
+          </a>
+        </h4>
+        <!-- Grid de tareas del proyecto -->
+        <div class="collapse" id="project{{ project.pk }}">
+          <div class="row g-3">
+            {% for task in tasks %}
+              {% if task.project == project %}
+              <div class="col-sm-6 col-md-4 col-xl-3">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body
+                    {% if task.is_overdue %}
+                      bg-danger bg-opacity-10
+                    {% elif task.is_on_time %}
+                      bg-success bg-opacity-10
+                    {% endif %}">
+                    <!-- Título de la tarea -->
+                    <a href="{% url 'task_update' task.pk %}"
+                      class="badge py-2 w-100 text-center text-decoration-none fs-6 text-wrap
+                      {% if task.status == 'TODO' %}
+                        card bg-warning-subtle text-dark
+                      {% elif task.status == 'IN_PROGRESS' %}
+                        card bg-info-subtle text-dark
+                      {% elif task.status == 'DONE' %}
+                        card bg-light text-dark
+                      {% elif task.status == 'CANCELLED' %}
+                        card bg-white text-danger
+                      {% endif %}" title="{{ task.title }}">
+                      {{ task.title|truncatechars:30 }}</a>
+                    <!-- Datos de la tarea -->
+                    <div class="text-dark small mt-3">
+                      <p class="mb-1" style="font-size: 16px;"><strong>Creada por: </strong>{{ task.created_by.username }}</p>
+                      <p class="mb-1" style="font-size: 16px;"><strong>Creada el: </strong>{{ task.created_at|date:'d-m-y H:i' }}</p>
+                      <p class="mb-1" style="font-size: 16px;"><strong>Prioridad: </strong>{{ task.priority }}</p>
+                      <p class="mb-1" style="font-size: 16px;"><strong>Estado: </strong>{{ task.status }}</p>
+                      <p class="mb-1" style="font-size: 16px;"><strong>Asignada a:</strong>
+                        {% if task.assigned_to %}
+                          {{ task.assigned_to.username }}
+                        {% else %}-{% endif %}
+                      </p>
+                      {% if task.remaining_status == "ARCHIVED" %}
+                      <p class="mb-1" style="font-size:16px;">
+                        <strong>Tiempo restante:</strong> Archivada
+                      </p>
+                      {% elif task.time_remaining is not None %}
+                      <p class="mb-1" style="font-size:16px;">
+                        <strong>Tiempo restante:</strong>
+                        {% if task.time_remaining < 0 %}
+                          Vencida
+                        {% else %}
+                          {{ task.time_remaining|floatformat:2 }} días
+                        {% endif %}
+                      </p>
+                      {% endif %}
+                      <p class="mb-1" style="font-size: 16px;">
+                        <strong>Watchers:</strong> {{ task.watchers_count }}
+                      </p>
+                      <p class="mb-1" style="font-size: 16px;">
+                        <strong>Comentarios:</strong> {{ task.comments_count }} {% if task.my_comments_count %}({{ task.my_comments_count }} de {{ request.user.username }}){% endif %}
+                      </p>
+                      <p class="mb-1" style="font-size: 16px;">
+                        <strong>Solicitudes:</strong> {{ task.requests_count }} {% if task.my_requests_count %}({{ task.my_requests_count }} de {{ request.user.username }}){% endif %}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <!-- Botón nueva tarea del proyecto -->
+          <div class="mt-4">
+            {% if project.can_create_task and not filters_active %}
+              <a href="{% url 'task_create' project.pk %}"
+                class="btn btn-dark new-width120">Nueva tarea</a>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      {% if not all_tasks_exist %}
+        <div class="text-muted">Aún no se ha creado ninguna tarea</div>
+      {% elif not visible_tasks_exist %}
+        <div class="text-muted">No tiene permisos para ver tareas</div>
+      {% else %}
+        <div class="text-muted">No hay tareas con los filtros aplicados</div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <script src="{% static 'js/tasks/task_list.js' %}"></script>
+{% endblock %}

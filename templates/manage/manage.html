@@ -1,0 +1,194 @@
+<!-- templates\manage\manage.html ...
+   ... se utiliza para:
+   mostrar la sección de Gestión de la aplicación, permitiendo administrar usuarios y consultar los permisos y capacidades asociadas a cada rol.
+   ... enlaza con las url:
+   'user_update' → abre el formulario para editar los datos de un usuario existente.
+   'user_create' → abre el formulario para crear un nuevo usuario.
+   'role_detail' → muestra el detalle de los usuarios que tienen un determinado rol. -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <h1 class="mb-5">Gestión</h1>
+  <!-- Usuarios -->
+  <div class="mb-4">
+    <h4 class="mb-3">Usuarios</h4>
+    <div class="card mb-4">
+      <div class="card-body">
+        {% if users %}
+          <table class="table table-sm align-middle table-hover mb-0">
+            <thead class="table-light">
+              <tr>
+                <th style="width: 19%" class="text-start">Usuario</th>
+                <th style="width: 25%" class="text-start">Nombre</th>
+                <th style="width: 24%" class="text-start">Email</th>
+                <th style="width: 8%" class="text-center">Proyectos</th>
+                <th style="width: 7%" class="text-center">Activo</th>
+                <th style="width: 7%" class="text-center">Admin</th>
+                <th style="width: 10%" class="text-center"></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for u in users %}
+                <tr>
+                  <td class="text-start">{{ u.username }}</td>
+                  <td class="text-start">{{ u.first_name }} {{ u.last_name }}</td>
+                  <td class="text-start">{{ u.email }}</td>
+                  <td class="text-center">{{ u.project_assignments.count }}</td>
+                  <td class="text-center">
+                    {% if u.is_active %}<span class="badge bg-success">✓</span>
+                    {% else %}<span class="badge bg-danger">✕</span>
+                    {% endif %}</td>
+                  <td class="text-center">
+                    {% if u.is_staff %}<span class="badge bg-success">✓</span>
+                    {% else %}<span class="badge bg-danger">✕</span>
+                    {% endif %}</td>
+                  <td class="text-center">
+                    <div class="d-flex justify-content-center gap-2">
+                      <a href="{% url 'user_update' u.id %}"
+                        class="btn btn-sm btn-outline-secondary" style="width: 140px;">Editar</a>
+                    </div>
+                  </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        {% else %}
+          <p>No existen usuarios</p>
+        {% endif %}
+      </div>
+    </div>
+    <a href="{% url 'user_create' %}" class="btn btn-dark" style="width: 150px;">Nuevo usuario</a>
+  </div>
+  <!-- Roles -->
+  <div class="mb-4">
+    <h4 class="mb-3">Roles</h4>
+    <div class="card mb-4">
+      <div class="card-body">
+        <table class="table table-sm align-middle text-center table-hover mb-0">
+          <thead class="table-light">
+            <tr>
+              <th style="width: 18%" class="text-start">Rol</th>
+              <th style="width: 9%" class="text-center">Usuarios</th>
+              <th style="width: 9%">Ver</th>
+              <th style="width: 9%">Crear</th>
+              <th style="width: 9%">Asignar</th>
+              <th style="width: 9%">Comentar</th>
+              <th style="width: 9%">Editar</th>
+              <th style="width: 9%">Eliminar</th>
+              <th style="width: 9%">Archivar</th>
+              <th style="width: 10%"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Owner -->
+            <tr>
+              <td class="text-start">Owner</td>
+              <td>{{ role_counts.OWNER }}</td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">P</span>
+              </td>
+              <td>
+                <a href="{% url 'role_detail' 'OWNER' %}"
+                  class="btn btn-sm btn-outline-secondary" style="width: 140px;">Mostrar</a>
+              </td>
+            </tr>
+            <!-- Manager -->
+            <tr>
+              <td class="text-start">Manager</td>
+              <td>{{ role_counts.MANAGER }}</td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-warning text-dark">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+              </td>
+              <td>
+                <a href="{% url 'role_detail' 'MANAGER' %}"
+                  class="btn btn-sm btn-outline-secondary" style="width: 140px;">Mostrar</a>
+              </td>
+            </tr>
+            <!-- Member -->
+            <tr>
+              <td class="text-start">Member</td>
+              <td>{{ role_counts.MEMBER }}</td>
+              <td>
+                <span class="badge bg-success">P</span>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-danger">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-danger">T</span>
+              </td>
+              <td>
+                <span class="badge bg-success">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-warning text-dark">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+                <span class="badge bg-danger">T</span>
+              </td>
+              <td>
+                <span class="badge bg-danger">P</span>
+              </td>
+              <td>
+                <a href="{% url 'role_detail' 'MEMBER' %}"
+                  class="btn btn-sm btn-outline-secondary" style="width: 140px;">Mostrar</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}

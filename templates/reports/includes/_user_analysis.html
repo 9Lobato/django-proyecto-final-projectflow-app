@@ -1,0 +1,96 @@
+<!-- templates\reports\includes\_user_analysis.html ...
+   ... se utiliza para:
+   mostrar el estado de la plantilla de trabajo de los usuarios mediante indicadores de tareas archivadas, activas, balance de trabajo,
+   finalizadas, canceladas, en plazo y vencidas, permitiendo consultar directamente las tareas correspondientes mediante los distintos indicadores.
+   ... se utiliza en los archivos:
+   templates\reports\report.html → mediante la inclusión del análisis de trabajo de los usuarios en la página de informes.
+   ... enlaza con las url:
+   'task_list' → muestra las tareas del usuario seleccionado, aplicando los filtros correspondientes según el indicador seleccionado. -->
+
+<!-- Estado plantilla de trabajo -->
+<div class="card shadow-sm mb-4">
+  <div class="card-header"><h4 class="ms-1 mb-0">Estado plantilla de trabajo</h4></div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover align-middle mb-0">
+        <thead>
+          <tr>
+            <th style="width: 20%">Usuario</th>
+            <th style="width: 10%">Rol</th>
+            <th class="text-center text-muted opacity-50" style="width: 10%">Archivadas</th>
+            <th class="text-center border-start" style="width: 10%">Activas</th>
+            <th class="text-center" style="width: 10%">Balance</th>
+            <th class="text-center" style="width: 10%">Finalizadas</th>
+            <th class="text-center" style="width: 10%">Canceladas</th>
+            <th class="text-center border-start" style="width: 10%">En plazo</th>
+            <th class="text-center" style="width: 10%">Vencidas</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for user in team_statistics %}
+            <tr>
+              <!-- Usuario -->
+              <td>{{ user.username }}</td>
+              <!-- Rol -->
+              <td>{{ user.role }}</td>
+              <!-- Archivadas -->
+              <td class="text-center">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&status_all=&delivery=ARCHIVED&priority_all=&search="
+                  class="text-decoration-none text-muted opacity-50">
+                  {{ user.archived_tasks }}
+                </a>
+              </td>
+              <!-- Activas -->
+              <td class="text-center border-start">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&status=TODO&status=IN_PROGRESS&delivery=NO_LIMIT&delivery=ON_TIME&priority_all=&search="
+                  class="text-decoration-none text-dark">
+                  {{ user.active_tasks }}
+                </a>
+              </td>
+              <!-- Balance -->
+              <td class="px-3">
+                <div class="progress">
+                  <div
+                    class="progress-bar bg-info"
+                    role="progressbar"
+                    style="width: {{ user.workload }}%;">
+                    {{ user.workload }}%
+                  </div>
+                </div>
+              </td>
+              <!-- Finalizadas -->
+              <td class="text-center">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&status=DONE&delivery=NO_LIMIT&delivery=ON_TIME&delivery=OVERDUE&priority_all=&search="
+                  class="text-decoration-none text-dark">
+                  {{ user.completed_tasks }}
+                </a>
+              </td>
+              <!-- Canceladas -->
+              <td class="text-center">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&status=CANCELLED&delivery=NO_LIMIT&delivery=ON_TIME&delivery=OVERDUE&priority_all=&search="
+                  class="text-decoration-none text-dark">
+                  {{ user.cancelled_tasks }}
+                </a>
+              </td>
+
+              <!-- En plazo -->
+              <td class="text-center border-start">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&delivery=NO_LIMIT&delivery=ON_TIME&priority_all=&search="
+                  class="text-decoration-none text-dark">
+                  {{ user.on_time_tasks }}
+                </a>
+              </td>
+              <!-- Vencidas -->
+              <td class="text-center">
+                <a href="{% url 'task_list' %}?assigned_to={{ user.id }}&delivery=OVERDUE&priority_all=&search="
+                  class="text-decoration-none text-dark">
+                  {{ user.overdue_tasks }}
+                </a>
+              </td>
+            </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

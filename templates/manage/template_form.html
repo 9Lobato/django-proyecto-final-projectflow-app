@@ -1,0 +1,155 @@
+<!-- templates\manage\template_form.html ...
+   ... se utiliza para:
+   crear y editar plantillas de proyectos, gestionar las tareas incluidas en cada plantilla y permitir añadir, eliminar, guardar o aplicar cambios sobre la plantilla.
+   ... se utiliza en los archivos:
+   static\js\manage\template_form.js → en la gestión dinámica de las tareas del formulario y del comportamiento del botón Aplicar.
+   ... enlaza con las url:
+   'template_update' → navega entre plantillas mientras se edita una plantilla.
+   'template_create' → limpia el formulario y crea una nueva plantilla.
+   'template_delete' → elimina la plantilla que se está editando.
+   'templates' → cancela la edición y regresa al listado de plantillas. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-4">
+            {% if mode == "edit" %}
+              Editar plantilla
+            {% else %}
+              Nueva plantilla
+            {% endif %}
+          </h1>
+          {% if mode == "edit" %}
+            <div class="d-flex gap-2">
+              <div>
+                {% if previous_template %}
+                  <a href="{% url 'template_update' previous_template.pk %}"
+                    class="btn btn-outline-secondary" style="width: 102px;">← Anterior
+                  </a>
+                {% endif %}
+              </div>
+              <div>
+                {% if next_template %}
+                  <a href="{% url 'template_update' next_template.pk %}"
+                    class="btn btn-outline-secondary" style="width: 110px;">Siguiente →
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <form method="POST" id="template-form">
+          {% csrf_token %}
+          <!-- Datos plantilla -->
+          <div class="row mb-4">
+            <!-- Nombre e ideal para -->
+            <div class="col-md-6">
+              <div class="mb-4">
+                <label class="form-label">Nombre:</label>
+                {{ form.name }}
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Ideal para:</label>
+                {{ form.perfect_for }}
+              </div>
+            </div>
+            <!-- Descripción -->
+            <div class="col-md-6">
+              <label class="form-label">Descripción:</label>
+              {{ form.description }}
+            </div>
+          </div>
+          <!-- Tareas -->
+          <h4 class="mb-4">Tareas</h4>
+          {% if not formset.forms %}
+            <div id="no-tasks-message" class="alert border mb-4">
+              No existen tareas. Pulsa <strong>Nueva tarea</strong> para añadir una.
+            </div>
+          {% endif %}
+          {{ formset.management_form }}
+          <div class="row g-3 mb-4 task-scroll" id="task-container">
+            {% for task_form in formset %}
+              <div class="col-sm-6 col-lg-4 task-card my-2">
+                <div class="card h-100 shadow-sm">
+                  <div class="card-body">
+                    {% for hidden in task_form.hidden_fields %}
+                      {{ hidden }}
+                    {% endfor %}
+                    <!-- Título -->
+                    <div class="mb-3">
+                      <label class="form-label">Título:</label>
+                      {{ task_form.title }}
+                    </div>
+                    <!-- Descripción -->
+                    <div class="mb-3">
+                      <label class="form-label">Descripción:</label>
+                      {{ task_form.description }}
+                    </div>
+                    <!-- Prioridad i eliminar -->
+                    <div class="d-flex justify-content-between align-items-end">
+                      <div class="flex-grow-1 me-3">
+                        <label class="form-label">Prioridad:</label>
+                        {{ task_form.priority }}
+                      </div>
+                      {% if task_form.instance.pk %}
+                        <div class="d-none">{{ task_form.DELETE }}</div>
+                        <button type="button" class="btn btn-outline-danger" style="width: 100px;" onclick="markDelete(this)">Eliminar</button>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endfor %}
+          </div>
+          <!-- Botones -->
+          <button type="submit" name="save" value="1" class="btn btn-dark" style="width: 100px;">Guardar</button>
+          <button id="applyBtn" type="submit" name="apply" value="1"
+            class="btn btn-outline-secondary" style="width: 100px;">Aplicar</button>
+          {% if mode == "edit" %}
+            <a href="{% url 'template_create' %}"
+              class="btn btn-outline-secondary" style="width: 100px;">Limpiar</a>
+            <a href="{% url 'template_delete' template_obj.pk %}"
+              class="btn btn-outline-danger" style="width: 100px;">Eliminar</a>
+          {% endif %}
+          <a href="{% url 'templates' %}" class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+          <button type="button" id="add-task" class="btn btn-info" style="width: 115px;">Nueva tarea</button>
+        </form>
+        <div id="empty-form" class="d-none">
+          <div class="col-sm-6 col-lg-4 task-card my-2 new-task">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body">
+                {% for hidden in formset.empty_form.hidden_fields %}
+                  {{ hidden }}
+                {% endfor %}
+                <!-- Título -->
+                <div class="mb-3">
+                  <label class="form-label">Título:</label>
+                  {{ formset.empty_form.title }}
+                </div>
+                <!-- Descripción -->
+                <div class="mb-3">
+                  <label class="form-label">Descripción:</label>
+                  {{ formset.empty_form.description }}
+                </div>
+                <!-- Prioridad i guardar -->
+                <div class="d-flex justify-content-between align-items-end">
+                  <div class="flex-grow-1 me-3">
+                    <label class="form-label">Prioridad:</label>
+                    {{ formset.empty_form.priority }}
+                  </div>
+                  <button type="submit" name="apply" value="1" class="btn btn-dark" style="width: 100px;">Guardar</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/manage/template_form.js' %}"></script>
+{% endblock %}

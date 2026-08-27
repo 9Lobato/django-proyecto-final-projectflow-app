@@ -1,0 +1,54 @@
+<!-- templates\manage\team_include.html ...
+   ... se utiliza para:
+   añadir un usuario al equipo de un proyecto, permitiendo seleccionar el usuario y asignarle un rol dentro del proyecto.
+   ... se utiliza en los archivos:
+   templates\manage\project_team.html → mediante el botón "Incluir" para acceder al formulario de incorporación de usuarios al equipo del proyecto.
+   ... enlaza con las url:
+   'project_team' → accede al equipo del proyecto y vuelve a él al cancelar la incorporación. -->
+
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <h1 class="mb-4">Añadir usuario al equipo</h1>
+        <h5 class="mb-3">
+          {{ project.code }} - {{ project.name }}
+        </h5>
+        <form method="POST">
+          {% csrf_token %}
+          <!-- Usuario -->
+          <div class="mb-3">
+            <label class="form-label">Usuario</label>
+            <select name="user" class="form-select" required>
+              <option value="">Selecciona un usuario</option>
+              {% for user in users %}
+                <option value="{{ user.id }}">
+                  {{ user.first_name }} {{ user.last_name }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          <!-- Rol -->
+          <div class="mb-3">
+            <label class="form-label">Rol</label>
+            <select name="role" class="form-select" required>
+              {% for role in roles %}
+                <option value="{{ role.name }}">
+                  {{ role.name|title }}
+                </option>
+              {% endfor %}
+            </select>
+          </div>
+          <!-- Botones -->
+          <div class="d-flex gap-2">
+            <button type="submit" class="btn btn-dark" style="width: 100px;">Añadir</button>
+            <a href="{% url 'project_team' project.pk %}"
+               class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}

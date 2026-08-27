@@ -1,0 +1,186 @@
+/* ==========================================================
+   TABLERO KANBAN
+   ========================================================== */
+
+.kanban-board {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kanban-header,
+.kanban-row {
+  display: grid;
+  grid-template-columns: 250px repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.kanban-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kanban-row {
+  align-items: start;
+}
+
+
+/* ==========================================================
+   COLUMNAS DE PROYECTO
+   ========================================================== */
+
+.kanban-project {
+  padding: 10px;
+  background: #f5f5f5;
+  font-weight: 600;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   COLUMNAS DE TAREAS
+   ========================================================== */
+
+.kanban-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  min-height: 0;
+}
+
+.kanban-cell.drag-over {
+  background: #e8f4ff;
+  border: 2px dashed #0d6efd;
+}
+
+.kanban-history {
+  overflow-y: auto;
+  min-height: 0;
+  flex-shrink: 0;
+}
+
+
+/* ==========================================================
+   TARJETAS DE TAREAS
+   ========================================================== */
+
+.kanban-card {
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 10px;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  cursor: grab;
+  transition: box-shadow .15s;
+}
+
+.kanban-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.kanban-card:active {
+  cursor: grabbing;
+}
+
+.kanban-card a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kanban-card .meta {
+  font-size: 12px;
+  color: #666;
+}
+
+
+/* ==========================================================
+   TARJETAS DE TAREAS COMPACTAS
+   ========================================================== */
+
+.kanban-card.compact {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.kanban-card.compact .kanban-details {
+  display: none;
+}
+
+.kanban-card.compact a {
+  color: #333;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+/* ==========================================================
+   LISTA DE TAREAS
+   ========================================================== */
+
+.kanban-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.kanban-list li {
+  padding: 4px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.kanban-list li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================================
+   LÍNEA DE TIEMPO
+   ========================================================== */
+
+.kanban-timeline {
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+
+  background: var(--bs-secondary-bg);
+  border-radius: 999px;
+}
+
+.timeline-estimated {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  background: #0d6efd;
+  z-index: 1;
+}
+
+.timeline-today {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 2px;
+
+  background: var(--bs-dark);
+  transform: translateX(-50%);
+  z-index: 2;
+}

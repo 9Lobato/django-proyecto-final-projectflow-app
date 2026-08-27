@@ -1,0 +1,27 @@
+<!-- templates\reports\includes\_user_metrics.html ...
+   ... se utiliza para:
+   mostrar las métricas de participación y productividad de los usuarios mediante gráficos.
+   ... se utiliza en los archivos:
+   templates\reports\report.html → mediante la inclusión de las métricas de los usuarios en la página de informes. -->
+
+<h3 class="mb-3">Métricas plantilla</h3>
+<div class="row g-3 mb-4">
+  <!-- Participación -->
+  <div class="col-lg-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 class="ms-1 mb-0">Participación</h4></div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="participationChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Productividad -->
+  <div class="col-lg-6">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 class="ms-1 mb-0">Productividad</h4></div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="productivityChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

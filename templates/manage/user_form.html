@@ -1,0 +1,111 @@
+<!-- templates\manage\user_form.html ...
+   ... se utiliza para:
+   mostrar el formulario de creación y edición de usuarios, permitiendo gestionar sus datos personales, estado, permisos de administración y, en el caso de usuarios existentes, consultar sus fechas de alta y último acceso.
+   ... se utiliza en los archivos:
+   templates\manage\manage.html → mediante los enlaces "Editar" de cada usuario para acceder a su formulario de edición.
+   ... enlaza con las url:
+   'user_update' → edita un usuario existente y navegar entre los usuarios anterior y siguiente.
+   'user_create' → crea un nuevo usuario o inicia un formulario vacío desde la edición de un usuario.
+   'user_delete' → elimina el usuario que se está editando. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-4">
+            {% if mode == "edit" %}
+              Editar usuario
+            {% else %}
+              Nuevo usuario
+            {% endif %}
+          </h1>
+          {% if mode == "edit" %}
+            <div class="d-flex gap-2">
+              <div>
+                {% if previous_user %}
+                  <a href="{% url 'user_update' previous_user.pk %}"
+                    class="btn btn-outline-secondary" style="width: 102px;">← Anterior
+                  </a>
+                {% endif %}
+              </div>
+              <div>
+                {% if next_user %}
+                  <a href="{% url 'user_update' next_user.pk %}"
+                    class="btn btn-outline-secondary" style="width: 110px;">Siguiente →
+                  </a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+          <!-- Nombre y apellidos -->
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Nombre:</label>{{ form.first_name }}
+            </div>
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Apellidos:</label>{{ form.last_name }}
+            </div>
+          </div>
+          <!-- Nombre usuario y tipo usuario -->
+          <div class="row align-items-center">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">Username:</label>{{ form.username }}
+            </div>
+            <div class="col-md-2 d-flex justify-content-center">
+              <div class="form-check text-center">
+                <label class="form-check-label">Estado activo</label>
+                {{ form.is_active }}
+              </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center">
+              <div class="form-check text-center">
+                <label class="form-check-label">Acceso admin</label>
+                {{ form.is_staff }}
+              </div>
+            </div>
+            <div class="col-md-2 d-flex justify-content-center">
+              <div class="form-check text-center">
+                <label class="form-check-label">Superusuario</label>
+                {{ form.is_superuser }}
+              </div>
+            </div>
+          </div>
+          <!-- eMail y fechas -->
+          <div class="mb-4 row align-items-center">
+            <div class="col-md-6">
+              <label class="form-label">Email:</label>{{ form.email }}
+            </div>
+            {% if mode == "edit" %}
+              <div class="col-md-3">
+                <label class="form-label">Fecha de alta:</label>
+                {{ form.date_joined }}
+              </div>
+              <div class="col-md-3">
+                <label class="form-label">Último login:</label>
+                {{ form.last_login }}
+              </div>
+            {% endif %}
+          </div>
+          <div class="d-flex gap-1">
+            <button type="submit" name="save" value="1" class="btn btn-dark" style="width: 100px;">Guardar</button>
+            <button id="applyBtn" type="submit" name="apply" value="1" class="btn btn-outline-secondary" style="width: 100px;">Aplicar</button>
+            {% if mode == "edit" %}
+              <a href="{% url 'user_create' %}" class="btn btn-outline-secondary" style="width: 100px;">Limpiar</a>
+              <a href="{% url 'user_delete' form.instance.pk %}" class="btn btn-outline-danger" style="width: 100px;">Eliminar</a>
+            {% endif %}
+            <a href="{% if next %}{{ next }}{% else %}{% url 'manage' %}{% endif %}" class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/common/form_changes.js' %}"></script>
+  <script src="{% static 'js/common/template_selector.js' %}"></script>
+{% endblock %}

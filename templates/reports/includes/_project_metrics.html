@@ -1,0 +1,71 @@
+<!-- templates\reports\includes\_project_metrics.html ...
+   ... se utiliza para:
+   mostrar las métricas de proyectos y tareas mediante gráficos, incluyendo proyectos creados, progreso de proyectos,
+   proyectos archivados y la distribución de las tareas según su estado, entrega y prioridad.
+   ... se utiliza en los archivos:
+   templates\reports\report.html → mediante la inclusión de las métricas en la página de informes. -->
+
+<h3 class="mb-3">Métricas de proyectos</h3>
+<div class="row g-3 mb-4">
+  <!-- Proyectos creados -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 class="mb-0">Proyectos creados</h4></div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="projectsChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Proyectos completados -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 id="progressChartTitle" class="mb-0">Progreso proyectos</h4></div>
+      <div class="card-body">
+        <canvas id="projectsCompletedChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Proyectos archivados -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 class="mb-0">Proyectos archivados</h4></div>
+      <div class="card-body">
+        <canvas id="projectsArchivedChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 class="mb-3">Métricas de tareas</h3>
+<div class="row g-3 mb-4">
+  <!-- Estado -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header"><h4 class="mb-0">Estado</h4></div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="taskStatusChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Entrega -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header">
+        <h4 class="mb-0">Entrega</h4>
+      </div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="taskDeliveryChart"></canvas>
+      </div>
+    </div>
+  </div>
+  <!-- Prioridad -->
+  <div class="col-lg-4">
+    <div class="card shadow-sm h-100">
+      <div class="card-header">
+        <h4 class="mb-0">Prioridad</h4>
+      </div>
+      <div class="card-body report-chart-placeholder">
+        <canvas id="taskPriorityChart"></canvas>
+      </div>
+    </div>
+  </div>
+</div>

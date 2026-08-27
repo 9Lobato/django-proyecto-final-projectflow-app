@@ -1,0 +1,129 @@
+<!-- templates\reports\includes\_project_analysis.html ...
+   ... se utiliza para:
+   mostrar un resumen del estado de los proyectos mediante indicadores de equipo, tareas, asignación, progreso y salud del proyecto,
+   permitiendo acceder directamente a la información del proyecto y a las tareas correspondientes mediante los distintos indicadores.
+   ... se utiliza en los archivos:
+   templates\reports\report.html → mediante la inclusión del análisis de proyectos en la página de informes.
+   ... enlaza con las url:
+   'project_update' → accede a la edición del proyecto.
+   'project_team'→ muestra el equipo asignado al proyecto.
+   'task_list' → muestra las tareas del proyecto, aplicando los filtros correspondientes según el indicador seleccionado. -->
+
+<!-- Estado de los proyectos -->
+<div class="card shadow-sm mb-4">
+  <div class="card-header"><h4 class="ms-1 mb-0">Estado de proyectos</h4></div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-hover mb-0">
+        <thead>
+          <tr>
+            <th style="width: 37%">Proyecto</th>
+            <th class="text-center" style="width: 6%"><i class="bi bi-people-fill"></i></th>
+            <th class="text-center" style="width: 6%">Tareas</th>
+            <th class="text-center px-3" style="width: 9%">Asignadas</th>
+            <th class="text-center" style="width: 8%">Pendientes</th>
+            <th class="text-center" style="width: 8%">Finalizadas</th>
+            <th class="text-center" style="width: 8%">Canceladas</th>
+            <th class="text-center px-3" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Progreso = Finalizadas / Total × 100" style="width: 9%">Progreso</th>
+            <th class="text-center px-3" data-bs-toggle="tooltip" data-bs-placement="top"
+              title="Salud = 50% Progreso + 30% Entrega + 20% Bonificación no retrasos." style="width: 9%">Salud</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for project in project_statistics %}
+          <tr>
+            <!-- Proyecto -->
+            <td>
+              <a href="{% url 'project_update' project.id %}"
+                class="text-decoration-none text-dark">
+                {{ project.code }}
+                {% if project.is_archived %}
+                  <i class="bi bi-archive text-info mx-1"></i>
+                {% endif %}
+                {{ project.name }}
+              </a>
+            </td>
+            <!-- Equipo -->
+            <td class="text-center">
+              <span
+                data-bs-toggle="popover"
+                data-bs-trigger="hover"
+                data-bs-placement="right"
+                data-bs-html="true"
+                data-bs-content="{{ project.user_names }}">
+                <a href="/manage/projects/{{ project.id }}/team/?from=report"
+                  class="text-decoration-none text-dark">
+                  {{ project.users }}
+                </a>
+              </span>
+            </td>
+            <!-- Tareas -->
+            <td class="text-center">
+              <a href="{% url 'task_list' %}?project={{ project.id }}"
+                class="text-decoration-none text-dark">
+                {{ project.total_tasks }}
+              </a>
+            </td>
+            <!-- Asignadas -->
+            <td class="px-3">
+              <div class="progress">
+                <div class="progress-bar bg-info" role="progressbar"
+                  style="width: {{ project.assignment_percentage }}%;">
+                  {{ project.assignment_percentage }}%
+                </div>
+              </div>
+            </td>
+            <!-- Pendientes (Filtro: A realizar + En curso) -->
+            <td class="text-center">
+              <a href="{% url 'task_list' %}?project={{ project.id }}&status=TODO&status=IN_PROGRESS&delivery_all=&priority_all=&search="
+                class="text-decoration-none text-dark">
+                {{ project.pending_tasks }}
+              </a>
+            </td>
+            <!-- Finalizadas (Filtro: Completada) -->
+            <td class="text-center">
+              <a href="{% url 'task_list' %}?project={{ project.id }}&status=DONE&delivery_all=&priority_all=&search="
+                class="text-decoration-none text-dark">
+                {{ project.completed_tasks }}
+              </a>
+            </td>
+            <!-- Canceladas (Filtro: Cancelada) -->
+            <td class="text-center">
+              <a href="{% url 'task_list' %}?project={{ project.id }}&status=CANCELLED&delivery_all=&priority_all=&search="
+                class="text-decoration-none text-dark">
+                {{ project.cancelled }}
+              </a>
+            </td>
+            <!-- Progreso -->
+            <td class="px-3">
+              <div class="progress">
+                <div class="progress-bar" style="width: {{ project.completion_percentage }}%">
+                  {{ project.completion_percentage }}%
+                </div>
+              </div>
+            </td>
+            <!-- Salud -->
+            <td class="px-3">
+              <div class="progress">
+                <div
+                class="progress-bar
+                {% if project.health >= 80 %}
+                bg-success
+                {% elif project.health >= 50 %}
+                bg-warning
+                {% else %}
+                bg-danger
+                {% endif %}"
+                role="progressbar" style="width: {{ project.health }}%">
+                {{ project.health }}%
+                </div>
+              </div>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

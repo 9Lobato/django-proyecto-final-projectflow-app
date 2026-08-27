@@ -1,0 +1,155 @@
+<!-- templates\base.html ...
+   ... se utiliza para:
+   proporcionar la plantilla base común de la aplicación, incluyendo la barra de navegación, el buscador de proyectos, el área
+   de contenido de las plantillas hijas y el widget de flujo de trabajo.
+   ... se utiliza en los archivos:
+   es utilizado como plantilla base por las páginas que heredan de ella mediante extends 'base.html'.
+   ... enlaza con las url:
+   'home' → página principal de ProjectFlow.
+   'project_list' → listado de proyectos y buscador de proyectos.
+   'task_list' → listado de tareas.
+   'kanban' → panel Kanban de tareas.
+   'report' → página de informes (visible para Managers y Owners).
+   'manage' → sección de gestión de usuarios/proyectos (visible para Owners).
+   'logout' → cierre de sesión del usuario autenticado.
+   'login' → página de inicio de sesión para usuarios no autenticados. -->
+
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+{% load i18n %}
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjectFlow</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/base/tables.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base/workflow.css' %}">
+    <link rel="stylesheet" href="{% static 'css/common/text.css' %}">
+    <link rel="stylesheet" href="{% static 'css/kanban/kanban.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects/project_list.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects/template_form.css' %}">
+    <link rel="stylesheet" href="{% static 'css/report/report.css' %}">
+    <link rel="stylesheet" href="{% static 'css/tasks/task_list.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  </head>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+    <nav class="navbar navbar-dark bg-dark py-0" style="min-height: 10px;">
+      <div class="d-flex align-items-center w-100" style="max-width: 1296px; height: 80px; margin: 0 auto;">
+        <a class="navbar-brand m-0 fs-1"
+          href="{% url 'home' %}">ProjectFlow</a>
+        <div class="flex-grow-1 d-flex flex-column justify-content-between h-100">
+          <div class="d-flex align-items-center justify-content-end h-50 pt-2">
+            <ul class="navbar-nav d-flex flex-row gap-3 align-items-center" style="width: 480px;">
+              <li class="nav-item">
+                <a class="nav-link py-0" href="{% url 'project_list' %}">
+                  {% translate "Proyectos" %}
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-0" href="{% url 'task_list' %}">
+                  {% translate "Tareas" %}
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link py-0" href="{% url 'kanban' %}">
+                  {% translate "Kanban" %}
+                </a>
+              </li>
+              {% if is_manager or is_owner %}
+                <li class="nav-item">
+                  <a class="nav-link py-0" href="{% url 'report' %}">
+                    {% translate "Informe" %}
+                  </a>
+                </li>
+              {% endif %}
+              {% if is_owner %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'manage' %}">
+                    {% translate "Gestión" %}
+                  </a>
+                </li>
+              {% endif %}
+              {% if user.is_authenticated %}
+                <li class="nav-item d-flex align-items-center">
+                  <form method="post" action="{% url 'logout' %}" class="d-flex align-items-center m-0">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-link nav-link py-0 p-0 border-0">
+                      {% translate "Salir:" %}&nbsp;
+                    </button>
+                    <span class="text-light ms-1">
+                      {{ user.username }}
+                    </span>
+                  </form>
+                </li>
+              {% else %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'login' %}">
+                    {% translate "Iniciar" %}
+                  </a>
+                </li>
+              {% endif %}
+            </ul>
+          </div>
+          <div class="d-flex justify-content-end align-items-center h-50 pb-2">
+            <form class="d-flex" method="GET" action="{% url 'project_list' %}">
+              <button class="btn btn-outline-light btn-sm me-2">{% translate "Buscar" %}</button>
+              <input class="form-control form-control-sm me-2"
+                type="search"
+                name="search"
+                placeholder="{% translate 'Buscar en proyectos...' %}"
+                value="{{ request.GET.search }}" style="width: 410px;">
+            </form>
+            <form action="{% url 'set_language' %}" method="post">
+              {% csrf_token %}
+              <select class="form-select form-select-sm" name="language" onchange="this.form.submit()" style="width: 62px;">
+                {% get_current_language as CURRENT_LANGUAGE %}
+                {% get_available_languages as LANGUAGES %}
+                {% for lang_code, lang_name in LANGUAGES %}
+                  <option value="{{ lang_code }}"
+                    {% if lang_code == CURRENT_LANGUAGE %}selected{% endif %}>
+                    {{ lang_name }}
+                  </option>
+                {% endfor %}
+              </select>
+            </form>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Botón flotante guía rápida -->
+    <div class="container mt-4">
+      {% block content %}
+      {% endblock %}
+    </div>
+    <div id="workflow-widget">
+      <div id="workflow-panel">
+        <button id="workflow-prev" type="button" class="workflow-arrow">
+          <i class="bi bi-chevron-left"></i>
+        </button>
+        <div id="workflow-content">
+          <div id="workflow-title"></div>
+          <div id="workflow-text"></div>
+        </div>
+        <button id="workflow-next" type="button" class="workflow-arrow">
+          <i class="bi bi-chevron-right"></i>
+        </button>
+      </div>
+      <button id="workflow-toggle" type="button" class="btn btn-info shadow">
+        <span>{% translate "Flujo de trabajo de " %}{{ workflow_role|lower }}</span>
+        <span id="workflow-counter"></span>
+      </button>
+    </div>
+    {{ workflow_steps|json_script:"workflow-data" }}
+    <script src="{% static 'js/common/utils.js' %}"></script>
+    <script src="{% static 'js/base/workflow.js' %}"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(element => {
+          new bootstrap.Tooltip(element);
+        });
+      });
+    </script>
+  </body>
+</html>

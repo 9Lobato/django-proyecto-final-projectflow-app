@@ -1,0 +1,268 @@
+<!-- templates\tasks\task_form.html ...
+   ... se utiliza para:
+   crear, editar, consultar y duplicar tareas, permitiendo gestionar sus datos principales, asignación, prioridad, estado, tiempos y fecha límite,
+   así como consultar y enviar comentarios o notificaciones asociados a la tarea. También permite realizar acciones de duplicación, eliminación y
+   navegación entre tareas.
+   ... se utiliza en los archivos:
+   templates\tasks\task_list.html → mediante los enlaces de creación y edición de tareas.
+   templates\projects\project_form.html → mediante el enlace "Nueva tarea" al crear una tarea para un proyecto.
+   templates\kanban\kanban.html → mediante los enlaces de las tareas del tablero.
+   templates\reports\includes_project_analysis.html → indirectamente mediante los enlaces a task_list.
+   templates\reports\includes_user_analysis.html → indirectamente mediante los enlaces a task_list.
+   ... enlaza con las url:
+   'task_update' → accede a la edición o consulta de una tarea y permite navegar entre tareas.
+   'task_duplicate' → accede al formulario para duplicar una tarea.
+   'task_create' → accede al formulario para crear una nueva tarea.
+   'task_delete' → accede a la eliminación de una tarea.
+   'task_list' → vuelve al listado de tareas. -->
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <div class="container mt-4">
+    <div class="card shadow-sm">
+      <div class="card-body">
+        <div class="d-flex justify-content-between align-items-center">
+          <h1 class="mb-4">
+            {% if mode == "edit" %}
+              {% if readonly %}
+                Detalle tarea
+              {% else %}
+                Editar tarea
+              {% endif %}
+            {% elif mode == "duplicate" %}
+              Duplicar tarea
+            {% else %}
+              Nueva tarea
+            {% endif %}
+          </h1>
+          {% if mode == "edit" %}
+            <div class="d-flex gap-2">
+              <div>
+                {% if previous_task %}
+                  <a href="{% url 'task_update' previous_task.pk %}{% if next %}?next={{ next|urlencode }}{% endif %}"
+                    class="btn btn-outline-secondary" style="width: 102px;">← Anterior</a>
+                {% endif %}
+              </div>
+              <div>
+                {% if next_task %}
+                  <a href="{% url 'task_update' next_task.pk %}{% if next %}?next={{ next|urlencode }}{% endif %}"
+                    class="btn btn-outline-secondary" style="width: 110px;">Siguiente →</a>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+        <form method="POST">
+          {% csrf_token %}
+          {% if next %}
+            <input type="hidden" name="next" value="{{ next }}">
+          {% endif %}
+          {% if form.errors %}
+            <div class="alert alert-danger">
+              {{ form.errors }}
+            </div>
+          {% endif %}
+          <!-- Proyecto -->
+          <div class="mb-3">
+            <label class="form-label">Proyecto:</label>
+              {{ form.project }}
+          </div>
+          <!-- Título -->
+          <div class="mb-3">
+            <label class="form-label">Título:</label>
+            <div class="input-group">
+              {% if mode == "edit" %}
+                <span class="input-group-text">#{{ task.sequence_number }}</span>
+              {% endif %}
+              {{ form.title }}
+            </div>
+            {% if form.title.errors %}
+              <div class="text-danger small">{{ form.title.errors }}</div>
+            {% endif %}
+          </div>
+          <!-- Descripción y comentarios -->
+          <div class="row">
+             <div class="col-md-8 mb-3">
+              <label class="form-label">Descripción:</label>
+              {{ form.description }}
+            </div>
+            <div class="col-md-4 mb-3">
+              <label class="form-label">Notificaciones:</label>
+              <div class="border rounded p-2 {% if not can_comment %}comments-readonly{% endif %}"
+                id="commentsContainer" style="max-height:298px;overflow-y:auto;">
+                {% if task.comments.all %}
+                  {% for comment in comments %}
+                    <div class="mb-1 comment-item"
+                      data-comment-id="{{ comment.id }}"
+                      data-can-delete="{% if comment.can_delete %}true{% else %}false{% endif %}">
+                      <div class="d-flex justify-content-between align-items-center mb-1">
+                        <strong>{{ comment.user.username }}</strong>
+                        <div class="d-flex align-items-center gap-2">
+                          <small class="text-muted">{{ comment.created_at|date:"d-m-y H:i" }}</small>
+                          {% if comment.type == "REQUEST" %}
+                            <span class="
+                              {% if task.project.is_archived %}badge card bg-light text-secondary
+                              {% else %}badge card bg-primary text-white{% endif %}" style="width: 85px">Solicitud</span>
+                          {% else %}
+                            <span class="
+                              {% if task.project.is_archived %}badge card bg-light text-secondary
+                              {% else %}badge card text-dark{% endif %}" style="width: 85px">Comentario</span>
+                          {% endif %}
+                        </div>
+                      </div>
+                      <textarea class="form-control comment-text" rows="4"
+                        readonly disabled>{{ comment.text }}</textarea>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <p id="noCommentsMsg" class="text-muted mb-0" {% if task.comments.all %}style="display:none"{% endif %}>
+                    Sin anotaciones
+                  </p>
+                {% endif %}
+              </div>
+            </div>          
+          </div>
+          <!-- Prioridad, estado y anotaciones -->
+          <div class="row mb-3 align-items-start">
+            <div class="col-md-4">
+              <label class="form-label">Prioridad:</label>
+              {{ form.priority }}
+            </div>
+            <div class="col-md-4">
+              <label class="form-label">Estado:</label>
+              {{ form.status }}
+            </div>
+            <div class="col-md-4">
+              <!-- Anotaciones y botones -->
+              <div class="row align-items-start">
+                <div class="col-4"><label class="form-label">Notificación:</label></div>
+                <div class="col-8 text-end">
+                  {% if can_comment %}
+                    <button type="button" id="deleteCommentBtn"
+                      class="btn btn-outline-light text-danger btn-sm" style="display:none">Eliminar</button>
+                    <button type="button" id="discardCommentBtn"
+                      class="btn btn-outline-light text-secondary btn-sm" style="display:none">Limpiar</button>
+                    <button type="submit" name="send_notification" value="1"
+                      class="btn btn-outline-light text-dark btn-sm">Enviar</button>
+                  {% endif %}
+                </div>
+              </div>
+              <!-- Comentario input y tipo -->
+              <div class="d-flex gap-2 align-items-start">
+                <div class="col-8 flex-shrink-0" style="width: 259px;">
+                  {{ comment_form.text }}
+                </div>
+                <div class="col-4 flex-shrink-0" style="width: 132px;">
+                  {{ comment_form.type }}
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Fecha límite, tiempos, asignado a -->
+          <div class="row mb-3">
+            <!-- Creado por -->
+            <div class="col-md-4">
+              <label class="form-label">Creado por:</label>
+              {% if mode == "duplicate" %}
+              <input class="form-control" readonly disabled>
+              {% else %}
+              <input type="text" class="form-control"
+              value="{{ task.created_by.username }}"
+              readonly disabled>
+              {% endif %}
+            </div>
+            <!-- Asignado a -->
+            <div class="col-md-4">
+              <label class="form-label">Asignado a:</label>
+              {{ form.assigned_to }}
+            </div>
+            <!-- Tiempo estimado y fecha límite -->
+            <div class="col-md-2">
+              <label class="form-label">Tiempo estimado:</label>
+              <div class="input-group">
+                {{ form.time_estimated }}
+                <span class="input-group-text bg-body-secondary">días</span>
+              </div>
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Fecha límite:</label>
+              {{ form.due_at }}
+            </div>
+          </div>
+          <!-- Creado por, creado el y actualizado el (no editables) -->
+          <div class="row mb-4">
+            <!-- Creado el -->
+            <div class="col-md-4">
+              <label class="form-label">Creado el:</label>
+              {% if mode == "duplicate" %}
+              <input class="form-control" readonly disabled>
+              {% else %}
+              <input type="text" class="form-control"
+              value="{{ task.created_at|date:'d-m-Y H:i' }}"
+              readonly disabled>
+              {% endif %}
+            </div>
+            <!-- Actualizado el -->
+            <div class="col-md-4">
+              <label class="form-label">Actualizado el:</label>
+              {% if mode == "duplicate" %}
+              <input class="form-control" readonly disabled>
+              {% else %}
+              <input type="text" class="form-control"
+                value="{{ task.updated_at|date:'d-m-Y H:i' }}"
+                readonly disabled>
+              {% endif %}
+            </div>
+            <!-- Estado planificación -->
+            <div class="col-md-2">
+            {% if task.planning_offset < 0 %}
+              <label class="form-label">Holgura:</label>
+              <input class="form-control text-end text-muted"
+                value="{{ task.planning_offset_abs|floatformat:2 }} días"
+                readonly disabled>
+            {% else %}
+              <label class="form-label">Tiempo transcurrido:</label>
+              <input class="form-control text-end text-muted"
+                value="{{ task.planning_offset|floatformat:2 }} días"
+                readonly disabled>
+            {% endif %}
+            </div>
+            <div class="col-md-2">
+              <label class="form-label">Tiempo restante:</label>
+              {% if mode == "edit" %}
+                <input class="form-control text-end text-muted" readonly disabled
+                value="{% if task.time_remaining is None %}-{% elif task.time_remaining < 0 %}Vencida{% else %}{{ task.time_remaining|floatformat:2 }} días{% endif %}">
+              {% else %}
+                <input class="form-control text-end text-muted" readonly disabled>
+              {% endif %}
+            </div>
+          </div>
+          <!-- Botones -->
+          <div class="d-flex gap-1">
+            {% if not readonly %}
+              <button type="submit" name="save_task" value="1" formnovalidate class="btn btn-dark" style="width: 100px;">Guardar</button>
+              <button id="applyBtn" type="submit" name="apply" value="1" formnovalidate class="btn btn-outline-secondary" style="width: 100px;">Aplicar</button>
+            {% endif %}
+            {% if mode == "edit" and can_duplicate_task %}
+              <a href="{% url 'task_duplicate' task.pk %}{% if next %}?next={{ next|urlencode }}{% endif %}"
+                class="btn btn-outline-secondary" style="width: 100px;">Duplicar</a>
+            {% endif %}
+            {% if mode == "edit" and can_create_task %}
+              <a href="{% url 'task_create' project.id %}{% if next %}?next={{ next|urlencode }}{% endif %}"
+              class="btn btn-outline-secondary" style="width: 100px;">Limpiar</a>
+            {% endif %}
+            {% if mode == "edit" and can_delete_task %}
+              <a href="{% url 'task_delete' task.pk %}{% if next %}?next={{ next|urlencode }}{% endif %}"
+              class="btn btn-outline-danger" style="width: 100px;">Eliminar</a>
+            {% endif %}
+            <a href="{% if next %}{{ next }}{% else %}{% url 'task_list' %}{% endif %}"
+              class="btn btn-secondary" style="width: 100px;">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="{% static 'js/tasks/task_form.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,24 @@
+/* ==========================================================
+   PANEL DE FILTROS
+   ========================================================== */
+
+.btn-check:checked + .btn {
+  background-color: #f9faf8;
+  border-color: #6c757d;
+  color: black;
+  font-weight: 700;
+}
+
+input[name="search"]:not(:placeholder-shown) {
+  border: 2px solid #6c757d;
+  box-shadow: 0 0 4px rgba(13, 202, 240, 0.4);
+}
+
+
+/* ==========================================================
+   COMENTARIOS
+   ========================================================== */
+
+.comment-selected {
+  background-color: #8c8c8c2a;
+}

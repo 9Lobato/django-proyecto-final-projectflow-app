@@ -7,12 +7,14 @@
 # Librerías estándar de Python
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 # Librerías externas (Django, requests, openpyxl, reportlab, etc.)
 # Imports internos de proyecto/apps
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / '.env')
 
 
 # Quick-start development settings - unsuitable for production

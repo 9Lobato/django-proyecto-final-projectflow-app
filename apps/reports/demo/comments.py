@@ -59,9 +59,9 @@ def _find_task(project, comment_data):
 
   except project.tasks.model.MultipleObjectsReturned:
     raise Exception(
-      f'Existe más de una tarea '{comment_data["task"]}' '
-      f'en el proyecto {project.code}. '
-      f'Añade task_sequence al catálogo.'
+      f"Existe más de una tarea '{comment_data['task']}' "
+      f"en el proyecto {project.code}. "
+      f"Añade task_sequence al catálogo."
     )
 
 

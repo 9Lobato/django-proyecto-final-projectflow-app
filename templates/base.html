@@ -76,7 +76,7 @@
                   <form method="post" action="{% url 'logout' %}" class="d-flex align-items-center m-0">
                     {% csrf_token %}
                     <button type="submit" class="btn btn-link nav-link py-0 p-0 border-0">
-                      {% translate "Salir:" %}&nbsp;
+                      {% translate "Salir" %}:
                     </button>
                     <span class="text-light ms-1">
                       {{ user.username }}
@@ -93,13 +93,28 @@
             </ul>
           </div>
           <div class="d-flex justify-content-end align-items-center h-50 pb-2">
-            <form class="d-flex" method="GET" action="{% url 'project_list' %}">
-              <button class="btn btn-outline-light btn-sm me-2">{% translate "Buscar" %}</button>
-              <input class="form-control form-control-sm me-2"
+              <form class="d-flex" method="GET"
+                action="{% if request.path|slice:':10' == '/projects/' %}{% url 'project_list' %}{% elif request.path|slice:':7' == '/tasks/' %}{% url 'task_list' %}{% elif request.path|slice:':8' == '/kanban/' %}{% url 'kanban' %}{% endif %}">
+              <button
+                class="btn btn-outline-light btn-sm me-2"
+                {% if not request.path|slice:':10' == '/projects/' and not request.path|slice:':7' == '/tasks/' and not request.path|slice:':8' == '/kanban/' %}
+                  disabled
+                {% endif %}
+              >
+                {% translate "Buscar" %}
+              </button>
+              <input
+                class="form-control form-control-sm me-2"
                 type="search"
                 name="search"
                 placeholder="{% translate 'Buscar en proyectos...' %}"
-                value="{{ request.GET.search }}" style="width: 410px;">
+                value="{{ request.GET.search }}"
+                style="width: 410px;"
+                {% if not request.path|slice:':10' == '/projects/' and not request.path|slice:':7' == '/tasks/' and not request.path|slice:':8' == '/kanban/' %}
+                  disabled
+                {% endif %}
+                onsearch="if (!this.value) { window.location.href = window.location.pathname; }"
+              >
             </form>
             <form action="{% url 'set_language' %}" method="post">
               {% csrf_token %}
@@ -118,32 +133,34 @@
         </div>
       </div>
     </nav>
-    <!-- Botón flotante guía rápida -->
     <div class="container mt-4">
       {% block content %}
       {% endblock %}
     </div>
-    <div id="workflow-widget">
-      <div id="workflow-panel">
-        <button id="workflow-prev" type="button" class="workflow-arrow">
-          <i class="bi bi-chevron-left"></i>
-        </button>
-        <div id="workflow-content">
-          <div id="workflow-title"></div>
-          <div id="workflow-text"></div>
+    {% if user.is_authenticated %}
+      <!-- Botón flotante guía rápida -->
+      <div id="workflow-widget">
+        <div id="workflow-panel">
+          <button id="workflow-prev" type="button" class="workflow-arrow">
+            <i class="bi bi-chevron-left"></i>
+          </button>
+          <div id="workflow-content">
+            <div id="workflow-title"></div>
+            <div id="workflow-text"></div>
+          </div>
+          <button id="workflow-next" type="button" class="workflow-arrow">
+            <i class="bi bi-chevron-right"></i>
+          </button>
         </div>
-        <button id="workflow-next" type="button" class="workflow-arrow">
-          <i class="bi bi-chevron-right"></i>
+        <button id="workflow-toggle" type="button" class="btn btn-info shadow">
+          <span>{% translate "Flujo de trabajo de " %}{{ workflow_role|lower }}</span>
+          <span id="workflow-counter"></span>
         </button>
       </div>
-      <button id="workflow-toggle" type="button" class="btn btn-info shadow">
-        <span>{% translate "Flujo de trabajo de " %}{{ workflow_role|lower }}</span>
-        <span id="workflow-counter"></span>
-      </button>
-    </div>
-    {{ workflow_steps|json_script:"workflow-data" }}
-    <script src="{% static 'js/common/utils.js' %}"></script>
-    <script src="{% static 'js/base/workflow.js' %}"></script>
+      {{ workflow_steps|json_script:"workflow-data" }}
+      <script src="{% static 'js/common/utils.js' %}"></script>
+      <script src="{% static 'js/base/workflow.js' %}"></script>
+    {% endif %}
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(element => {

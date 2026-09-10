@@ -52,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // el estado del workflow entre páginas y sesiones.
   // =========================================
 
-  const CHECKS_STORAGE_KEY = "projectflow_workflow_checks";
   const PANEL_STORAGE_KEY = "projectflow_workflow_open";
   const CURRENT_STORAGE_KEY = "projectflow_workflow_current";
 
@@ -112,21 +111,53 @@ document.addEventListener("DOMContentLoaded", function () {
   // por el usuario en cada paso del workflow.
   // =========================================
 
-  function getChecks() {
+  let workflowChecks = {};
+
+  async function loadChecks() {
     try {
-      return JSON.parse(
-        localStorage.getItem(CHECKS_STORAGE_KEY) || "{}"
-      );
+      const response = await fetch("/api/workflow/", {
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error("No se pudieron cargar los checks.");
+      }
+
+      const data = await response.json();
+      workflowChecks = data.workflow_checks || {};
     } catch (error) {
-      console.error("Workflow: error leyendo checks.", error);
-      return {};
+      console.error("Workflow: error cargando checks.", error);
+      workflowChecks = {};
     }
   }
-  function saveChecks(checks) {
-    localStorage.setItem(
-      CHECKS_STORAGE_KEY,
-      JSON.stringify(checks)
-    );
+
+  async function saveChecks(checks) {
+    workflowChecks = checks;
+
+    try {
+      const csrfToken = document.cookie
+        .split("; ")
+        .find((row) => row.startsWith("csrftoken="))
+        ?.split("=")[1];
+
+      const response = await fetch("/api/workflow/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
+        },
+        credentials: "include",
+        body: JSON.stringify({
+          checks,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error("No se pudieron guardar los checks.");
+      }
+    } catch (error) {
+      console.error("Workflow: error guardando checks.", error);
+    }
   }
 
 
@@ -157,18 +188,22 @@ document.addEventListener("DOMContentLoaded", function () {
       `)
       .join("");
     // Recupera el estado guardado de cada check y registra los cambios realizados por el usuario.
-    const checks = getChecks();
     text
       .querySelectorAll("input[type='checkbox']")
       .forEach(checkbox => {
         const key = `${current}-${checkbox.dataset.item}`;
-        checkbox.checked = checks[key] === true;
+
+        checkbox.checked = workflowChecks[key] === true;
+
         checkbox.addEventListener(
           "change",
           function () {
-            const checks = getChecks();
-            checks[key] = checkbox.checked;
-            saveChecks(checks);
+            const updatedChecks = {
+              ...workflowChecks,
+              [key]: checkbox.checked,
+            };
+
+            saveChecks(updatedChecks);
           }
         );
       });
@@ -177,7 +212,9 @@ document.addEventListener("DOMContentLoaded", function () {
     next.disabled = false;
   }
   // Muestra el contenido correspondiente al paso seleccionado al cargar la página.
-  render();
+  loadChecks().then(() => {
+    render();
+  });
 
 
   // =========================================

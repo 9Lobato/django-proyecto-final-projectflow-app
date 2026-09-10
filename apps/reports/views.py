@@ -2,7 +2,6 @@
 # gestionar las vistas de informes y preparar los datos para su visualización y exportación
 
 # Librerías estándar de Python
-import json
 # Librerías externas (Django, requests, openpyxl, reportlab, etc.)
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render

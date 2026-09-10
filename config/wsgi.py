@@ -8,6 +8,7 @@ import os
 # Imports internos de proyecto/apps
 from django.core.wsgi import get_wsgi_application
 
+
 """
 WSGI config for ProjectFlow project.
 It exposes the WSGI callable as a module-level variable named ``application``.

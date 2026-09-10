@@ -21,6 +21,8 @@ urlpatterns = [
   path("<int:pk>/to-template/", views.project_to_template, name="project_to_template"),
   # Archivar o desarchivar proyecto
   path("<int:pk>/archive/", views.project_archive_toggle, name="project_archive_toggle"),
+  path("<int:pk>/archive/api/", views.project_archive_toggle_api, name="project_archive_toggle_api"),
   # Seguir o dejar de seguir un proyecto
   path("<int:pk>/follow/", views.project_follow_toggle, name="project_follow_toggle"),
+  path("<int:pk>/follow/api/", views.project_follow_toggle_api, name="project_follow_toggle_api"),
 ]

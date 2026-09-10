@@ -10,7 +10,10 @@ from django.urls import path, include
 # Imports internos de proyecto/apps
 from apps.core.forms import CustomLoginForm
 
+
 urlpatterns = [
+  # API global para React
+  path("api/", include("apps.core.urls")),
   # Rutas de la aplicación principal
   path('', include('apps.home.urls')),
   # Inicio de sesión

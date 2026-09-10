@@ -12,6 +12,8 @@ from django.db.models.functions import Cast, Substr
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 from django.utils import timezone
+from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 # Imports internos de proyecto/apps
 from apps.core.utils.navigation import get_previous_next
 from apps.projects.permissions import get_user_role, user_can_archive_project, user_can_change_owner, user_can_create_project, user_can_delete_project, user_can_edit_project, user_can_view_project
@@ -27,7 +29,8 @@ from .models import Project, ProjectFollow, ProjectTemplate
 @login_required
 def project_list(request):
 
-  projects = get_projects_queryset()
+  search = request.GET.get("search") or None
+  projects = get_projects_queryset(search=search)
 
   user = request.user
   is_owner = user.is_superuser
@@ -63,9 +66,12 @@ def project_list(request):
       ("Disponible a seguir", external_projects)
     )
 
+  projects_exist = any(project_list for _, project_list in sections)
+
   return render(request, "projects/project_list.html", {
     "sections": sections,
     "can_create_project": user_can_create_project(user),
+    "projects_exist": projects_exist,
   })
 
 
@@ -334,12 +340,31 @@ def project_archive_toggle(request, pk):
   return redirect(request.META.get("HTTP_REFERER", "project_list"))
 
 
-# comprueba si un usuario sigue un proyecto
-def is_following_project(user, project):
-  return ProjectFollow.objects.filter(
-    user=user,
-    project=project
-  ).exists()
+# archiva o desarchiva un proyecto desde React
+@login_required
+@require_POST
+def project_archive_toggle_api(request, pk):
+
+  project = get_object_or_404(Project, pk=pk)
+
+  if not user_can_archive_project(request.user, project):
+    return JsonResponse(
+      {
+        "success": False,
+        "error": "No tienes permiso para archivar este proyecto."
+      },
+      status=403
+    )
+
+  if project.is_archived:
+    project.unarchive()
+  else:
+    project.archive()
+
+  return JsonResponse({
+    "success": True,
+    "is_archived": project.is_archived,
+  })
 
 
 # permite seguir o dejar de seguir un proyecto
@@ -365,3 +390,40 @@ def project_follow_toggle(request, pk):
     )
 
   return redirect(request.META.get("HTTP_REFERER", "project_list"))
+
+
+# permite seguir o dejar de seguir un proyecto desde React
+@login_required
+@require_POST
+def project_follow_toggle_api(request, pk):
+
+  project = get_object_or_404(Project, pk=pk)
+
+  if not (request.user.is_staff and not request.user.is_superuser):
+    return JsonResponse(
+      {
+        "success": False,
+        "error": "No tienes permiso para seguir este proyecto."
+      },
+      status=403
+    )
+
+  follow = ProjectFollow.objects.filter(
+    user=request.user,
+    project=project
+  ).first()
+
+  if follow:
+    follow.delete()
+    is_followed = False
+  else:
+    ProjectFollow.objects.create(
+      user=request.user,
+      project=project
+    )
+    is_followed = True
+
+  return JsonResponse({
+    "success": True,
+    "is_followed": is_followed,
+  })

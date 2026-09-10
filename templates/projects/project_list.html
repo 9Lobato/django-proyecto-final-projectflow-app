@@ -13,6 +13,13 @@
 
 {% block content %}
   <h1 class="mb-5">Mis proyectos</h1>
+  {% if request.GET.search %}
+    {% if not projects_exist %}
+      <div class="text-muted">
+        No hay proyectos para los valores buscados.
+      </div>
+    {% endif %}
+  {% endif %}
   <!-- Grid de todos mis proyectos -->
   {% for title, project_list in sections %}
     {% if project_list %}

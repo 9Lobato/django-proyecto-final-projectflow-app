@@ -113,7 +113,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     // Acción tras soltar tarea sobre columna
     cell.addEventListener("drop", function (e) {
-      e.preventDefault();
       if (!draggedTask) return;
       const oldStatus = draggedTask.dataset.previousStatus;
       const newStatus = this.dataset.status;
@@ -125,7 +124,8 @@ document.addEventListener("DOMContentLoaded", function () {
         newProject,
         newStatus
       );
-      if (dropAction === "none") {return}
+      if (dropAction === "none") return;
+      e.preventDefault();
       // Copia de tarea tras soltarla a otro proyecto
       if (dropAction === "copy") {
         fetch("/kanban/copy/", {

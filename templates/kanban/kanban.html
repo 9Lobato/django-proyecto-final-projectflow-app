@@ -17,17 +17,16 @@
 
 {% block content %}
   <h1 class="mb-4">Mi Kanban</h1>
-    {{ row.project.can_follow }}
-    {{ row.project.is_assigned }}
-    {{ row.project.is_followed }}
   <div class="kanban-board mb-4">
-    <div class="kanban-header">
-      <a class="kanban-project-col"></a>
-      <a href="{% url 'task_list' %}?status=TODO" class="kanban-col text-center text-decoration-none text-dark">To do</a>
-      <a href="{% url 'task_list' %}?status=IN_PROGRESS" class="kanban-col text-center text-decoration-none text-dark">In progress</a>
-      <a href="{% url 'task_list' %}?status=DONE" class="kanban-col text-center text-decoration-none text-dark">Done</a>
-      <a href="{% url 'task_list' %}?status=CANCELLED" class="kanban-col text-center text-decoration-none text-dark">Cancelled</a>
-    </div>
+    {% if board %}
+      <div class="kanban-header">
+        <a class="kanban-project-col"></a>
+        <a href="{% url 'task_list' %}?status=TODO" class="kanban-col text-center text-decoration-none text-dark">To do</a>
+        <a href="{% url 'task_list' %}?status=IN_PROGRESS" class="kanban-col text-center text-decoration-none text-dark">In progress</a>
+        <a href="{% url 'task_list' %}?status=DONE" class="kanban-col text-center text-decoration-none text-dark">Done</a>
+        <a href="{% url 'task_list' %}?status=CANCELLED" class="kanban-col text-center text-decoration-none text-dark">Cancelled</a>
+      </div>
+    {% endif %}
     {% for row in board %}
       <div class="kanban-row" data-project="{{ row.project.id }}">
         <!-- Proyecto -->
@@ -110,6 +109,12 @@
           {% endfor %}
         </div>
       </div>
+    {% empty %}
+      {% if request.GET.search %}
+        <div class="text-muted">
+          No hay tareas para los valores buscados.
+        </div>
+      {% endif %}
     {% endfor %}
   </div>
   <script src="{% static 'js/kanban/kanban.js' %}"></script>

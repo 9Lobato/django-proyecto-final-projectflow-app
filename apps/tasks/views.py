@@ -233,7 +233,6 @@ def task_list(request):
     status,
     delivery,
     priority,
-    search,
   ]) or request.GET.get("keep_open") == "1"
 
   task_filters_active = any([

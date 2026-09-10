@@ -8,7 +8,9 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_GET, require_POST
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.db.models import Q
 # Imports internos de proyecto/apps
 from apps.projects.models import Project
 from apps.projects.permissions import user_can_create_task, user_can_edit_task, user_can_view_task
@@ -16,11 +18,8 @@ from apps.projects.utils import prepare_project_for_user
 from apps.tasks.models import Task
 
 
-# muestra el tablero Kanban con los proyectos y sus tareas
-@login_required
-def board(request):
-
-  user = request.user
+# Django → datos para frontend
+def get_kanban_data(user, search=None):
 
   if user.is_superuser:
 
@@ -51,7 +50,16 @@ def board(request):
 
     prepare_project_for_user(project, user)
 
-    tasks = Task.objects.filter(project=project)
+    tasks = Task.objects.filter(project=project, deleted_at__isnull=True)
+
+    if search:
+      tasks = tasks.filter(
+        Q(title__icontains=search) |
+        Q(description__icontains=search)
+      )
+
+    if search and not tasks.exists():
+      continue
 
     task_data = []
 
@@ -81,8 +89,95 @@ def board(request):
       ],
     })
 
+  return data
+
+
+# muestra el tablero Kanban con los proyectos y sus tareas
+@login_required
+def board(request):
+
+  search = request.GET.get("search") or None
+
+  data = get_kanban_data(
+    request.user,
+    search=search,
+  )
+
   return render(request, "kanban/kanban.html", {
     "board": data
+  })
+
+
+# Django → JSON → frontend
+@ensure_csrf_cookie
+@require_GET
+def kanban_api(request):
+  if not request.user.is_authenticated:
+    return JsonResponse(
+      {
+        "authenticated": False,
+      },
+      status=401,
+    )
+
+  search = request.GET.get("search") or None
+
+  data = get_kanban_data(request.user, search=search)
+
+  projects = []
+
+  for row in data:
+
+    project = row["project"]
+
+    project_data = {
+      "id": project.id,
+      "code": project.code,
+      "name": project.name,
+      "is_archived": project.is_archived,
+      "user_role": getattr(project, "user_role", None),
+      "can_follow": getattr(project, "can_follow", False),
+      "is_followed": getattr(project, "is_followed", False),
+      "tasks": [],
+    }
+
+    for status in ["todo", "progress", "done", "cancelled"]:
+
+      for item in row[status]:
+
+        task = item["task"]
+
+        project_data["tasks"].append({
+          "id": task.id,
+          "title": task.title,
+          "status": task.status,
+          "priority": task.priority,
+          "assigned_to": (
+            str(task.assigned_to)
+            if task.assigned_to
+            else None
+          ),
+          "due_at": (
+            task.due_at.isoformat()
+            if task.due_at
+            else None
+          ),
+          "time_estimated": task.time_estimated,
+          "time_remaining": task.time_remaining,
+          "is_planned": task.is_planned,
+          "can_move": item["can_move"],
+          "timeline_estimated_start_percent":
+            task.timeline_estimated_start_percent,
+          "timeline_estimated_percent":
+            task.timeline_estimated_percent,
+          "timeline_today_percent":
+            task.timeline_today_percent,
+        })
+
+    projects.append(project_data)
+
+  return JsonResponse({
+    "projects": projects
   })
 
 

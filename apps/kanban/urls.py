@@ -12,8 +12,10 @@ from . import views
 urlpatterns = [
   # Mostrar tablero kanban
   path("", views.board, name="kanban"),
-  # Cambiar estado de una tarea
+  # Django → JSON → frontend
+  path("api/", views.kanban_api, name="kanban_api"),
+  # Cambiar estado de una tarea Django → modifica BD
   path("move/", views.move_task, name="kanban_move"),
-  # Copiar tarea a otro proyecto
+  # Copiar tarea a otro proyecto Django → modifica BD
   path("copy/", views.copy_task, name="kanban_copy"),
 ]

@@ -8,7 +8,7 @@
 from .comment_types import COMMENT, REQUEST
 from .project_roles import OWNER, MANAGER, MEMBER
 from .project_types import WEB, ERP, BI, MOBILE, INFRASTRUCTURE, SECURITY, AUTOMATION
-from .request_kinds import IMMEDIATE, SCHEDULED, ROUTINE, MITIGATION, IMPROVEMENT, OPTIONAL, DELEGATED
+from .request_kinds import IMMEDIATE, SCHEDULED, ROUTINE, MITIGATION, IMPROVEMENT, OPTIONAL, DELEGATED # tipos disponibles del catálogo (incluye no utilizados)
 
 
 # catálogo de comentarios y solicitudes por tipo de proyecto

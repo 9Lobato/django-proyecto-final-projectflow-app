@@ -39,8 +39,8 @@ msgid "Gestión"
 msgstr "Manage"
 
 #: templates/base.html:79
-msgid "Salir:"
-msgstr "Logout:"
+msgid "Salir"
+msgstr "Logout"
 
 #: templates/base.html:89
 msgid "Iniciar"

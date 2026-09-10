@@ -1,0 +1,340 @@
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+
+.kanban-navbar {
+  min-height: 10px;
+}
+
+.kanban-navbar-inner {
+  max-width: 1296px;
+  height: 80px;
+  margin: 0 auto;
+}
+
+
+/* ==========================================================
+   TABLERO KANBAN
+   ========================================================== */
+
+.kanban-board {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.kanban-header,
+.kanban-row {
+  display: grid;
+  grid-template-columns: 250px repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  align-items: stretch;
+  min-height: 0;
+}
+
+.kanban-header {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.kanban-row {
+  align-items: stretch;
+  overflow: hidden;
+}
+
+
+/* ==========================================================
+   COLUMNAS DE PROYECTO
+   ========================================================== */
+
+.kanban-project {
+  padding: 10px;
+  background: #f5f5f5;
+  font-weight: 600;
+  min-height: 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+
+/* ==========================================================
+   COLUMNAS DE TAREAS
+   ========================================================== */
+
+.kanban-cell {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  min-height: 60px;
+  box-sizing: border-box;
+}
+
+.kanban-cell.drag-over {
+  background: #e8f4ff;
+  border: 2px dashed #0d6efd;
+}
+
+.kanban-history {
+  min-height: 0;
+}
+
+
+/* ==========================================================
+   TARJETAS DE TAREAS
+   ========================================================== */
+
+.kanban-card {
+  width: 100%;
+  flex-shrink: 0;
+  overflow: hidden;
+  padding: 10px;
+
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+
+  cursor: grab;
+  transition: box-shadow .15s;
+}
+
+.kanban-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .15);
+}
+
+.kanban-card:active {
+  cursor: grabbing;
+}
+
+.kanban-card a {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.kanban-card .meta {
+  font-size: 12px;
+  color: #666;
+}
+
+.kanban-card[draggable="false"] {
+  cursor: default;
+}
+
+.kanban-card[draggable="true"] {
+  cursor: grab;
+}
+
+.kanban-card[draggable="true"]:active {
+  cursor: grabbing;
+}
+
+
+/* ==========================================================
+   TARJETAS DE TAREAS COMPACTAS
+   ========================================================== */
+
+.kanban-card.compact {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin: 0;
+  border-radius: 6px;
+}
+
+.kanban-card.compact .kanban-details {
+  display: none;
+}
+
+.kanban-card.compact a {
+  color: #333;
+  font-weight: 400;
+  text-decoration: none;
+}
+
+
+/* ==========================================================
+   LISTA DE TAREAS
+   ========================================================== */
+
+.kanban-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.kanban-list li {
+  padding: 4px 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.kanban-list li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ==========================================================
+   LÍNEA DE TIEMPO
+   ========================================================== */
+
+.kanban-timeline {
+  position: relative;
+  height: 10px;
+  overflow: hidden;
+
+  background: var(--bs-secondary-bg);
+  border-radius: 999px;
+}
+
+.timeline-estimated {
+  position: absolute;
+  top: 0;
+  height: 100%;
+
+  background: #0d6efd;
+  z-index: 1;
+}
+
+.timeline-today {
+  position: absolute;
+  top: -2px;
+  bottom: -2px;
+  width: 2px;
+
+  background: var(--bs-dark);
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+
+/* ==========================================================
+   WORKFLOW
+   ========================================================== */
+
+#workflow-widget {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 312px;
+  z-index: 2000;
+}
+
+#workflow-panel {
+  display: none;
+  width: 100%;
+  min-height: 100px;
+  margin-bottom: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .25);
+  align-items: stretch;
+}
+
+#workflow-panel.open {
+  display: flex;
+}
+
+#workflow-content {
+  flex: 1;
+  min-width: 0;
+  padding: 10px 5px;
+}
+
+#workflow-title {
+  font-weight: bold;
+  margin-bottom: 6px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#workflow-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#workflow-title a:hover {
+  text-decoration: underline;
+}
+
+#workflow-text {
+  line-height: 1.15;
+  overflow-wrap: break-word;
+}
+
+#workflow-text a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#workflow-text a:hover {
+  text-decoration: underline;
+}
+
+.workflow-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  cursor: pointer;
+  line-height: 1.15;
+}
+
+.workflow-check input {
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.workflow-check span {
+  display: block;
+  line-height: 1.15;
+}
+
+.workflow-check input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.workflow-arrow {
+  width: 38px;
+  flex-shrink: 0;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.workflow-arrow:hover {
+  background: #f1f1f1;
+  color: #212529;
+}
+
+#workflow-toggle {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 8px;
+  padding: 0 20px;
+}
+
+#workflow-role {
+  margin-left: auto;
+  margin-right: 10px;
+  font-size: .85rem;
+  opacity: .8;
+}
+
+#workflow-counter {
+  font-size: .85rem;
+  opacity: .8;
+}

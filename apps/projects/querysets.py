@@ -12,8 +12,8 @@ from .models import Project
 
 
 # obtiene un queryset de proyectos con sus relaciones y estadísticas
-def get_projects_queryset():
-  return (
+def get_projects_queryset(search=None):
+  queryset = (
     Project.objects
     .select_related("owner", "template")
     .prefetch_related("assignments", "tasks")
@@ -23,5 +23,12 @@ def get_projects_queryset():
       project_year=Cast(Substr("code", 1, 2), IntegerField()),
       project_number=Cast(Substr("code", 4, 3), IntegerField()),
     )
-    .order_by("-project_year", "-project_number")
   )
+
+  if search:
+    queryset = queryset.filter(
+      Q(name__icontains=search) |
+      Q(description__icontains=search)
+    )
+
+  return queryset.order_by("-project_year", "-project_number")

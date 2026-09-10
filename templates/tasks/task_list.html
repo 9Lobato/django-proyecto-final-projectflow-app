@@ -263,11 +263,11 @@
       </div>
     {% empty %}
       {% if not all_tasks_exist %}
-        <div class="text-muted">Aún no se ha creado ninguna tarea</div>
+        <div class="text-muted">Aún no se ha creado ninguna tarea.</div>
       {% elif not visible_tasks_exist %}
-        <div class="text-muted">No tiene permisos para ver tareas</div>
+        <div class="text-muted">No tiene permisos para ver ninguna tarea.</div>
       {% else %}
-        <div class="text-muted">No hay tareas con los filtros aplicados</div>
+        <div class="text-muted">No hay tareas para los valores buscados.</div>
       {% endif %}
     {% endfor %}
   </div>

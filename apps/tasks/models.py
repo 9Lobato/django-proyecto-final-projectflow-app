@@ -344,7 +344,10 @@ class Task(models.Model):
 
     now = timezone.now()
 
-    if self.remaining_minutes is not None:
+    if (
+      self.remaining_minutes is not None
+      and self.remaining_minutes > 0
+    ):
       self.due_at = now + timedelta(
         minutes=self.remaining_minutes
       )

@@ -2,466 +2,555 @@
 
 ## 1. Introducción
 
-ProjectFlow es una aplicación web desarrollada con Django para la gestión de proyectos y tareas.
+ProjectFlow es una aplicación web desarrollada con Django como backend y React + Vite como frontend integrado.
 
-La arquitectura del proyecto está organizada por funcionalidades mediante aplicaciones Django independientes.
+La aplicación mantiene la arquitectura y lógica de negocio principal en Django, incluyendo:
 
-Las principales áreas funcionales son:
-
-- Gestión de usuarios y autenticación.
-- Proyectos.
-- Tareas.
+- Autenticación y sesiones.
+- Modelos y acceso a base de datos.
+- Permisos y autorización.
+- Gestión de proyectos.
+- Gestión de tareas.
 - Kanban.
-- Informes.
-- Gestión administrativa.
-- Dashboard y página inicial.
-
-La estructura de la aplicación busca separar:
-
-- Configuración global del proyecto;
-- Funcionalidades de negocio;
-- Acceso a datos;
-- Lógica de permisos;
-- Servicios;
-- Vistas;
-- Plantillas;
-- Archivos estáticos;
+- Seguimiento y archivado de proyectos.
 - Internacionalización.
+- APIs internas utilizadas por el frontend React.
 
-La aplicación sigue principalmente el patrón de arquitectura MTV de Django:
+React se utiliza para construir e integrar las interfaces que requieren una interacción más dinámica, mientras que Django continúa proporcionando determinadas páginas renderizadas mediante templates y los servicios backend de la aplicación.
 
-- **Model** → modelos y acceso a datos.
-- **Template** → presentación HTML.
-- **View** → coordinación entre petición, lógica y respuesta.
-
-El objetivo de esta arquitectura es mantener separadas las responsabilidades de cada módulo y facilitar el mantenimiento y evolución de la aplicación. Además, el proyecto incorpora una capa de servicios y módulos específicos para consultas y permisos.
+Por tanto, ProjectFlow no es una SPA completamente independiente de Django. Se trata de una arquitectura híbrida en la que Django continúa siendo el núcleo de la aplicación y React consume determinados endpoints JSON proporcionados por Django.
 
 ---
 
-## 2. Estructura general del proyecto
+## 2. Arquitectura general
 
-La estructura principal del proyecto es:
+La arquitectura puede representarse de la siguiente manera:
+
+                         ProjectFlow
+                              │
+                ┌─────────────┴─────────────┐
+                │                           │
+             Django                    React + Vite
+             Backend                    Frontend
+                │                           │
+                │                    Componentes JSX
+                │                    Estado de interfaz
+                │                    Peticiones a API
+                │                           │
+                └─────────────┬─────────────┘
+                              │
+                       APIs / HTTP
+                              │
+                           Django
+                              │
+                    ┌─────────┴─────────┐
+                    │                   │
+                 Modelos              Lógica
+                  / ORM              de negocio
+                    │                   │
+                    └─────────┬─────────┘
+                              │
+                          Base de datos
+
+La comunicación entre React y Django se realiza mediante peticiones HTTP.
+
+React puede solicitar o modificar información mediante endpoints JSON de Django, mientras que Django mantiene el acceso a los modelos y a la base de datos.
+
+---
+
+## 3. Backend Django
+
+Django constituye el núcleo del backend de ProjectFlow.
+
+Entre sus responsabilidades se encuentran:
+
+- Gestión de usuarios y autenticación.
+- Gestión de sesiones.
+- Control de permisos.
+- Validación de operaciones.
+- Lógica de negocio.
+- Acceso a la base de datos mediante Django ORM.
+- Generación de determinadas páginas HTML.
+- Exposición de APIs JSON para el frontend React.
+- Gestión de CSRF.
+- Internacionalización.
+
+La estructura principal del backend se organiza mediante aplicaciones Django independientes.
+
+apps/
+├── accounts/
+├── core/
+├── home/
+├── kanban/
+├── projects/
+├── reports/
+└── tasks/
+
+config/
+├── settings.py
+├── urls.py
+├── wsgi.py
+└── ...
+
+Cada aplicación agrupa funcionalidades relacionadas y mantiene separadas las responsabilidades del sistema.
+
+---
+
+## 4. Frontend React + Vite
+
+La parte React del proyecto se encuentra dentro del directorio:
+
+frontend/
+├── src/
+│   ├── components/
+│   │   ├── Kanban.jsx
+│   │   ├── Navbar.jsx
+│   │   ├── Start.jsx
+│   │   └── Workflow.jsx
+│   │
+│   ├── styles/
+│   │   ├── kanban.css
+│   │   └── start.css
+│   │
+│   ├── App.jsx
+│   ├── index.css
+│   └── main.jsx
+│
+├── vite.config.js
+├── package.json
+└── ...
+
+## 4.1. Responsabilidades principales
+
+React se encarga principalmente de:
+
+- Renderizar componentes interactivos.
+- Gestionar el estado de la interfaz.
+- Responder a acciones del usuario.
+- Realizar peticiones a las APIs de Django.
+- Actualizar la interfaz sin necesidad de recargar toda la página.
+- Gestionar determinadas interacciones del Kanban y del workflow.
+
+Vite proporciona el entorno de desarrollo y el proceso de compilación del frontend.
+
+---
+
+## 5. Integración entre Django y React
+
+Django y React se integran mediante HTTP.
+
+El frontend React realiza peticiones a endpoints proporcionados por Django, principalmente mediante respuestas JSON.
+
+Por ejemplo:
+
+React
+  │
+  │ GET /api/navbar/
+  ▼
+Django
+  │
+  ├── autenticación
+  ├── permisos
+  ├── consultas
+  └── lógica de negocio
+  │
+  ▼
+JSON
+  │
+  ▼
+React
+  │
+  ▼
+Actualización de la interfaz
+
+Esta separación permite que React gestione la experiencia de usuario mientras Django mantiene el control de los datos y las reglas de negocio.
+
+---
+
+## 6. APIs internas
+
+Las APIs internas se encuentran principalmente bajo:
+
+/api/
+
+Actualmente existen endpoints utilizados para funcionalidades como:
+
+/api/navbar/
+/api/workflow/
+/projects/archive/api/
+/projects/follow/api/
+/kanban/api/
+/kanban/move/
+/kanban/copy/
+
+Estas rutas son atendidas por Django y permiten que el frontend interactúe con el backend sin depender exclusivamente de páginas HTML renderizadas.
+
+Las APIs siguen utilizando la autenticación y autorización proporcionadas por Django.
+
+---
+
+## 7. Flujo de una petición
+
+Dependiendo de la funcionalidad, una petición puede seguir diferentes recorridos.
+
+## 7.1. Página renderizada por Django
+
+Para una página tradicional:
+
+Usuario
+   ↓
+URL
+   ↓
+config/urls.py
+   ↓
+urls.py de la aplicación
+   ↓
+views.py
+   ↓
+Permisos / QuerySets / Services
+   ↓
+Models / ORM
+   ↓
+Base de datos
+   ↓
+Contexto
+   ↓
+Template Django
+   ↓
+HTML
+   ↓
+Navegador
+
+## 7.2. Petición desde React
+
+Cuando una funcionalidad React necesita información del backend:
+
+Usuario
+   ↓
+Componente React
+   ↓
+Petición HTTP
+   ↓
+API Django
+   ↓
+View
+   ↓
+Permisos / lógica de negocio
+   ↓
+Models / ORM
+   ↓
+Base de datos
+   ↓
+Respuesta JSON
+   ↓
+React
+   ↓
+Actualización de la interfaz
+
+De esta forma, React no accede directamente a la base de datos.
+
+---
+
+## 8. Gestión de permisos
+
+Los permisos se mantienen en el backend Django.
+
+React puede recibir información sobre las capacidades del usuario para adaptar la interfaz, pero la autorización real de las operaciones corresponde a Django.
+
+Por ejemplo:
+
+React
+  │
+  │ solicitud de modificación
+  ▼
+Django
+  │
+  ├── usuario autenticado
+  ├── permisos
+  ├── rol
+  └── reglas de negocio
+  │
+  ▼
+Operación permitida / rechazada
+
+Esto evita depender de controles exclusivamente visuales en el frontend.
+
+Un usuario no obtiene permisos adicionales simplemente modificando el código o el estado de React.
+
+---
+
+## 9. Persistencia de datos
+
+La persistencia de los datos se realiza mediante Django ORM.
+
+La estructura general es:
+
+React / Django Templates
+          ↓
+       Views
+          ↓
+   Lógica de negocio
+          ↓
+      Django ORM
+          ↓
+      Base de datos
+
+React no almacena los datos principales de la aplicación como fuente de verdad.
+
+Los proyectos, tareas, usuarios, asignaciones, estados y demás información persistente pertenecen al backend y a la base de datos.
+
+---
+
+## 10. Persistencia del workflow
+
+El progreso del workflow es persistente y está asociado al usuario.
+
+La interfaz React obtiene el estado mediante:
+
+/start/
+   ↓
+React
+   ↓
+GET /api/workflow/
+   ↓
+WorkflowProgress
+   ↓
+Base de datos
+
+Cuando el usuario marca o desmarca un paso:
+
+React
+   ↓
+POST /api/workflow/
+   ↓
+WorkflowProgress.checks
+   ↓
+Base de datos
+
+El modelo utilizado es:
+
+WorkflowProgress
+├── user
+└── checks
+
+Cada usuario dispone de un único registro de progreso mediante una relación OneToOneField.
+
+Esto permite que el estado del workflow:
+
+- Se mantenga después de recargar la página.
+- Se mantenga después de cerrar sesión.
+- Se recupere al volver a iniciar sesión.
+- Sea independiente del navegador utilizado por el usuario.
+
+El backend es, por tanto, la fuente de verdad del progreso persistente del workflow.
+
+---
+
+## 11. Sesiones y autenticación
+
+La autenticación continúa siendo gestionada por Django.
+
+El flujo general es:
+
+Usuario
+   ↓
+/login/
+   ↓
+Django Authentication
+   ↓
+Sesión Django
+   ↓
+Usuario autenticado
+
+Las peticiones realizadas desde React utilizan la sesión de Django y las medidas de protección CSRF correspondientes.
+
+React no sustituye el sistema de autenticación de Django.
+
+---
+
+## 12. Kanban
+
+El Kanban combina la interfaz dinámica del frontend con la lógica de negocio del backend.
+
+De forma simplificada:
+
+Usuario
+   ↓
+Kanban React
+   ↓
+Drag & Drop
+   ↓
+API Django
+   ↓
+Validación de permisos
+   ↓
+Cambio de estado
+   ↓
+Base de datos
+   ↓
+Respuesta
+   ↓
+Actualización del Kanban
+
+Las operaciones que modifican información persistente se validan en Django antes de actualizar la base de datos.
+
+Esto permite controlar tanto las transiciones válidas como los permisos del usuario.
+
+---
+
+## 13. Estructura del proyecto
+
+La estructura general de ProjectFlow queda organizada de la siguiente manera:
 
 ProjectFlow/
 │
 ├── apps/
-│   ├── accounts/ # Relacionada con los usuarios y la administración del modelo de usuario
-│   ├── core/     # Contiene elementos reutilizables o transversales de la aplicación
-│   ├── home/     # Controla el Dashboard y la página inicial
-│   ├── kanban/   # Proporciona el tablero visual de tareas
-│   ├── manage/   # Contiene funcionalidades de gestión administrativa de la aplicación
-│   ├── projects/ # Contiene la lógica principal relacionada con los proyectos
-│   ├── reports/  # Contiene la funcionalidad de informes y métricas
-│   └── tasks/    # Gestiona las tareas de los proyectos
-│
-├── config/
-│   ├── settings.py # Contiene la configuración principal de Django
-│   ├── urls.py     # Define las rutas principales del proyecto
-│   ├── asgi.py     # ?
-│   └── wsgi.py     # ?
-│
-├── templates/
-│   ├── common/
+│   ├── accounts/
+│   ├── core/
 │   ├── home/
 │   ├── kanban/
-│   ├── manage/
 │   ├── projects/
 │   ├── reports/
-│   ├── registration/
 │   └── tasks/
 │
+├── config/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── wsgi.py
+│   └── ...
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── styles/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── package.json
+│   └── vite.config.js
+│
+├── templates/
+│
 ├── static/
-│   ├── css/
-│   ├── js/
-│   └── img/
 │
 ├── locale/
-│   ├── en/
-│   └── es/
 │
 ├── manage.py
-├── requirements.txt
-└── db.sqlite3
+│
+└── requirements.txt
+
+apps/
+
+Contiene las aplicaciones Django y la lógica funcional del backend.
+
+config/
+
+Contiene la configuración global del proyecto Django.
+
+frontend/
+
+Contiene el código fuente del frontend React y la configuración de Vite.
+
+templates/
+
+Contiene las plantillas HTML utilizadas por Django.
+
+static/
+
+Contiene recursos estáticos del proyecto, incluyendo CSS y JavaScript que siguen siendo utilizados por las partes Django-rendered de la aplicación.
+
+locale/
+
+Contiene los archivos de traducción utilizados por Django.
 
 ---
 
-## 3. Configuración del proyecto
-
-La carpeta config/ contiene la configuración global de Django.
-
-Contiene la configuración principal de la aplicación:
-
-- Aplicaciones instaladas;
-- Middleware;
-- Base de datos;
-- Plantillas;
-- Archivos estáticos;
-- Internacionalización;
-- Autenticación;
-- Configuración de Django.
-
-También es el punto donde se registra la estructura general de ProjectFlow.
-
-## 4. Aplicaciones Django
-
-ProjectFlow utiliza varias aplicaciones Django para separar las distintas áreas funcionales.
-
-### Accounts
-
-Gestiona los aspectos relacionados con los usuarios y la administración de usuarios de Django.
-
-### Core
-
-Contiene funcionalidades compartidas por diferentes partes de la aplicación.
-
-### Home
-
-Gestiona la página inicial y el dashboard de ProjectFlow.
-
-## 5. Aplicación projects
-
-La aplicación projects contiene la lógica principal relacionada con los proyectos.
-
-Su estructura incluye:
-
-apps/projects/
-├── admin.py
-├── apps.py
-├── forms.py
-├── models.py       # Define los modelos relacionados con los proyectos.
-├── permissions.py  # Centraliza la lógica de permisos.
-├── querysets.py    # Centraliza consultas reutilizables relacionadas con proyectos.
-├── to_template.py
-├── urls.py
-├── utils.py
-└── views.py        # Contiene las vistas relacionadas con listado de proyectos, creación, edición, eliminación, archivado, detalle, gestión del equipo y plantillas.
-
-## 6. Aplicación projects
-
-La aplicación tasks gestiona las tareas de los proyectos.
-
-Su estructura incluye:
-
-apps/tasks/
-├── admin.py
-├── apps.py
-├── forms.py
-├── models.py
-├── services/
-│└── inbox.py
-├── urls.py
-├── utils.py
-└── views.py
-
-## 7. Aplicación kanban
-
-La aplicación kanban proporciona la vista Kanban de las tareas.
-
-Su estructura es:
-
-apps/kanban/
-├── apps.py
-├── urls.py
-└── views.py
-
-## 8. Aplicación reports
-
-La aplicación reports concentra la funcionalidad de informes y análisis.
-
-Su estructura es:
-
-apps/reports/
-├── models.py
-├── views.py
-├── urls.py
-├── services/
-│├── dashboard.py
-│├── export.py
-│├── metrics.py
-│├── pdf.py
-│└── project_progress_service.py
-└── demo/
-
-## 9. Aplicación manage
-
-La aplicación manage proporciona las funcionalidades administrativas propias de ProjectFlow.
-
-Está relacionada principalmente con la gestión de:
-
-- Usuarios;
-- Proyectos;
-- Equipos;
-- Roles.
-
-Su estructura es:
-
-apps/manage/
-├── forms.py
-├── urls.py
-└── views.py
-
-## 10. Plantillas
-
-Las plantillas HTML se encuentran en templates/
-
-Están organizadas por funcionalidad:
-
-templates/
-├── common/
-├── home/
-├── kanban/
-├── manage/
-├── projects/
-├── reports/
-├── registration/
-└── tasks/
-
-Además existe una plantilla base templates/base.html
-
-## 11. Archivos estáticos
-
-Las plantillas HTML se encuentran en static/
-
-Se dividen en:
-
-static/
-├── css/
-├── js/
-└── img/
-
-Los archivos css y js están organizados en carpetas según sus funcionalidades.
-
-## 12. Flujo de una petición
-
-El flujo general de una petición HTTP es:
-
-Usuario
-   │
-   ▼
-  URL
-   │
-   ▼
-config/urls.py
-   │
-   ▼
-urls.py de la aplicación
-   │
-   ▼
-views.py
-   │
-   ├── permissions.py
-   ├── querysets.py
-   ├── services/
-   └── models.py
-   │
-   ▼
-Contexto
-   │
-   ▼
-Template HTML
-   │
-   ▼
-Respuesta HTTP
-
-## 13. Separación de responsabilidades
-
-ProjectFlow intenta mantener una separación clara entre las diferentes responsabilidades.
-
-| Archivo         | Responsabilidad                                                                         |
-| --------------- | --------------------------------------------------------------------------------------- |
-| models.py       | Representar y persistir los datos                                                       |
-| views.py        | Recibir la petición, controlar el flujo y devolver la respuesta                         |
-| forms.py        | Validar y procesar los datos introducidos por el usuario                                |
-| querysets.py    | Centralizar consultas complejas o reutilizables                                         |
-| permissions.py  | Determinar qué acciones puede realizar cada usuario                                     |
-
-| Carpeta         | Responsabilidad                                                                         |
-| --------------- | --------------------------------------------------------------------------------------- |
-| services/       | Contener lógica de negocio o procesos que no deberían estar directamente en las vistas  |
-| templates/      | Representar visualmente los datos recibidos del backend                                 |
-| static/js/      | Gestionar interacciones del navegador y comportamiento dinámico de la interfaz          |
-
-## 14. Acceso y permisos
-
-El control de acceso se basa principalmente en los roles:
-
-OWNER
-MANAGER
-MEMBER
-
-El rol se determina en función de la relación del usuario con el proyecto.
-
-Además, un usuario puede seguir un proyecto sin formar parte de su equipo.
-
-Esto permite diferenciar entre:
-
-Usuario asignado
-        │
-        └── acceso según su rol
-
-Usuario seguidor
-        │
-        └── acceso de solo lectura
-
-La lógica detallada de permisos se documenta en:
-
-02 Permisos.md
-
-## 15. Dashboard
-
-El dashboard utiliza una combinación de consultas y servicios para construir la información que necesita cada usuario.
-
-El flujo principal es:
-
-home()
-   │
-   ▼
-get_dashboard_context(user)
-   │
-   ├── proyectos
-   ├── notificaciones
-   ├── tareas
-   └── plantillas
-   │
-   ▼
-templates/home/home.html
-
-El dashboard no obtiene directamente toda la información desde la plantilla.
-
-La preparación de datos se realiza previamente en apps/home/services/dashboard.py
-
-## 16. Internacionalización
-
-ProjectFlow utiliza el sistema de internacionalización de Django.
-
-Las traducciones se almacenan en:
-
-locale/
-├── en/
-│   └── LC_MESSAGES/
-│       └── django.po
-└── es/
-    └── LC_MESSAGES/
-        └── django.po
-
-Las cadenas traducibles se marcan en las plantillas mediante {% load i18n %} y {% translate "Texto" %}
-
-El cambio de idioma se realiza mediante la vista set_language de Django.
-
-La internacionalización se utiliza de forma selectiva para los elementos que necesitan traducción.
-
-## 17. Base de datos
-
-ProjectFlow utiliza Django ORM para acceder a la base de datos.
-
-Las aplicaciones definen sus modelos y Django gestiona las migraciones correspondientes.
-
-Las migraciones se encuentran dentro de cada aplicación:
-
-apps/
-└── <app>/
-    └── migrations/
-
-Las migraciones permiten evolucionar el esquema de la base de datos de forma controlada.
-
-Los archivos de migración no contienen lógica de negocio de la aplicación, sino cambios estructurales del modelo de datos.
-
-## 18. Entorno de ejecución
-
-El proyecto utiliza un entorno virtual de Python env/
-
-Este directorio contiene las dependencias instaladas y no forma parte del código fuente de ProjectFlow.
-
-Por este motivo:
-
-- No se documenta como parte de la arquitectura funcional;
-- No debe incluirse en el control de versiones;
-- No debe procesarse al generar traducciones;
-- Sus paquetes no deben modificarse manualmente.
-
-Las dependencias utilizadas por el proyecto se registran en requirements.txt
-
-## 19. Principios utilizados
-
-La arquitectura de ProjectFlow sigue principalmente estos principios:
-
-- Separación de responsabilidades
-
-Cada módulo intenta encargarse de una responsabilidad concreta.
-
-- Reutilización
-
-Las consultas y reglas comunes se centralizan en módulos reutilizables.
-
-Ejemplos:
-
-querysets.py
-permissions.py
-services/
-
-- Modularidad
-
-Cada aplicación Django representa una parte funcional de ProjectFlow.
-
-- Bajo acoplamiento
-
-Las aplicaciones se comunican mediante modelos, servicios y funciones bien definidas evitando duplicar lógica.
-
-- Seguridad
-
-Las operaciones sensibles se protegen mediante:
-
-- Autenticación;
-- Permisos;
-- Comprobaciones de rol;
-- Restricciones a nivel de proyecto;
-- Protección CSRF de Django.
-
-## 20. Resumen de la arquitectura
-
-La arquitectura de ProjectFlow puede resumirse de la siguiente manera:
-
-                    ┌─────────────────────┐
-                    │       Usuario       │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    Django URLs      │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │       Views         │
-                    └──────────┬──────────┘
-                               │
-              ┌────────────────┼────────────────┐
-              │                │                │
-              ▼                ▼                ▼
-        Permissions       Querysets         Services
-              │                │                │
-              └────────────────┼────────────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │       Models        │
-                    │     Django ORM      │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      Database       │
-                    └─────────────────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │      Templates      │
-                    │   HTML + Bootstrap  │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │   CSS + JavaScript  │
-                    └─────────────────────┘
-
-En conjunto, ProjectFlow utiliza Django como núcleo de la aplicación, separando la lógica funcional en aplicaciones independientes y utilizando services, querysets y permissions para evitar concentrar toda la lógica en las vistas.
+## 14. Separación de responsabilidades
+
+ProjectFlow mantiene una separación clara entre frontend y backend.
+
+React
+
+Se encarga principalmente de:
+
+- Presentación dinámica.
+- Componentes.
+- Estado de interfaz.
+- Interacciones del usuario.
+- Comunicación con las APIs.
+
+Django
+
+Se encarga principalmente de:
+
+- Autenticación.
+- Autorización.
+- Reglas de negocio.
+- Validación.
+- Persistencia.
+- ORM.
+- APIs.
+- Templates Django.
+- Seguridad.
+
+Base de datos
+
+Se encarga de almacenar la información persistente de la aplicación.
+
+La regla general es:
+
+Interfaz → React
+Reglas de negocio → Django
+Datos persistentes → Base de datos
+
+---
+
+## 15. Principios arquitectónicos
+
+La arquitectura de ProjectFlow sigue los siguientes principios:
+
+1. Django es la autoridad sobre los datos y permisos.
+2. React se utiliza para mejorar la interacción y dinamismo de la interfaz.
+3. El frontend no accede directamente a la base de datos.
+4. Las operaciones persistentes pasan por Django.
+5. La autorización se valida en el backend.
+6. Las APIs proporcionan una interfaz clara entre React y Django.
+7. La aplicación mantiene compatibilidad con páginas renderizadas por Django.
+8. La información persistente no depende exclusivamente del estado del navegador.
+9. La lógica de negocio debe permanecer fuera de los componentes React cuando afecte a la seguridad o integridad de los datos.
+10. Cada aplicación Django mantiene separadas sus responsabilidades funcionales.
+
+---
+
+## 16. Resumen
+
+La arquitectura actual de ProjectFlow combina Django y React de forma integrada:
+
+                         USUARIO
+                            │
+                ┌───────────┴───────────┐
+                │                       │
+        Django Templates          React + Vite
+                │                       │
+                └───────────┬───────────┘
+                            │
+                         HTTP/API
+                            │
+                          Django
+                            │
+                 ┌──────────┴──────────┐
+                 │                     │
+              Permisos             Lógica de
+              Seguridad             negocio
+                 │                     │
+                 └──────────┬──────────┘
+                            │
+                         Django ORM
+                            │
+                       BASE DE DATOS
+
+Django continúa siendo el núcleo de la aplicación y mantiene la responsabilidad sobre autenticación, permisos, lógica de negocio y persistencia.
+
+React + Vite proporciona una interfaz moderna y dinámica para las partes integradas del proyecto.
+
+Esta arquitectura permite evolucionar progresivamente la interfaz hacia React sin tener que reemplazar toda la estructura existente de Django.

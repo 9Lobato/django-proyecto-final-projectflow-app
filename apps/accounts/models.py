@@ -28,3 +28,18 @@ class Profile(models.Model):
 
   def __str__(self):
     return self.user.username
+
+
+# progreso del workflow asociado al usuario
+class WorkflowProgress(models.Model):
+
+  user = models.OneToOneField(
+    User,
+    on_delete=models.CASCADE,
+    related_name="workflow_progress"
+  )
+
+  checks = models.JSONField(default=dict, blank=True)
+
+  def __str__(self):
+    return f"Workflow: {self.user.username}"

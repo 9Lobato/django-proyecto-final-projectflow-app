@@ -2,264 +2,510 @@
 
 ## 1. Introducción
 
-ProjectFlow es una aplicación web para la gestión de proyectos, tareas y equipos de trabajo.
+ProjectFlow es una aplicación web para la gestión de proyectos y tareas.
 
 La aplicación permite:
 
-- Gestionar proyectos;
-- Gestionar tareas;
-- Organizar tareas mediante un tablero Kanban;
-- Consultar informes;
-- Gestionar usuarios y equipos;
-- Recibir y gestionar notificaciones;
-- Utilizar plantillas de proyectos;
-- Trabajar con diferentes roles y permisos;
-- Seguir proyectos para consultar su evolución.
+- Gestionar proyectos.
+- Gestionar tareas.
+- Organizar tareas mediante un tablero Kanban.
+- Asignar usuarios a proyectos y tareas.
+- Aplicar filtros y búsquedas.
+- Seguir proyectos.
+- Archivar proyectos.
+- Consultar informes.
+- Utilizar un workflow de seguimiento del proyecto.
+- Trabajar con diferentes idiomas.
+- Gestionar las funcionalidades según el rol del usuario.
 
-El acceso y las acciones disponibles dependen del rol del usuario y de su relación con cada proyecto.
-
----
-
-## 2. Usuarios y roles
-
-ProjectFlow utiliza tres roles principales:
-
-* OWNER: responsable de la administración y gestión completa.
-* MANAGER: responsable de la gestión operativa de los proyectos.
-* MEMBER: usuario que participa en el trabajo del proyecto.
-
-Los superusuarios de Django se consideran automáticamente como OWNER.
+La aplicación utiliza Django como backend y combina páginas renderizadas por Django con interfaces dinámicas desarrolladas mediante React.
 
 ---
 
-## 3. Inicio de sesión
+## 2. Acceso a la aplicación
 
-Los usuarios deben autenticarse para acceder a las funcionalidades de ProjectFlow.
+El acceso se realiza mediante la pantalla de inicio de sesión.
 
-La aplicación dispone de:
+El usuario debe introducir sus credenciales para acceder a las funcionalidades protegidas de ProjectFlow.
 
-- Página de inicio de sesión;
-- Cierre de sesión;
-- Identificación del usuario autenticado;
-- Selección de la página inicial según el rol.
+Una vez autenticado, la aplicación mantiene la sesión mediante el sistema de autenticación de Django.
 
-### Página inicial según el rol
-
-| Rol     | Página inicial  |
-|---------|-----------------|
-| Owner   | Gestión         |
-| Manager | Proyectos       |
-| Member  | Dashboard       |
-
-Si un usuario no tiene una asignación de proyecto que determine su rol, se utiliza MEMBER como rol por defecto para determinar la página inicial.
+Si el usuario intenta acceder a una sección protegida sin haber iniciado sesión, será redirigido al login.
 
 ---
 
-## 4. Dashboard
+## 3. Navegación
 
-El Dashboard constituye la página principal de trabajo para los usuarios que acceden a ella.
+La navegación principal se encuentra en la barra superior de la aplicación.
 
-Su contenido se adapta al usuario y a los proyectos con los que tiene relación.
+Dependiendo del usuario y de sus permisos, pueden aparecer diferentes opciones.
 
-El Dashboard proporciona principalmente:
+Entre ellas:
 
-- Proyectos disponibles para el usuario;
-- Notificaciones relacionadas con sus proyectos;
-- Información sobre plantillas de proyectos.
+- Inicio.
+- Workflow / guía.
+- Proyectos.
+- Tareas.
+- Kanban.
+- Informes.
+- Gestión.
+- Cambio de idioma.
+- Cierre de sesión.
 
-### 4.1 Proyectos
+Las opciones disponibles pueden variar según el rol y los permisos del usuario.
 
-Los superusuarios pueden acceder a todos los proyectos.
+La navegación se obtiene dinámicamente desde el backend para mantener la información relacionada con el usuario autenticado.
 
-Para el resto de usuarios, el Dashboard muestra los proyectos en los que están asignados o son seguidores.
+---
 
-Los proyectos se presentan junto con información calculada sobre sus tareas, como el número total de tareas y las tareas completadas.
+## 4. Inicio / Workflow
 
-### 4.2 Notificaciones
+La sección /start/ proporciona una guía de trabajo para el usuario.
 
-El Dashboard agrupa las notificaciones por proyecto.
+El workflow está organizado en pasos que pueden marcarse como completados.
 
-Las acciones disponibles sobre una notificación dependen de los permisos del usuario.
+El usuario puede:
 
-Entre las operaciones contempladas por el sistema se encuentran:
+- Consultar los diferentes pasos.
+- Marcar un paso como completado.
+- Desmarcar un paso.
+- Continuar el workflow en diferentes momentos.
 
-- Eliminar una solicitud;
-- Resolver una solicitud;
-- Reabrir una solicitud;
-- Eliminar una notificación.
+El progreso se guarda asociado al usuario.
 
-### 4.3 Plantillas
+Persistencia del workflow
 
-El Dashboard también muestra las plantillas de proyectos.
+El estado de los pasos se almacena en el backend mediante WorkflowProgress.
 
-Para cada plantilla se dispone de información sobre:
+Por este motivo, los pasos marcados permanecen:
 
-- Número de proyectos asociados;
-- Número de tareas asociadas.
+- Después de recargar la página.
+- Después de cerrar sesión.
+- Después de volver a iniciar sesión.
 
-Las plantillas se ordenan dando prioridad a las que tienen un
-mayor número de proyectos asociados.
+El progreso no depende únicamente del navegador o del almacenamiento local.
+
+El funcionamiento general es:
+
+Usuario
+   ↓
+Workflow
+   ↓
+React
+   ↓
+API Django
+   ↓
+WorkflowProgress
+   ↓
+Base de datos
 
 ---
 
 ## 5. Proyectos
 
-La sección de proyectos permite consultar y gestionar los proyectos a los que el usuario tiene acceso.
+La sección de proyectos permite consultar los proyectos a los que el usuario tiene acceso.
 
-Los proyectos contienen información relacionada con:
+Los proyectos muestran información relevante como:
 
-- Propietario;
-- Miembros o asignaciones;
-- Tareas;
-- Seguidores;
-- Plantilla de origen;
-- Estado de archivado.
+- Nombre.
+- Código.
+- Descripción.
+- Responsable.
+- Tareas.
+- Estado.
+- Información relacionada con asignaciones y seguimiento.
 
-Las operaciones que puede realizar cada usuario dependen de su rol.
+Los proyectos se organizan según la relación del usuario con ellos.
 
----
+## 5.1. Búsqueda de proyectos
 
-## 6. Tareas
+La lista de proyectos dispone de búsqueda.
 
-Las tareas pertenecen a un proyecto y representan unidades de trabajo.
+El usuario puede introducir texto para localizar proyectos por:
 
-Los usuarios pueden consultar las tareas de los proyectos a los que tienen acceso.
+- Nombre.
+- Descripción.
 
-Dependiendo del rol y de la asignación de la tarea, un usuario puede:
+La búsqueda se ejecuta sobre los proyectos disponibles para el usuario.
 
-- Crear tareas;
-- Editar tareas;
-- Eliminar tareas;
-- Asignar tareas a usuarios.
+Al eliminar el texto de búsqueda se recupera la lista normal de proyectos.
 
-Los miembros tienen un acceso más limitado y pueden editar sus propias tareas asignadas.
-
----
-
-## 7. Kanban
-
-El tablero Kanban proporciona una representación visual de las tareas de un proyecto.
-
-Las tareas se organizan según su estado de trabajo.
-
-El objetivo del tablero es facilitar:
-
-- La visualización del trabajo pendiente;
-- La identificación del estado actual de cada tarea;
-- El seguimiento del progreso;
-- La gestión visual del flujo de trabajo.
-
-Las operaciones disponibles dependen de los permisos del usuario.
+Si una búsqueda no devuelve resultados, se muestra el mensaje correspondiente indicando que no existen proyectos para los valores buscados.
 
 ---
 
-## 8. Informes
+## 6. Gestión de proyectos
 
-La sección de informes proporciona información agregada sobre los proyectos y sus tareas.
+Los usuarios con permisos suficientes pueden realizar operaciones de gestión sobre los proyectos.
 
-Está orientada principalmente al seguimiento y análisis del trabajo realizado.
+Entre las operaciones disponibles se encuentran:
 
-Entre la información que puede proporcionar se encuentran:
+- Crear proyectos.
+- Editar proyectos.
+- Eliminar proyectos.
+- Archivar y desarchivar proyectos.
+- Convertir proyectos en plantillas cuando corresponda.
 
-- Tareas;
-- Estados;
-- Usuarios;
-- Progreso de proyectos;
-- Métricas de actividad.
+Las operaciones están protegidas mediante los permisos definidos en Django.
 
-Los informes están disponibles para los roles que tengan acceso a esta funcionalidad.
-
----
-
-## 9. Gestión
-
-La sección de gestión proporciona funcionalidades administrativas de ProjectFlow.
-
-Está destinada principalmente a usuarios con permisos de administración.
-
-Permite gestionar elementos relacionados con:
-
-- Usuarios;
-- Proyectos;
-- Equipos;
-- Plantillas;
-- Asignaciones.
-
-Las operaciones disponibles dependen del rol del usuario.
+Un usuario no puede realizar una operación simplemente modificando la interfaz del navegador si no dispone de autorización en el backend.
 
 ---
 
-## 10. Seguimiento de proyectos
+## 7. Seguimiento de proyectos
 
-Los usuarios pueden seguir proyectos.
+Los usuarios que tienen permisos para ello pueden seguir un proyecto.
 
-Seguir un proyecto permite consultar información del mismo sin necesidad de estar asignado directamente a él.
+El seguimiento permite mantener un proyecto identificado como relevante para el usuario.
 
-Los usuarios que siguen un proyecto pueden disponer de acceso de solo lectura cuando no tienen una asignación dentro del proyecto.
+El usuario puede:
 
----
+- Seguir un proyecto.
+- Dejar de seguirlo.
+- Consultar visualmente su estado de seguimiento.
 
-## 11. Archivado de proyectos
-
-Los proyectos pueden ser archivados por usuarios con los permisos correspondientes.
-
-Un proyecto archivado continúa formando parte de la aplicación, pero determinadas operaciones quedan restringidas.
-
-Por ejemplo, no se pueden crear nuevas tareas en un proyecto archivado.
+El estado de seguimiento se almacena en la base de datos y permanece después de recargar la página.
 
 ---
 
-## 12. Internacionalización
+## 8. Archivado de proyectos
 
-ProjectFlow incorpora soporte para traducciones mediante el sistema de internacionalización de Django.
+Los proyectos pueden archivarse cuando el usuario dispone de los permisos necesarios.
 
-Las traducciones se gestionan mediante archivos .po situados en:
+El archivado permite retirar un proyecto del flujo habitual de trabajo sin eliminar necesariamente toda su información.
 
-locale/
-├── en/
-│ └── LC_MESSAGES/
-│   └── django.po
-└── es/
-  └── LC_MESSAGES/
-    └── django.po
+También es posible desarchivar un proyecto cuando corresponda.
 
-Las cadenas traducibles se marcan en las plantillas mediante las herramientas de internacionalización de Django.
-
-El idioma puede seleccionarse desde el menú correspondiente de la aplicación.
-
-## 13. Resumen de funcionalidades
-
-| Funcionalidad         | Descripción                                           |
-|-----------------------|-------------------------------------------------------|
-| Inicio de sesión      | Autenticación de usuarios                             |
-| Dashboard             | Vista general personalizada                           |
-| Proyectos             | Consulta y gestión de proyectos                       |
-| Tareas                | Gestión del trabajo de los proyectos                  |
-| Kanban                | Visualización del flujo de tareas                     |
-| Informes              | Análisis y métricas                                   |
-| Gestión               | Administración de usuarios, proyectos y plantillas    |
-| Seguimiento           | Consulta de proyectos seguidos                        |
-| Plantillas            | Creación y reutilización de estructuras de proyectos  |
-| Internacionalización  | Soporte para diferentes idiomas                       |
+Las operaciones de archivado se validan en Django.
 
 ---
 
-## 14. Arquitectura funcional
+## 9. Tareas
 
-Desde el punto de vista funcional, ProjectFlow puede representarse de la siguiente manera:
+La sección de tareas permite consultar y gestionar las tareas asociadas a los proyectos.
 
-                         ProjectFlow
-                              │
-          ┌───────────────────┼────────────────────┐
-          │                   │                    │
-      Dashboard           Proyectos             Gestión
-          │                   │                    │
-          │              ┌────┴──────┐             │
-          │              │           │             │
-          │            Tareas   Seguimiento    Usuarios
-          │              │                     Equipos
-          │           Kanban                   Plantillas
-          │
-          └───────── Informes
+Las tareas pueden contener información como:
 
-El acceso a cada funcionalidad está condicionado por los permisos del usuario.
+- Título.
+- Descripción.
+- Proyecto.
+- Responsable.
+- Creador.
+- Estado.
+- Prioridad.
+- Tipo de entrega.
+- Fechas relevantes.
+
+La información visible depende de los permisos y de la relación del usuario con los proyectos correspondientes.
+
+---
+
+## 10. Búsqueda de tareas
+
+La lista de tareas permite buscar por texto.
+
+La búsqueda se realiza sobre:
+
+- Título.
+- Descripción.
+
+Los resultados se actualizan mostrando únicamente las tareas que coinciden con los valores buscados.
+
+Al eliminar la búsqueda se recupera la lista normal de tareas.
+
+---
+
+## 11. Filtros de tareas
+
+La sección de tareas permite utilizar diferentes filtros.
+
+Entre ellos:
+
+- Creador.
+- Responsable.
+- Estado.
+- Tipo de entrega.
+- Prioridad.
+
+Los filtros pueden utilizarse individualmente o combinados.
+
+Por ejemplo, es posible filtrar simultáneamente por:
+
+Estado = IN_PROGRESS
+Prioridad = HIGH
+
+En este caso únicamente se muestran las tareas que cumplen ambas condiciones.
+
+Los filtros pueden eliminarse individualmente para recuperar progresivamente los resultados.
+
+---
+
+## 12. Kanban
+
+El Kanban permite visualizar las tareas organizadas por estado.
+
+Las columnas representan los diferentes estados de trabajo.
+
+El usuario puede consultar las tareas de forma visual y moverlas entre columnas cuando la operación esté permitida.
+
+La interfaz Kanban utiliza React para proporcionar una interacción dinámica.
+
+---
+
+## 13. Drag & Drop en Kanban
+
+Las tareas pueden desplazarse mediante drag & drop.
+
+El usuario puede:
+
+- Seleccionar una tarea.
+- Arrastrarla.
+- Colocarla sobre una columna válida.
+- Confirmar visualmente el nuevo estado.
+- El backend actualiza la tarea.
+
+El cambio de estado se guarda en la base de datos.
+
+Por tanto, después de recargar la página la tarea mantiene el nuevo estado.
+
+---
+
+## 14. Transiciones de estado
+
+No todas las transiciones entre estados están permitidas.
+
+El sistema valida las transiciones antes de modificar la tarea.
+
+Cuando una transición no es válida:
+
+- La interfaz indica que el destino no es válido.
+- La tarea no cambia de estado.
+- El estado anterior permanece.
+- La información persistida en la base de datos no se modifica.
+
+Las reglas de transición se aplican en el backend.
+
+---
+
+## 15. Copiar tareas
+
+El Kanban permite copiar una tarea a otro proyecto cuando el usuario dispone de los permisos necesarios.
+
+El flujo es:
+
+1. Seleccionar la acción de copiar.
+2. Elegir el proyecto de destino permitido.
+3. Confirmar la operación.
+4. Django crea la nueva tarea.
+5. La tarea original permanece sin modificaciones.
+
+La tarea copiada aparece en el proyecto de destino.
+
+La autorización para copiar una tarea se comprueba en Django.
+
+---
+
+## 16. Búsqueda en Kanban
+
+El Kanban dispone de búsqueda de tareas.
+
+La búsqueda permite localizar tareas por texto sin abandonar la vista del tablero.
+
+Los resultados se reflejan en las diferentes columnas manteniendo la estructura del Kanban.
+
+Al eliminar la búsqueda se recuperan las tareas correspondientes a la vista normal.
+
+---
+
+## 17. Roles y permisos
+
+ProjectFlow utiliza diferentes roles para controlar el acceso a proyectos y operaciones.
+
+Los roles principales son:
+
+- OWNER
+- MANAGER
+- MEMBER
+
+Cada rol dispone de diferentes capacidades.
+
+Las reglas detalladas de permisos se encuentran documentadas en:
+
+docs/02 Permisos.md
+
+Los permisos se comprueban en el backend Django.
+
+La interfaz puede ocultar o mostrar acciones dependiendo de las capacidades del usuario, pero esta presentación no sustituye la validación del backend.
+
+---
+
+## 18. Informes
+
+La aplicación dispone de una sección de informes.
+
+Los informes permiten consultar información agregada relacionada con los proyectos y las tareas.
+
+El acceso y la información disponible dependen de los permisos del usuario.
+
+---
+
+## 19. Gestión
+
+Los usuarios con permisos administrativos pueden acceder a las funcionalidades de gestión disponibles en la aplicación.
+
+Estas funcionalidades permiten administrar determinados elementos de ProjectFlow según el rol y las autorizaciones correspondientes.
+
+Las operaciones administrativas están protegidas por Django.
+
+---
+
+## 20. Internacionalización
+
+ProjectFlow dispone de soporte para diferentes idiomas.
+
+El usuario puede cambiar el idioma desde la navegación de la aplicación.
+
+Al cambiar el idioma:
+
+- Se actualizan los textos traducibles.
+- La navegación se adapta al idioma seleccionado.
+- El usuario puede volver posteriormente al idioma anterior.
+
+Actualmente se utiliza el sistema de internacionalización de Django.
+
+---
+
+## 21. Cierre de sesión
+
+El usuario puede cerrar la sesión mediante la opción correspondiente de la navegación.
+
+Al cerrar sesión:
+
+- La sesión autenticada deja de estar disponible.
+- Las páginas protegidas requieren volver a iniciar sesión.
+- El usuario es redirigido a la pantalla de login.
+
+Los datos persistentes asociados al usuario no se eliminan al cerrar sesión.
+
+Esto incluye, entre otros datos, el progreso guardado del workflow.
+
+---
+
+## 22. Seguridad
+
+Las operaciones que modifican información están protegidas mediante Django.
+
+La aplicación utiliza:
+
+- Autenticación.
+- Sesiones.
+- Control de permisos.
+- Protección CSRF.
+- Validaciones en el backend.
+
+Las APIs utilizadas por React forman parte del mismo sistema de seguridad.
+
+React no sustituye las comprobaciones de seguridad realizadas por Django.
+
+---
+
+## 23. Comportamiento general del frontend
+
+Las funcionalidades integradas con React permiten actualizar determinadas partes de la interfaz de forma dinámica.
+
+El frontend React se comunica con Django mediante APIs JSON.
+
+De forma simplificada:
+
+Usuario
+   ↓
+Interfaz React
+   ↓
+Petición HTTP
+   ↓
+API Django
+   ↓
+Validación / lógica de negocio
+   ↓
+Base de datos
+   ↓
+Respuesta JSON
+   ↓
+React
+   ↓
+Actualización de la interfaz
+
+Las páginas que todavía utilizan templates Django continúan funcionando mediante el flujo tradicional de Django.
+
+---
+
+## 24. Resumen funcional
+
+Las principales funcionalidades actuales de ProjectFlow son:
+
+Funcionalidad               Disponible
+Login / logout                  Sí
+Navegación según usuario	      Sí
+Workflow                        Sí
+Persistencia del workflow       Sí
+Gestión de proyectos            Sí
+Búsqueda de proyectos           Sí
+Seguimiento de proyectos	      Sí
+Archivado de proyectos          Sí
+Gestión de tareas               Sí
+Búsqueda de tareas              Sí
+Filtros de tareas               Sí
+Kanban                          Sí
+Drag & Drop                     Sí
+Validación de transiciones	    Sí
+Copia de tareas                 Sí
+Búsqueda en Kanban              Sí
+Informes                        Sí
+Gestión                         Sí
+Internacionalización            Sí
+Control de permisos             Sí
+
+---
+
+## 25. Flujo general de trabajo
+
+Un flujo habitual de uso de ProjectFlow puede ser:
+
+1. Iniciar sesión
+        ↓
+2. Consultar el workflow
+        ↓
+3. Seleccionar un proyecto
+        ↓
+4. Consultar sus tareas
+        ↓
+5. Filtrar o buscar tareas
+        ↓
+6. Trabajar con las tareas
+        ↓
+7. Utilizar el Kanban
+        ↓
+8. Actualizar estados
+        ↓
+9. Seguir o archivar proyectos
+        ↓
+10. Consultar informes
+        ↓
+11. Cerrar sesión
+
+El progreso del workflow y los cambios realizados sobre proyectos y tareas se mantienen en el backend cuando la operación correspondiente ha sido completada correctamente.
+
+---
+
+## 26. Conclusión
+
+ProjectFlow proporciona una plataforma integrada para la gestión de proyectos y tareas.
+
+La aplicación combina:
+
+- Django para backend, seguridad, permisos y persistencia.
+- React para las interfaces dinámicas.
+- Vite para el desarrollo y compilación del frontend.
+- Django Templates y recursos estáticos para las partes que continúan utilizando la arquitectura tradicional.
+
+El usuario puede gestionar proyectos y tareas, trabajar con el Kanban, realizar búsquedas y filtros, seguir y archivar proyectos, utilizar el workflow y consultar informes, siempre dentro de los permisos asociados a su usuario.

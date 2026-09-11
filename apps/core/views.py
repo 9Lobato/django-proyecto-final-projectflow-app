@@ -11,6 +11,7 @@ from django.http import JsonResponse
 from django.utils.translation import gettext
 # Imports internos de proyecto/apps
 from apps.projects.models import Assignment
+from apps.accounts.models import WorkflowProgress
 
 
 # devuelve a React los datos necesarios para el navbar
@@ -72,7 +73,10 @@ def workflow_api(request):
   user = request.user
 
   if request.method == "GET":
-    workflow_checks = request.session.get("workflow_checks", {})
+    workflow_progress, _ = WorkflowProgress.objects.get_or_create(
+      user=user
+    )
+    workflow_checks = workflow_progress.checks
 
   elif request.method == "POST":
     try:
@@ -91,8 +95,9 @@ def workflow_api(request):
         status=400,
       )
 
-    request.session["workflow_checks"] = workflow_checks
-    request.session.modified = True
+    workflow_progress, _ = WorkflowProgress.objects.get_or_create(user=user)
+    workflow_progress.checks = workflow_checks
+    workflow_progress.save(update_fields=["checks"])
 
   else:
     return JsonResponse(

@@ -7,11 +7,17 @@ import json
 # Librerías externas (Django, requests, openpyxl, reportlab, etc.)
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
-from django.http import JsonResponse
+from django.http import FileResponse, JsonResponse
 from django.utils.translation import gettext
 # Imports internos de proyecto/apps
 from apps.projects.models import Assignment
 from apps.accounts.models import WorkflowProgress
+
+
+@login_required
+def react_app(request):
+  index_file = settings.BASE_DIR / "static" / "react" / "index.html"
+  return FileResponse(open(index_file, "rb"))
 
 
 # devuelve a React los datos necesarios para el navbar

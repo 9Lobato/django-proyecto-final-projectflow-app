@@ -50,6 +50,14 @@ function djangoRootProxy() {
 
 export default defineConfig({
   plugins: [react(), djangoRootProxy()],
+
+  base: "/static/react/",
+
+  build: {
+    outDir: "../static/react",
+    emptyOutDir: true,
+  },
+
   server: {
 
     /*

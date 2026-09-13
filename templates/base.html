@@ -21,7 +21,16 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjectFlow</title>
+    <link rel="icon" type="image/svg+xml" href="{% static 'react/favicon.svg' %}">
+    <title>
+      ProjectFlow{% if request.path|slice:':10' == '/projects/' %}
+       - Projects{% elif request.path|slice:':7' == '/tasks/' %}
+       - Tasks{% elif request.path|slice:':8' == '/kanban/' %}
+       - Kanban{% elif request.path|slice:':8' == '/report/' %}
+       - Report{% elif request.path|slice:':8' == '/manage/' %}
+       - Manage{% elif request.path|slice:':7' == '/login/' %}
+       - Login{% endif %}
+    </title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{% static 'css/base/tables.css' %}">
     <link rel="stylesheet" href="{% static 'css/base/workflow.css' %}">

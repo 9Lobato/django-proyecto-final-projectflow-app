@@ -19,6 +19,17 @@ function App() {
 
   const currentPath = window.location.pathname;
 
+  // Cambiar el título de la pestaña según la sección.
+  useEffect(() => {
+    const sections = {
+      "/": "ProjectFlow",
+      "/start/": "ProjectFlow - Start",
+      "/kanban/": "ProjectFlow - Kanban",
+    };
+
+    document.title = sections[currentPath] || "ProjectFlow";
+  }, [currentPath]);
+
   useEffect(() => {
     /*
      * El Kanban se carga desde React únicamente en su propia ruta.

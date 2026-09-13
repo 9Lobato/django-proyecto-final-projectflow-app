@@ -91,7 +91,6 @@ coverage.xml
 .ipynb_checkpoints
 
 # pyenv
-.python-version
 
 # celery
 celerybeat-schedule.*
@@ -140,3 +139,6 @@ GitHub.sublime-settings
 !.vscode/extensions.json
 .history
 backup_db.sqlite3
+staticfiles/
+
+static/react/

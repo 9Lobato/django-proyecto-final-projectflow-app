@@ -9,11 +9,14 @@ from django.contrib.auth import views as auth_views
 from django.urls import path, include
 # Imports internos de proyecto/apps
 from apps.core.forms import CustomLoginForm
+from apps.core import views
 
 
 urlpatterns = [
   # API global para React
   path("api/", include("apps.core.urls")),
+  # Aplicación React para la guía rápida
+  path("start/", views.react_app, name="react_start"),
   # Rutas de la aplicación principal
   path('', include('apps.home.urls')),
   # Inicio de sesión
@@ -24,6 +27,8 @@ urlpatterns = [
   path('projects/', include('apps.projects.urls')),
   # Rutas de tareas
   path('tasks/', include('apps.tasks.urls')),
+  # Aplicación React para el tablero Kanban
+  path("kanban/", views.react_app, name="react_kanban"),
   # Rutas del tablero Kanban
   path("kanban/", include("apps.kanban.urls")),
   # Rutas de informes

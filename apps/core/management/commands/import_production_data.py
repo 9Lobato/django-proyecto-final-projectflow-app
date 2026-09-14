@@ -1,5 +1,5 @@
 # apps\core\management\import_production_data.py sirve para:
-# importar importar los datos iniciales de ProjectFlow en el entorno de producción.
+# importar los datos iniciales de ProjectFlow en el entorno de producción.
 
 # Librerías estándar de Python
 from pathlib import Path
@@ -15,6 +15,10 @@ class Command(BaseCommand):
 
   def handle(self, *args, **options):
     User = get_user_model()
+
+    self.stdout.write(
+        f"Usuarios actuales: {list(User.objects.values_list('username', flat=True))}"
+    )
 
     # Si los datos ya fueron importados, no hacemos nada.
     if User.objects.filter(username="SLobato").exists():

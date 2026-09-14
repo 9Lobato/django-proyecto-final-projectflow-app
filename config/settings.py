@@ -55,8 +55,9 @@ INSTALLED_APPS = [
   'django.contrib.messages',
   'django.contrib.staticfiles',
   'apps.accounts.apps.AccountsConfig',
-  "apps.kanban",
-  "apps.reports",
+  'apps.core',
+  'apps.kanban',
+  'apps.reports',
   'apps.projects.apps.ProjectsConfig',
   'apps.tasks.apps.TasksConfig',
 ]

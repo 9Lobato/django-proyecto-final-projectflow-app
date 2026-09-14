@@ -1,0 +1,7938 @@
+[
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$8IXJukPLhf6GWKzHuVS7yj$+ZA9GN7BwhmojSlsprY/qyfPoSxJUn5gzXFSOyFqSZc=",
+    "last_login": "2026-09-13T22:28:29.404Z",
+    "is_superuser": true,
+    "username": "SLobato",
+    "first_name": "Sergi",
+    "last_name": "Lobato",
+    "email": "slobato@demo.local",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:40.502Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$eGXVd2NPCZ1zuL3IpH37n0$r1Lxczi+BaqyY6Gi+JR+kgBhb0c6Qz20uZhLC6OvBzo=",
+    "last_login": "2026-09-08T09:18:46.998Z",
+    "is_superuser": false,
+    "username": "ALopez",
+    "first_name": "Ana",
+    "last_name": "López",
+    "email": "alopez@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:40.645Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$apAo0VplyWpJYcOpSgjdsH$KO4USRjcmxdMYuuB/MrcjY8+IqtsDchiFPqQ8Z1LON4=",
+    "last_login": "2026-08-10T15:58:07.535Z",
+    "is_superuser": false,
+    "username": "CGarcia",
+    "first_name": "Carlos",
+    "last_name": "García",
+    "email": "cgarcia@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:40.774Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$67fp7JYGape6gEmXxeX2bN$p1pp1hMux6J8GuuhZrKaNSdPir6M/t8YopV0rEUVvD4=",
+    "last_login": "2026-09-11T22:35:37.411Z",
+    "is_superuser": false,
+    "username": "DMartin",
+    "first_name": "David",
+    "last_name": "Martín",
+    "email": "dmartin@demo.local",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:40.900Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$SNYhxi5o8xuVdHvLxC7OfE$TEQaXgUZ242yKU5tbGZHKUul2hGv8Ota8nOdi5Tx2uI=",
+    "last_login": "2026-09-13T20:33:54.800Z",
+    "is_superuser": false,
+    "username": "ERuiz",
+    "first_name": "Elena",
+    "last_name": "Ruiz",
+    "email": "eruiz@demo.local",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:41.027Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$watKhuTx2fCg9sd3t1xmh4$rZa8KOpvQyrCuUig8jL53jcKc+CpwNREgpGpUH+CooY=",
+    "last_login": "2026-09-11T22:39:31.156Z",
+    "is_superuser": false,
+    "username": "JSanz",
+    "first_name": "Javier",
+    "last_name": "Sanz",
+    "email": "jsanz@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:41.162Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$lIWCKUnnWD7QKeDmCsocwf$FutkSy6LW8nUhfA+fn/opkuX/uqfD55aFeq4+AvSxnI=",
+    "last_login": "2026-09-11T22:52:45.319Z",
+    "is_superuser": false,
+    "username": "LMoreno",
+    "first_name": "Laura",
+    "last_name": "Moreno",
+    "email": "lmoreno@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:41.294Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$5rTu4sAxaPxYaRlsX0dUqu$UIlPKxzMT+k8DXasv0oMGr9pJPZR6i2E/NtfPEbDlnU=",
+    "last_login": "2026-08-06T16:28:00.331Z",
+    "is_superuser": false,
+    "username": "MGil",
+    "first_name": "Marta",
+    "last_name": "Gil",
+    "email": "mgil@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:41.423Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$yD37AY9Sgyai1PSxWaWjNy$nVEJ5LS19nnoNNYqyxaBe1KwHILY9TzlQEWITuzc90Y=",
+    "last_login": "2026-08-18T22:14:24.249Z",
+    "is_superuser": false,
+    "username": "PNavarro",
+    "first_name": "Pablo",
+    "last_name": "Navarro",
+    "email": "pnavarro@demo.local",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2026-08-04T11:42:41.556Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "accounts.workflowprogress",
+  "pk": 1,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "checks": {
+      "0-0": true,
+      "0-1": true
+    }
+  }
+},
+{
+  "model": "accounts.workflowprogress",
+  "pk": 2,
+  "fields": {
+    "user": [
+      "SLobato"
+    ],
+    "checks": {
+      "0-0": true
+    }
+  }
+},
+{
+  "model": "accounts.workflowprogress",
+  "pk": 3,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "checks": {}
+  }
+},
+{
+  "model": "accounts.workflowprogress",
+  "pk": 4,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "checks": {}
+  }
+},
+{
+  "model": "accounts.workflowprogress",
+  "pk": 5,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "checks": {}
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2288,
+  "fields": {
+    "project": 1,
+    "month": "2023-09-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.727Z",
+    "updated_at": "2026-08-31T11:31:47.727Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2289,
+  "fields": {
+    "project": 1,
+    "month": "2023-10-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.728Z",
+    "updated_at": "2026-08-31T11:31:47.728Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2290,
+  "fields": {
+    "project": 1,
+    "month": "2023-11-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.729Z",
+    "updated_at": "2026-08-31T11:31:47.729Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2291,
+  "fields": {
+    "project": 1,
+    "month": "2023-12-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.729Z",
+    "updated_at": "2026-08-31T11:31:47.729Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2292,
+  "fields": {
+    "project": 1,
+    "month": "2024-01-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.730Z",
+    "updated_at": "2026-08-31T11:31:47.730Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2293,
+  "fields": {
+    "project": 1,
+    "month": "2024-02-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.730Z",
+    "updated_at": "2026-08-31T11:31:47.731Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2294,
+  "fields": {
+    "project": 1,
+    "month": "2024-03-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.731Z",
+    "updated_at": "2026-08-31T11:31:47.731Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2295,
+  "fields": {
+    "project": 1,
+    "month": "2024-04-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.732Z",
+    "updated_at": "2026-08-31T11:31:47.732Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2296,
+  "fields": {
+    "project": 1,
+    "month": "2024-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.732Z",
+    "updated_at": "2026-08-31T11:31:47.732Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2297,
+  "fields": {
+    "project": 2,
+    "month": "2023-10-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.733Z",
+    "updated_at": "2026-08-31T11:31:47.733Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2298,
+  "fields": {
+    "project": 2,
+    "month": "2023-11-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.734Z",
+    "updated_at": "2026-08-31T11:31:47.734Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2299,
+  "fields": {
+    "project": 2,
+    "month": "2023-12-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.734Z",
+    "updated_at": "2026-08-31T11:31:47.734Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2300,
+  "fields": {
+    "project": 2,
+    "month": "2024-01-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.735Z",
+    "updated_at": "2026-08-31T11:31:47.735Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2301,
+  "fields": {
+    "project": 2,
+    "month": "2024-02-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.736Z",
+    "updated_at": "2026-08-31T11:31:47.736Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2302,
+  "fields": {
+    "project": 2,
+    "month": "2024-03-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.737Z",
+    "updated_at": "2026-08-31T11:31:47.737Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2303,
+  "fields": {
+    "project": 2,
+    "month": "2024-04-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.737Z",
+    "updated_at": "2026-08-31T11:31:47.737Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2304,
+  "fields": {
+    "project": 2,
+    "month": "2024-05-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.738Z",
+    "updated_at": "2026-08-31T11:31:47.738Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2305,
+  "fields": {
+    "project": 2,
+    "month": "2024-06-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.739Z",
+    "updated_at": "2026-08-31T11:31:47.739Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2306,
+  "fields": {
+    "project": 2,
+    "month": "2024-07-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.739Z",
+    "updated_at": "2026-08-31T11:31:47.739Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2307,
+  "fields": {
+    "project": 2,
+    "month": "2024-08-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.740Z",
+    "updated_at": "2026-08-31T11:31:47.740Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2308,
+  "fields": {
+    "project": 2,
+    "month": "2024-09-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.740Z",
+    "updated_at": "2026-08-31T11:31:47.740Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2309,
+  "fields": {
+    "project": 2,
+    "month": "2024-10-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.741Z",
+    "updated_at": "2026-08-31T11:31:47.741Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2310,
+  "fields": {
+    "project": 2,
+    "month": "2024-11-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.742Z",
+    "updated_at": "2026-08-31T11:31:47.742Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2311,
+  "fields": {
+    "project": 2,
+    "month": "2024-12-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.742Z",
+    "updated_at": "2026-08-31T11:31:47.742Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2312,
+  "fields": {
+    "project": 2,
+    "month": "2025-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.743Z",
+    "updated_at": "2026-08-31T11:31:47.743Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2313,
+  "fields": {
+    "project": 2,
+    "month": "2025-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.743Z",
+    "updated_at": "2026-08-31T11:31:47.744Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2314,
+  "fields": {
+    "project": 2,
+    "month": "2025-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.744Z",
+    "updated_at": "2026-08-31T11:31:47.744Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2315,
+  "fields": {
+    "project": 2,
+    "month": "2025-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.745Z",
+    "updated_at": "2026-08-31T11:31:47.745Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2316,
+  "fields": {
+    "project": 2,
+    "month": "2025-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.745Z",
+    "updated_at": "2026-08-31T11:31:47.745Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2317,
+  "fields": {
+    "project": 2,
+    "month": "2025-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.746Z",
+    "updated_at": "2026-08-31T11:31:47.746Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2318,
+  "fields": {
+    "project": 2,
+    "month": "2025-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.747Z",
+    "updated_at": "2026-08-31T11:31:47.747Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2319,
+  "fields": {
+    "project": 2,
+    "month": "2025-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.747Z",
+    "updated_at": "2026-08-31T11:31:47.747Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2320,
+  "fields": {
+    "project": 2,
+    "month": "2025-09-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.748Z",
+    "updated_at": "2026-08-31T11:31:47.748Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2321,
+  "fields": {
+    "project": 2,
+    "month": "2025-10-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.749Z",
+    "updated_at": "2026-08-31T11:31:47.749Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2322,
+  "fields": {
+    "project": 2,
+    "month": "2025-11-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.749Z",
+    "updated_at": "2026-08-31T11:31:47.749Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2323,
+  "fields": {
+    "project": 2,
+    "month": "2025-12-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.750Z",
+    "updated_at": "2026-08-31T11:31:47.750Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2324,
+  "fields": {
+    "project": 2,
+    "month": "2026-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.750Z",
+    "updated_at": "2026-08-31T11:31:47.750Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2325,
+  "fields": {
+    "project": 2,
+    "month": "2026-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.751Z",
+    "updated_at": "2026-08-31T11:31:47.751Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2326,
+  "fields": {
+    "project": 2,
+    "month": "2026-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.752Z",
+    "updated_at": "2026-08-31T11:31:47.752Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2327,
+  "fields": {
+    "project": 2,
+    "month": "2026-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.752Z",
+    "updated_at": "2026-08-31T11:31:47.752Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2328,
+  "fields": {
+    "project": 2,
+    "month": "2026-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.753Z",
+    "updated_at": "2026-08-31T11:31:47.753Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2329,
+  "fields": {
+    "project": 2,
+    "month": "2026-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.754Z",
+    "updated_at": "2026-08-31T11:31:47.754Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2330,
+  "fields": {
+    "project": 2,
+    "month": "2026-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.754Z",
+    "updated_at": "2026-08-31T11:31:47.754Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2331,
+  "fields": {
+    "project": 2,
+    "month": "2026-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.755Z",
+    "updated_at": "2026-08-31T11:31:47.755Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2332,
+  "fields": {
+    "project": 3,
+    "month": "2024-01-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.755Z",
+    "updated_at": "2026-08-31T11:31:47.755Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2333,
+  "fields": {
+    "project": 3,
+    "month": "2024-02-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.756Z",
+    "updated_at": "2026-08-31T11:31:47.756Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2334,
+  "fields": {
+    "project": 3,
+    "month": "2024-03-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.757Z",
+    "updated_at": "2026-08-31T11:31:47.757Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2335,
+  "fields": {
+    "project": 3,
+    "month": "2024-04-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.757Z",
+    "updated_at": "2026-08-31T11:31:47.757Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2336,
+  "fields": {
+    "project": 3,
+    "month": "2024-05-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.758Z",
+    "updated_at": "2026-08-31T11:31:47.758Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2337,
+  "fields": {
+    "project": 3,
+    "month": "2024-06-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.759Z",
+    "updated_at": "2026-08-31T11:31:47.759Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2338,
+  "fields": {
+    "project": 3,
+    "month": "2024-07-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.759Z",
+    "updated_at": "2026-08-31T11:31:47.759Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2339,
+  "fields": {
+    "project": 3,
+    "month": "2024-08-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.760Z",
+    "updated_at": "2026-08-31T11:31:47.760Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2340,
+  "fields": {
+    "project": 3,
+    "month": "2024-09-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.761Z",
+    "updated_at": "2026-08-31T11:31:47.761Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2341,
+  "fields": {
+    "project": 3,
+    "month": "2024-10-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.761Z",
+    "updated_at": "2026-08-31T11:31:47.761Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2342,
+  "fields": {
+    "project": 3,
+    "month": "2024-11-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.762Z",
+    "updated_at": "2026-08-31T11:31:47.762Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2343,
+  "fields": {
+    "project": 3,
+    "month": "2024-12-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.763Z",
+    "updated_at": "2026-08-31T11:31:47.763Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2344,
+  "fields": {
+    "project": 3,
+    "month": "2025-01-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.763Z",
+    "updated_at": "2026-08-31T11:31:47.763Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2345,
+  "fields": {
+    "project": 3,
+    "month": "2025-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.764Z",
+    "updated_at": "2026-08-31T11:31:47.764Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2346,
+  "fields": {
+    "project": 3,
+    "month": "2025-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.764Z",
+    "updated_at": "2026-08-31T11:31:47.764Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2347,
+  "fields": {
+    "project": 3,
+    "month": "2025-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.765Z",
+    "updated_at": "2026-08-31T11:31:47.765Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2348,
+  "fields": {
+    "project": 3,
+    "month": "2025-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.766Z",
+    "updated_at": "2026-08-31T11:31:47.766Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2349,
+  "fields": {
+    "project": 3,
+    "month": "2025-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.766Z",
+    "updated_at": "2026-08-31T11:31:47.766Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2350,
+  "fields": {
+    "project": 3,
+    "month": "2025-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.767Z",
+    "updated_at": "2026-08-31T11:31:47.767Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2351,
+  "fields": {
+    "project": 3,
+    "month": "2025-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.768Z",
+    "updated_at": "2026-08-31T11:31:47.768Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2352,
+  "fields": {
+    "project": 3,
+    "month": "2025-09-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.768Z",
+    "updated_at": "2026-08-31T11:31:47.768Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2353,
+  "fields": {
+    "project": 3,
+    "month": "2025-10-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.769Z",
+    "updated_at": "2026-08-31T11:31:47.769Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2354,
+  "fields": {
+    "project": 3,
+    "month": "2025-11-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.770Z",
+    "updated_at": "2026-08-31T11:31:47.770Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2355,
+  "fields": {
+    "project": 3,
+    "month": "2025-12-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.770Z",
+    "updated_at": "2026-08-31T11:31:47.770Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2356,
+  "fields": {
+    "project": 3,
+    "month": "2026-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.771Z",
+    "updated_at": "2026-08-31T11:31:47.771Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2357,
+  "fields": {
+    "project": 3,
+    "month": "2026-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.771Z",
+    "updated_at": "2026-08-31T11:31:47.771Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2358,
+  "fields": {
+    "project": 3,
+    "month": "2026-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.772Z",
+    "updated_at": "2026-08-31T11:31:47.772Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2359,
+  "fields": {
+    "project": 3,
+    "month": "2026-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.773Z",
+    "updated_at": "2026-08-31T11:31:47.773Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2360,
+  "fields": {
+    "project": 3,
+    "month": "2026-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.774Z",
+    "updated_at": "2026-08-31T11:31:47.774Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2361,
+  "fields": {
+    "project": 3,
+    "month": "2026-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.774Z",
+    "updated_at": "2026-08-31T11:31:47.774Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2362,
+  "fields": {
+    "project": 3,
+    "month": "2026-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.775Z",
+    "updated_at": "2026-08-31T11:31:47.775Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2363,
+  "fields": {
+    "project": 3,
+    "month": "2026-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.776Z",
+    "updated_at": "2026-08-31T11:31:47.776Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2364,
+  "fields": {
+    "project": 4,
+    "month": "2024-05-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.776Z",
+    "updated_at": "2026-08-31T11:31:47.776Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2365,
+  "fields": {
+    "project": 4,
+    "month": "2024-06-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.777Z",
+    "updated_at": "2026-08-31T11:31:47.777Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2366,
+  "fields": {
+    "project": 4,
+    "month": "2024-07-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.778Z",
+    "updated_at": "2026-08-31T11:31:47.778Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2367,
+  "fields": {
+    "project": 4,
+    "month": "2024-08-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.778Z",
+    "updated_at": "2026-08-31T11:31:47.778Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2368,
+  "fields": {
+    "project": 4,
+    "month": "2024-09-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.779Z",
+    "updated_at": "2026-08-31T11:31:47.779Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2369,
+  "fields": {
+    "project": 4,
+    "month": "2024-10-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.779Z",
+    "updated_at": "2026-08-31T11:31:47.779Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2370,
+  "fields": {
+    "project": 4,
+    "month": "2024-11-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.780Z",
+    "updated_at": "2026-08-31T11:31:47.780Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2371,
+  "fields": {
+    "project": 4,
+    "month": "2024-12-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.781Z",
+    "updated_at": "2026-08-31T11:31:47.781Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2372,
+  "fields": {
+    "project": 4,
+    "month": "2025-01-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.781Z",
+    "updated_at": "2026-08-31T11:31:47.781Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2373,
+  "fields": {
+    "project": 4,
+    "month": "2025-02-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.782Z",
+    "updated_at": "2026-08-31T11:31:47.782Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2374,
+  "fields": {
+    "project": 4,
+    "month": "2025-03-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.783Z",
+    "updated_at": "2026-08-31T11:31:47.783Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2375,
+  "fields": {
+    "project": 4,
+    "month": "2025-04-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.783Z",
+    "updated_at": "2026-08-31T11:31:47.783Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2376,
+  "fields": {
+    "project": 4,
+    "month": "2025-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.784Z",
+    "updated_at": "2026-08-31T11:31:47.784Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2377,
+  "fields": {
+    "project": 5,
+    "month": "2024-10-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.785Z",
+    "updated_at": "2026-08-31T11:31:47.785Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2378,
+  "fields": {
+    "project": 5,
+    "month": "2024-11-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.785Z",
+    "updated_at": "2026-08-31T11:31:47.785Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2379,
+  "fields": {
+    "project": 5,
+    "month": "2024-12-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.786Z",
+    "updated_at": "2026-08-31T11:31:47.786Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2380,
+  "fields": {
+    "project": 5,
+    "month": "2025-01-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.786Z",
+    "updated_at": "2026-08-31T11:31:47.786Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2381,
+  "fields": {
+    "project": 5,
+    "month": "2025-02-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.787Z",
+    "updated_at": "2026-08-31T11:31:47.787Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2382,
+  "fields": {
+    "project": 5,
+    "month": "2025-03-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.788Z",
+    "updated_at": "2026-08-31T11:31:47.788Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2383,
+  "fields": {
+    "project": 5,
+    "month": "2025-04-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.788Z",
+    "updated_at": "2026-08-31T11:31:47.788Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2384,
+  "fields": {
+    "project": 5,
+    "month": "2025-05-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.789Z",
+    "updated_at": "2026-08-31T11:31:47.789Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2385,
+  "fields": {
+    "project": 5,
+    "month": "2025-06-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.790Z",
+    "updated_at": "2026-08-31T11:31:47.790Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2386,
+  "fields": {
+    "project": 5,
+    "month": "2025-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.790Z",
+    "updated_at": "2026-08-31T11:31:47.790Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2387,
+  "fields": {
+    "project": 5,
+    "month": "2025-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.791Z",
+    "updated_at": "2026-08-31T11:31:47.791Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2388,
+  "fields": {
+    "project": 5,
+    "month": "2025-09-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.791Z",
+    "updated_at": "2026-08-31T11:31:47.791Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2389,
+  "fields": {
+    "project": 5,
+    "month": "2025-10-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.792Z",
+    "updated_at": "2026-08-31T11:31:47.792Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2390,
+  "fields": {
+    "project": 5,
+    "month": "2025-11-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.793Z",
+    "updated_at": "2026-08-31T11:31:47.793Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2391,
+  "fields": {
+    "project": 5,
+    "month": "2025-12-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.793Z",
+    "updated_at": "2026-08-31T11:31:47.793Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2392,
+  "fields": {
+    "project": 5,
+    "month": "2026-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.794Z",
+    "updated_at": "2026-08-31T11:31:47.794Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2393,
+  "fields": {
+    "project": 5,
+    "month": "2026-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.794Z",
+    "updated_at": "2026-08-31T11:31:47.794Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2394,
+  "fields": {
+    "project": 5,
+    "month": "2026-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.795Z",
+    "updated_at": "2026-08-31T11:31:47.795Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2395,
+  "fields": {
+    "project": 5,
+    "month": "2026-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.796Z",
+    "updated_at": "2026-08-31T11:31:47.796Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2396,
+  "fields": {
+    "project": 5,
+    "month": "2026-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.796Z",
+    "updated_at": "2026-08-31T11:31:47.796Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2397,
+  "fields": {
+    "project": 5,
+    "month": "2026-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.797Z",
+    "updated_at": "2026-08-31T11:31:47.797Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2398,
+  "fields": {
+    "project": 5,
+    "month": "2026-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.798Z",
+    "updated_at": "2026-08-31T11:31:47.798Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2399,
+  "fields": {
+    "project": 5,
+    "month": "2026-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.798Z",
+    "updated_at": "2026-08-31T11:31:47.798Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2400,
+  "fields": {
+    "project": 6,
+    "month": "2025-02-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.799Z",
+    "updated_at": "2026-08-31T11:31:47.799Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2401,
+  "fields": {
+    "project": 6,
+    "month": "2025-03-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.799Z",
+    "updated_at": "2026-08-31T11:31:47.799Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2402,
+  "fields": {
+    "project": 6,
+    "month": "2025-04-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.800Z",
+    "updated_at": "2026-08-31T11:31:47.800Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2403,
+  "fields": {
+    "project": 6,
+    "month": "2025-05-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.801Z",
+    "updated_at": "2026-08-31T11:31:47.801Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2404,
+  "fields": {
+    "project": 6,
+    "month": "2025-06-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.801Z",
+    "updated_at": "2026-08-31T11:31:47.801Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2405,
+  "fields": {
+    "project": 6,
+    "month": "2025-07-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.802Z",
+    "updated_at": "2026-08-31T11:31:47.802Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2406,
+  "fields": {
+    "project": 6,
+    "month": "2025-08-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.802Z",
+    "updated_at": "2026-08-31T11:31:47.802Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2407,
+  "fields": {
+    "project": 6,
+    "month": "2025-09-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.803Z",
+    "updated_at": "2026-08-31T11:31:47.803Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2408,
+  "fields": {
+    "project": 6,
+    "month": "2025-10-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.804Z",
+    "updated_at": "2026-08-31T11:31:47.804Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2409,
+  "fields": {
+    "project": 6,
+    "month": "2025-11-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.804Z",
+    "updated_at": "2026-08-31T11:31:47.804Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2410,
+  "fields": {
+    "project": 6,
+    "month": "2025-12-01",
+    "completion_percentage": 90,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.805Z",
+    "updated_at": "2026-08-31T11:31:47.805Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2411,
+  "fields": {
+    "project": 6,
+    "month": "2026-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.806Z",
+    "updated_at": "2026-08-31T11:31:47.806Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2412,
+  "fields": {
+    "project": 7,
+    "month": "2025-04-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.806Z",
+    "updated_at": "2026-08-31T11:31:47.806Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2413,
+  "fields": {
+    "project": 7,
+    "month": "2025-05-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.807Z",
+    "updated_at": "2026-08-31T11:31:47.807Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2414,
+  "fields": {
+    "project": 7,
+    "month": "2025-06-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.807Z",
+    "updated_at": "2026-08-31T11:31:47.807Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2415,
+  "fields": {
+    "project": 7,
+    "month": "2025-07-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.808Z",
+    "updated_at": "2026-08-31T11:31:47.808Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2416,
+  "fields": {
+    "project": 7,
+    "month": "2025-08-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.809Z",
+    "updated_at": "2026-08-31T11:31:47.809Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2417,
+  "fields": {
+    "project": 7,
+    "month": "2025-09-01",
+    "completion_percentage": 60,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.809Z",
+    "updated_at": "2026-08-31T11:31:47.809Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2418,
+  "fields": {
+    "project": 7,
+    "month": "2025-10-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.810Z",
+    "updated_at": "2026-08-31T11:31:47.810Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2419,
+  "fields": {
+    "project": 7,
+    "month": "2025-11-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.811Z",
+    "updated_at": "2026-08-31T11:31:47.811Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2420,
+  "fields": {
+    "project": 7,
+    "month": "2025-12-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.811Z",
+    "updated_at": "2026-08-31T11:31:47.811Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2421,
+  "fields": {
+    "project": 7,
+    "month": "2026-01-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.812Z",
+    "updated_at": "2026-08-31T11:31:47.812Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2422,
+  "fields": {
+    "project": 7,
+    "month": "2026-02-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.813Z",
+    "updated_at": "2026-08-31T11:31:47.813Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2423,
+  "fields": {
+    "project": 7,
+    "month": "2026-03-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.814Z",
+    "updated_at": "2026-08-31T11:31:47.814Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2424,
+  "fields": {
+    "project": 7,
+    "month": "2026-04-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.814Z",
+    "updated_at": "2026-08-31T11:31:47.814Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2425,
+  "fields": {
+    "project": 7,
+    "month": "2026-05-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.815Z",
+    "updated_at": "2026-08-31T11:31:47.815Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2426,
+  "fields": {
+    "project": 7,
+    "month": "2026-06-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.816Z",
+    "updated_at": "2026-08-31T11:31:47.816Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2427,
+  "fields": {
+    "project": 7,
+    "month": "2026-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.816Z",
+    "updated_at": "2026-08-31T11:31:47.816Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2428,
+  "fields": {
+    "project": 7,
+    "month": "2026-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.817Z",
+    "updated_at": "2026-08-31T11:31:47.817Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2429,
+  "fields": {
+    "project": 8,
+    "month": "2025-09-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.818Z",
+    "updated_at": "2026-08-31T11:31:47.818Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2430,
+  "fields": {
+    "project": 8,
+    "month": "2025-10-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.818Z",
+    "updated_at": "2026-08-31T11:31:47.818Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2431,
+  "fields": {
+    "project": 8,
+    "month": "2025-11-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.819Z",
+    "updated_at": "2026-08-31T11:31:47.819Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2432,
+  "fields": {
+    "project": 8,
+    "month": "2025-12-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.820Z",
+    "updated_at": "2026-08-31T11:31:47.820Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2433,
+  "fields": {
+    "project": 8,
+    "month": "2026-01-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.821Z",
+    "updated_at": "2026-08-31T11:31:47.821Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2434,
+  "fields": {
+    "project": 8,
+    "month": "2026-02-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.821Z",
+    "updated_at": "2026-08-31T11:31:47.821Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2435,
+  "fields": {
+    "project": 8,
+    "month": "2026-03-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.822Z",
+    "updated_at": "2026-08-31T11:31:47.822Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2436,
+  "fields": {
+    "project": 8,
+    "month": "2026-04-01",
+    "completion_percentage": 30,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.822Z",
+    "updated_at": "2026-08-31T11:31:47.822Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2437,
+  "fields": {
+    "project": 8,
+    "month": "2026-05-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.823Z",
+    "updated_at": "2026-08-31T11:31:47.823Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2438,
+  "fields": {
+    "project": 8,
+    "month": "2026-06-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.824Z",
+    "updated_at": "2026-08-31T11:31:47.824Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2439,
+  "fields": {
+    "project": 8,
+    "month": "2026-07-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.824Z",
+    "updated_at": "2026-08-31T11:31:47.824Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2440,
+  "fields": {
+    "project": 8,
+    "month": "2026-08-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.825Z",
+    "updated_at": "2026-08-31T11:31:47.825Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2441,
+  "fields": {
+    "project": 9,
+    "month": "2026-01-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.825Z",
+    "updated_at": "2026-08-31T11:31:47.825Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2442,
+  "fields": {
+    "project": 9,
+    "month": "2026-02-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.826Z",
+    "updated_at": "2026-08-31T11:31:47.826Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2443,
+  "fields": {
+    "project": 9,
+    "month": "2026-03-01",
+    "completion_percentage": 40,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.827Z",
+    "updated_at": "2026-08-31T11:31:47.827Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2444,
+  "fields": {
+    "project": 9,
+    "month": "2026-04-01",
+    "completion_percentage": 50,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.827Z",
+    "updated_at": "2026-08-31T11:31:47.827Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2445,
+  "fields": {
+    "project": 9,
+    "month": "2026-05-01",
+    "completion_percentage": 70,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.828Z",
+    "updated_at": "2026-08-31T11:31:47.828Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2446,
+  "fields": {
+    "project": 9,
+    "month": "2026-06-01",
+    "completion_percentage": 80,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.828Z",
+    "updated_at": "2026-08-31T11:31:47.829Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2447,
+  "fields": {
+    "project": 9,
+    "month": "2026-07-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.829Z",
+    "updated_at": "2026-08-31T11:31:47.829Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2448,
+  "fields": {
+    "project": 9,
+    "month": "2026-08-01",
+    "completion_percentage": 100,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.830Z",
+    "updated_at": "2026-08-31T11:31:47.830Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2449,
+  "fields": {
+    "project": 10,
+    "month": "2026-04-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.830Z",
+    "updated_at": "2026-08-31T11:31:47.830Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2450,
+  "fields": {
+    "project": 10,
+    "month": "2026-05-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.831Z",
+    "updated_at": "2026-08-31T11:31:47.831Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2451,
+  "fields": {
+    "project": 10,
+    "month": "2026-06-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.831Z",
+    "updated_at": "2026-08-31T11:31:47.832Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2452,
+  "fields": {
+    "project": 10,
+    "month": "2026-07-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.832Z",
+    "updated_at": "2026-08-31T11:31:47.832Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2453,
+  "fields": {
+    "project": 10,
+    "month": "2026-08-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.833Z",
+    "updated_at": "2026-08-31T11:31:47.833Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2454,
+  "fields": {
+    "project": 11,
+    "month": "2026-06-01",
+    "completion_percentage": 10,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.833Z",
+    "updated_at": "2026-08-31T11:31:47.833Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2455,
+  "fields": {
+    "project": 11,
+    "month": "2026-07-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.834Z",
+    "updated_at": "2026-08-31T11:31:47.834Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2456,
+  "fields": {
+    "project": 11,
+    "month": "2026-08-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.834Z",
+    "updated_at": "2026-08-31T11:31:47.834Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2457,
+  "fields": {
+    "project": 12,
+    "month": "2026-06-01",
+    "completion_percentage": 0,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.835Z",
+    "updated_at": "2026-08-31T11:31:47.835Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2458,
+  "fields": {
+    "project": 12,
+    "month": "2026-07-01",
+    "completion_percentage": 0,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.836Z",
+    "updated_at": "2026-08-31T11:31:47.836Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2459,
+  "fields": {
+    "project": 12,
+    "month": "2026-08-01",
+    "completion_percentage": 0,
+    "is_interpolated": false,
+    "created_at": "2026-08-31T11:31:47.836Z",
+    "updated_at": "2026-08-31T11:31:47.836Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2460,
+  "fields": {
+    "project": 12,
+    "month": "2026-09-01",
+    "completion_percentage": 0,
+    "is_interpolated": false,
+    "created_at": "2026-09-01T12:28:30.766Z",
+    "updated_at": "2026-09-01T12:28:30.766Z"
+  }
+},
+{
+  "model": "reports.projectprogresssnapshot",
+  "pk": 2461,
+  "fields": {
+    "project": 11,
+    "month": "2026-09-01",
+    "completion_percentage": 20,
+    "is_interpolated": false,
+    "created_at": "2026-09-02T11:27:16.885Z",
+    "updated_at": "2026-09-02T11:27:16.886Z"
+  }
+},
+{
+  "model": "projects.role",
+  "pk": 1,
+  "fields": {
+    "name": "OWNER"
+  }
+},
+{
+  "model": "projects.role",
+  "pk": 2,
+  "fields": {
+    "name": "MANAGER"
+  }
+},
+{
+  "model": "projects.role",
+  "pk": 3,
+  "fields": {
+    "name": "MEMBER"
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 1,
+  "fields": {
+    "code": "23-001",
+    "name": "Portal de Clientes",
+    "description": "Nuevo portal web para clientes.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": 72,
+    "created_at": "2023-09-15T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.211Z",
+    "is_archived": true,
+    "archived_at": "2024-05-18T15:30:00Z"
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 2,
+  "fields": {
+    "code": "23-002",
+    "name": "Migración ERP",
+    "description": "Migración del ERP corporativo.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": null,
+    "created_at": "2023-10-02T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.211Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 3,
+  "fields": {
+    "code": "24-001",
+    "name": "Dashboard BI",
+    "description": "Paneles de negocio para dirección.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": null,
+    "created_at": "2024-01-10T08:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.212Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 4,
+  "fields": {
+    "code": "24-002",
+    "name": "Web Corporativa",
+    "description": "Rediseño de la web corporativa.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": 67,
+    "created_at": "2024-05-01T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.213Z",
+    "is_archived": true,
+    "archived_at": "2025-05-18T15:30:00Z"
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 5,
+  "fields": {
+    "code": "24-003",
+    "name": "Aplicación Android",
+    "description": "Aplicación móvil para clientes.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": null,
+    "created_at": "2024-10-15T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.213Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 6,
+  "fields": {
+    "code": "25-001",
+    "name": "Aplicación iOS",
+    "description": "Versión iOS de la aplicación móvil.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": null,
+    "created_at": "2025-02-05T08:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.214Z",
+    "is_archived": true,
+    "archived_at": "2026-01-10T16:30:00Z"
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 7,
+  "fields": {
+    "code": "25-002",
+    "name": "CRM Comercial",
+    "description": "Nuevo CRM para el departamento comercial.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": null,
+    "created_at": "2025-04-18T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.215Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 8,
+  "fields": {
+    "code": "25-003",
+    "name": "ISO 27001",
+    "description": "Adecuación de procesos de seguridad.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": null,
+    "created_at": "2025-09-12T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.215Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 9,
+  "fields": {
+    "code": "26-001",
+    "name": "Integración SAP",
+    "description": "Integración con SAP mediante API.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": null,
+    "created_at": "2026-01-28T08:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.216Z",
+    "is_archived": true,
+    "archived_at": "2026-08-01T15:30:00Z"
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 10,
+  "fields": {
+    "code": "26-002",
+    "name": "Gestión de Inventario",
+    "description": "Sistema de inventario y logística.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": null,
+    "created_at": "2026-04-08T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.216Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 11,
+  "fields": {
+    "code": "26-003",
+    "name": "Portal RRHH",
+    "description": "Portal interno para empleados.",
+    "owner": [
+      "ALopez"
+    ],
+    "template": 66,
+    "created_at": "2026-06-06T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.217Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.project",
+  "pk": 12,
+  "fields": {
+    "code": "26-004",
+    "name": "Automatización Facturación",
+    "description": "Automatización de procesos contables.",
+    "owner": [
+      "CGarcia"
+    ],
+    "template": null,
+    "created_at": "2026-06-20T07:30:00Z",
+    "updated_at": "2026-08-31T11:31:47.218Z",
+    "is_archived": false,
+    "archived_at": null
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1711,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 1,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.230Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1712,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 1,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.231Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1713,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 1,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.231Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1714,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "project": 1,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.232Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1715,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 2,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.232Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1716,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 2,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.233Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1717,
+  "fields": {
+    "user": [
+      "MGil"
+    ],
+    "project": 2,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.233Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1718,
+  "fields": {
+    "user": [
+      "PNavarro"
+    ],
+    "project": 2,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.233Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1719,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 3,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.234Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1720,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 3,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.235Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1721,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 3,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.235Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1722,
+  "fields": {
+    "user": [
+      "MGil"
+    ],
+    "project": 3,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.236Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1723,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 4,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.236Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1724,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 4,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.236Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1725,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "project": 4,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.237Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1726,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 5,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.237Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1727,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 5,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.238Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1728,
+  "fields": {
+    "user": [
+      "PNavarro"
+    ],
+    "project": 5,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.238Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1729,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 5,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.238Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1730,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 6,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.239Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1731,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 6,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.239Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1732,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 6,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.240Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1733,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "project": 6,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.240Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1734,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 7,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.241Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1735,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 7,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.241Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1736,
+  "fields": {
+    "user": [
+      "MGil"
+    ],
+    "project": 7,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.241Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1737,
+  "fields": {
+    "user": [
+      "PNavarro"
+    ],
+    "project": 7,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.242Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1738,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 8,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.242Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1739,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 8,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.243Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1740,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 8,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.243Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1741,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 9,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.244Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1742,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 9,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.244Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1743,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "project": 9,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.244Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1744,
+  "fields": {
+    "user": [
+      "MGil"
+    ],
+    "project": 9,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.245Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1745,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 10,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.245Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1746,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 10,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.246Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1747,
+  "fields": {
+    "user": [
+      "PNavarro"
+    ],
+    "project": 10,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.246Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1748,
+  "fields": {
+    "user": [
+      "JSanz"
+    ],
+    "project": 10,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.246Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1749,
+  "fields": {
+    "user": [
+      "ALopez"
+    ],
+    "project": 11,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.247Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1750,
+  "fields": {
+    "user": [
+      "DMartin"
+    ],
+    "project": 11,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.247Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1751,
+  "fields": {
+    "user": [
+      "MGil"
+    ],
+    "project": 11,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.248Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1752,
+  "fields": {
+    "user": [
+      "CGarcia"
+    ],
+    "project": 12,
+    "role": 1,
+    "assigned_at": "2026-08-31T11:31:47.248Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1753,
+  "fields": {
+    "user": [
+      "ERuiz"
+    ],
+    "project": 12,
+    "role": 2,
+    "assigned_at": "2026-08-31T11:31:47.249Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1754,
+  "fields": {
+    "user": [
+      "LMoreno"
+    ],
+    "project": 12,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.249Z"
+  }
+},
+{
+  "model": "projects.assignment",
+  "pk": 1755,
+  "fields": {
+    "user": [
+      "PNavarro"
+    ],
+    "project": 12,
+    "role": 3,
+    "assigned_at": "2026-08-31T11:31:47.250Z"
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 66,
+  "fields": {
+    "name": "Portal RRHH",
+    "description": "Portal interno para empleados.",
+    "perfect_for": "",
+    "generated_from": "26-003"
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 67,
+  "fields": {
+    "name": "Web Corporativa",
+    "description": "Rediseño de la web corporativa.",
+    "perfect_for": "",
+    "generated_from": "24-002"
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 68,
+  "fields": {
+    "name": "Portal de Clientes",
+    "description": "Nuevo portal web para clientes.",
+    "perfect_for": "",
+    "generated_from": "23-001"
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 69,
+  "fields": {
+    "name": "Nuevo proyecto de software",
+    "description": "Plantilla para proyectos de desarrollo de aplicaciones y soluciones software.",
+    "perfect_for": "Proyectos de desarrollo de aplicaciones web, móviles o de escritorio.",
+    "generated_from": null
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 70,
+  "fields": {
+    "name": "Implantación ISO 27001",
+    "description": "Plantilla para proyectos de implantación y preparación de una organización para ISO 27001.",
+    "perfect_for": "Proyectos de seguridad de la información, cumplimiento y certificación.",
+    "generated_from": null
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 71,
+  "fields": {
+    "name": "Portal de Clientes",
+    "description": "Nuevo portal web para clientes.",
+    "perfect_for": "",
+    "generated_from": "23-001"
+  }
+},
+{
+  "model": "projects.projecttemplate",
+  "pk": 72,
+  "fields": {
+    "name": "Portal de Clientes",
+    "description": "Nuevo portal web para clientes.",
+    "perfect_for": "",
+    "generated_from": "23-001"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 453,
+  "fields": {
+    "template": 66,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 454,
+  "fields": {
+    "template": 66,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 455,
+  "fields": {
+    "template": 66,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 456,
+  "fields": {
+    "template": 66,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 457,
+  "fields": {
+    "template": 66,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 458,
+  "fields": {
+    "template": 66,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 459,
+  "fields": {
+    "template": 66,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 460,
+  "fields": {
+    "template": 66,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 461,
+  "fields": {
+    "template": 66,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 462,
+  "fields": {
+    "template": 66,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 463,
+  "fields": {
+    "template": 67,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 464,
+  "fields": {
+    "template": 67,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 465,
+  "fields": {
+    "template": 67,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 466,
+  "fields": {
+    "template": 67,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 467,
+  "fields": {
+    "template": 67,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 468,
+  "fields": {
+    "template": 67,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 469,
+  "fields": {
+    "template": 67,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 470,
+  "fields": {
+    "template": 67,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 471,
+  "fields": {
+    "template": 67,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 472,
+  "fields": {
+    "template": 67,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 473,
+  "fields": {
+    "template": 68,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 474,
+  "fields": {
+    "template": 68,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 475,
+  "fields": {
+    "template": 68,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 476,
+  "fields": {
+    "template": 68,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 477,
+  "fields": {
+    "template": 68,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 478,
+  "fields": {
+    "template": 68,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 479,
+  "fields": {
+    "template": 68,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 480,
+  "fields": {
+    "template": 68,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 481,
+  "fields": {
+    "template": 68,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 482,
+  "fields": {
+    "template": 68,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 483,
+  "fields": {
+    "template": 69,
+    "title": "Definir requisitos",
+    "description": "Recopilar y documentar los requisitos funcionales y técnicos del proyecto.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 484,
+  "fields": {
+    "template": 69,
+    "title": "Diseñar la solución",
+    "description": "Definir la arquitectura y el diseño general de la solución.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 485,
+  "fields": {
+    "template": 69,
+    "title": "Implementar la solución",
+    "description": "Desarrollar las funcionalidades previstas en el proyecto.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 486,
+  "fields": {
+    "template": 69,
+    "title": "Realizar pruebas",
+    "description": "Verificar el funcionamiento de la solución y corregir los errores encontrados.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 487,
+  "fields": {
+    "template": 69,
+    "title": "Preparar la puesta en producción",
+    "description": "Preparar el despliegue y comprobar que el entorno de producción está correctamente configurado.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 488,
+  "fields": {
+    "template": 70,
+    "title": "Analizar el estado actual",
+    "description": "Evaluar la situación actual de la organización respecto a los requisitos de ISO 27001.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 489,
+  "fields": {
+    "template": 70,
+    "title": "Definir el alcance del SGSI",
+    "description": "Determinar el alcance del Sistema de Gestión de Seguridad de la Información.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 490,
+  "fields": {
+    "template": 70,
+    "title": "Realizar análisis de riesgos",
+    "description": "Identificar activos, amenazas, vulnerabilidades y riesgos de seguridad.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 491,
+  "fields": {
+    "template": 70,
+    "title": "Definir controles de seguridad",
+    "description": "Seleccionar y documentar los controles necesarios para tratar los riesgos identificados.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 492,
+  "fields": {
+    "template": 70,
+    "title": "Preparar documentación",
+    "description": "Preparar las políticas, procedimientos y registros necesarios para el SGSI.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 493,
+  "fields": {
+    "template": 70,
+    "title": "Preparar auditoría",
+    "description": "Revisar el cumplimiento de los requisitos y preparar la organización para la auditoría.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 494,
+  "fields": {
+    "template": 71,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 495,
+  "fields": {
+    "template": 71,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 496,
+  "fields": {
+    "template": 71,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 497,
+  "fields": {
+    "template": 71,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 498,
+  "fields": {
+    "template": 71,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 499,
+  "fields": {
+    "template": 71,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 500,
+  "fields": {
+    "template": 71,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 501,
+  "fields": {
+    "template": 71,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 502,
+  "fields": {
+    "template": 71,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 503,
+  "fields": {
+    "template": 71,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 504,
+  "fields": {
+    "template": 72,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 505,
+  "fields": {
+    "template": 72,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 506,
+  "fields": {
+    "template": 72,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 507,
+  "fields": {
+    "template": 72,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 508,
+  "fields": {
+    "template": 72,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 509,
+  "fields": {
+    "template": 72,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 510,
+  "fields": {
+    "template": 72,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 511,
+  "fields": {
+    "template": 72,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 512,
+  "fields": {
+    "template": 72,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "priority": "HIGH"
+  }
+},
+{
+  "model": "projects.tasktemplate",
+  "pk": 513,
+  "fields": {
+    "template": 72,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "priority": "MEDIUM"
+  }
+},
+{
+  "model": "projects.projectfollow",
+  "pk": 9,
+  "fields": {
+    "project": 10,
+    "user": [
+      "DMartin"
+    ],
+    "created_at": "2026-09-10T21:54:07.893Z"
+  }
+},
+{
+  "model": "projects.projectfollow",
+  "pk": 10,
+  "fields": {
+    "project": 1,
+    "user": [
+      "ERuiz"
+    ],
+    "created_at": "2026-09-11T22:57:59.202Z"
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2132,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-11T22:30:40.705Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-09-08T09:14:16.377Z",
+    "started_at": "2026-09-01T09:45:17.885Z",
+    "completed_at": "2026-09-11T22:30:40.703Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 15130,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-11T22:30:40.703Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2133,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Analizar reglas de negocio",
+    "description": "Documentación de reglas y excepciones.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-13T20:33:22.499Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-06-24T07:30:01.772Z",
+    "started_at": "2026-06-20T07:30:00Z",
+    "completed_at": "2026-09-13T20:33:22.498Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 123182,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-13T20:33:22.498Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2134,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseñar flujo automatizado",
+    "description": "Diseño del flujo completo de automatización.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-01T12:28:33.117Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": "2026-09-01T10:20:49.972Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 15125,
+    "active_started_at": "2026-09-11T22:26:32.387Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2135,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseñar gestión de errores",
+    "description": "Definición de excepciones y recuperación.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.270Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2026-06-23T07:30:01.772Z",
+    "started_at": "2026-06-20T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 120416,
+    "active_started_at": "2026-09-11T22:26:32.395Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2136,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Implementar automatización",
+    "description": "Desarrollo del proceso automatizado.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.271Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2026-06-30T07:30:01.772Z",
+    "started_at": "2026-06-20T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 120416,
+    "active_started_at": "2026-09-11T22:26:32.402Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2137,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Integrar sistemas",
+    "description": "Integración con los sistemas involucrados.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-01T15:23:52.406Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2026-09-01T11:56:45.372Z",
+    "started_at": "2026-09-01T11:55:21.605Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 14823,
+    "active_started_at": "2026-09-11T22:26:32.409Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2138,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Configurar ejecución programada",
+    "description": "Configuración de ejecuciones automáticas.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-01T15:26:14.457Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2026-06-23T07:30:01.772Z",
+    "started_at": "2026-09-01T15:26:14.456Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 14820,
+    "active_started_at": "2026-09-11T22:26:32.417Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2139,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas del flujo",
+    "description": "Validación del flujo automatizado.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.274Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-06-24T07:30:01.772Z",
+    "started_at": "2026-06-20T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 120416,
+    "active_started_at": "2026-09-11T22:26:32.425Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2140,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de errores",
+    "description": "Validación de escenarios excepcionales.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.275Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2026-06-23T07:30:01.772Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-09-11T22:26:32.432Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2141,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Puesta en producción",
+    "description": "Activación de la automatización.",
+    "project": 12,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-06-20T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.276Z",
+    "assigned_to": [
+      "CGarcia"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 2,
+    "due_at": "2026-06-22T07:30:01.772Z",
+    "started_at": "2026-06-20T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 120416,
+    "active_started_at": "2026-09-11T22:26:32.440Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2142,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-08T10:16:39.055Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2026-06-11T07:30:00Z",
+    "started_at": "2026-06-06T07:30:00Z",
+    "completed_at": "2026-09-08T10:16:39.054Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2401,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-08T10:16:39.054Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2143,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-10T22:05:24.661Z",
+    "assigned_to": [
+      "ALopez"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 2,
+    "due_at": "2026-06-08T07:30:00Z",
+    "started_at": "2026-06-06T07:30:00Z",
+    "completed_at": "2026-09-10T22:05:24.660Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4550,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-10T22:05:24.660Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2144,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-10T21:48:36.674Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2026-09-01T15:18:00.026Z",
+    "started_at": "2026-09-01T15:17:34.743Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-09-10T21:48:36.673Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2145,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.280Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2026-06-09T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2146,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-08T10:20:57.342Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-06-10T07:30:00Z",
+    "started_at": "2026-06-06T07:30:00Z",
+    "completed_at": "2026-09-08T10:20:57.341Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 135530,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-08T10:20:57.341Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2147,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.282Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2026-06-14T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2148,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-08T10:20:47.002Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2026-06-16T07:30:00Z",
+    "started_at": "2026-06-06T07:30:00Z",
+    "completed_at": "2026-09-08T10:20:47.001Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 135530,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-08T10:20:47.001Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2149,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.284Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 6,
+    "due_at": "2026-06-12T07:30:00Z",
+    "started_at": "2026-06-06T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-06-06T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2150,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-08T10:20:53.062Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2026-06-11T07:30:00Z",
+    "started_at": "2026-09-08T10:20:53.061Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-09-08T10:20:53.061Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2151,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "project": 11,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-06-06T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-08T10:20:03.855Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2026-06-09T07:30:00Z",
+    "started_at": "2026-09-08T10:13:08.690Z",
+    "completed_at": "2026-09-08T10:20:03.854Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 6,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-08T10:20:03.854Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2152,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Inventario de infraestructura",
+    "description": "Inventario de servidores, redes y servicios.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.287Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-04-12T07:30:00Z",
+    "started_at": "2026-04-08T07:30:00Z",
+    "completed_at": "2026-04-08T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-04-08T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2153,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Análisis de capacidad",
+    "description": "Análisis de capacidad y necesidades futuras.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.288Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-04-12T07:30:00Z",
+    "started_at": "2026-04-08T07:30:00Z",
+    "completed_at": "2026-07-31T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-07-31T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2154,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de arquitectura",
+    "description": "Diseño de la arquitectura objetivo.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-01T10:52:25.571Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "CANCELLED",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2026-04-14T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": "2026-09-01T10:52:25.570Z",
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-01T10:52:25.570Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2155,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración de servidores",
+    "description": "Configuración de servidores y máquinas virtuales.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-11T22:43:15.535Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2026-04-15T07:30:00Z",
+    "started_at": "2026-09-11T22:43:15.534Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-09-11T22:43:15.534Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2156,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Configuración de red",
+    "description": "Configuración de redes y comunicaciones.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.291Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2026-04-14T07:30:00Z",
+    "started_at": "2026-04-08T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-04-08T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2157,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Configuración de backups",
+    "description": "Configuración de copias de seguridad.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.292Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "TODO",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2026-04-12T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2158,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Monitorización",
+    "description": "Configuración de monitorización y alertas.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.293Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2026-04-13T07:30:00Z",
+    "started_at": "2026-04-08T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-04-08T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2159,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas de disponibilidad",
+    "description": "Comprobación de disponibilidad y recuperación.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.294Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-04-12T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2160,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de rendimiento",
+    "description": "Pruebas de carga y rendimiento.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.295Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2026-04-13T07:30:00Z",
+    "started_at": "2026-04-08T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-04-08T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2161,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Migración",
+    "description": "Migración de servicios a la nueva infraestructura.",
+    "project": 10,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2026-04-08T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.296Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2026-04-16T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2162,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Inventario de infraestructura",
+    "description": "Inventario de servidores, redes y servicios.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.297Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-02-01T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-01-28T08:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-01-28T08:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2163,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Análisis de capacidad",
+    "description": "Análisis de capacidad y necesidades futuras.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.298Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-02-01T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-02-17T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-02-17T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2164,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de arquitectura",
+    "description": "Diseño de la arquitectura objetivo.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.299Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2026-02-03T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-03-09T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-03-09T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2165,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración de servidores",
+    "description": "Configuración de servidores y máquinas virtuales.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.300Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2026-02-04T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-03-30T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3360,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-03-30T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2166,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Configuración de red",
+    "description": "Configuración de redes y comunicaciones.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.301Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2026-02-03T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-04-19T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-04-19T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2167,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Configuración de backups",
+    "description": "Configuración de copias de seguridad.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.302Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2026-02-01T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-05-10T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-05-10T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2168,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Monitorización",
+    "description": "Configuración de monitorización y alertas.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.303Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2026-02-02T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-05-30T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-05-30T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2169,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas de disponibilidad",
+    "description": "Comprobación de disponibilidad y recuperación.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.304Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2026-02-01T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-06-20T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-06-20T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2170,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de rendimiento",
+    "description": "Pruebas de carga y rendimiento.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.305Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2026-02-02T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-07-10T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-07-10T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2171,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Migración",
+    "description": "Migración de servicios a la nueva infraestructura.",
+    "project": 9,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2026-01-28T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.306Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2026-02-05T08:30:00Z",
+    "started_at": "2026-01-28T08:30:00Z",
+    "completed_at": "2026-07-31T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-07-31T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2172,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de riesgos",
+    "description": "Identificación de amenazas y riesgos.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.308Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2025-09-18T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": "2025-09-12T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-09-12T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2173,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Inventario de activos",
+    "description": "Inventario de activos de información.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.309Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2025-09-17T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": "2025-12-01T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-12-01T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2174,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Definición de controles",
+    "description": "Selección de controles de seguridad.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.310Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2025-09-18T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": "2026-02-20T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-02-20T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2175,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseño del plan de seguridad",
+    "description": "Definición del plan de tratamiento de riesgos.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.311Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2025-09-16T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": "2026-05-11T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-05-11T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2176,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Implementación de controles",
+    "description": "Aplicación de controles de seguridad.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.312Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2025-09-22T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": "2026-07-31T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-07-31T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2177,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Configuración de accesos",
+    "description": "Revisión y configuración de permisos.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.312Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2025-09-17T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2178,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Auditoría interna",
+    "description": "Revisión interna del cumplimiento.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.313Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2025-09-18T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2179,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas de seguridad",
+    "description": "Pruebas técnicas de seguridad.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.314Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2025-09-17T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2025-09-12T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2180,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Corrección de vulnerabilidades",
+    "description": "Corrección de vulnerabilidades detectadas.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.315Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2025-09-19T07:30:00Z",
+    "started_at": "2025-09-12T07:30:00Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2025-09-12T07:30:00Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2181,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Preparación de certificación",
+    "description": "Preparación de documentación para certificación.",
+    "project": 8,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-09-12T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-01T12:06:37.111Z",
+    "assigned_to": [
+      "CGarcia"
+    ],
+    "status": "CANCELLED",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2025-09-17T07:30:00Z",
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": "2026-09-01T12:06:37.110Z",
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": 0,
+    "frozen_at": "2026-09-01T12:06:37.110Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2182,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de procesos",
+    "description": "Análisis de los procesos actuales de la organización.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.318Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2025-04-23T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-04-18T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-04-18T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2183,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Definición de módulos",
+    "description": "Identificación de los módulos necesarios.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.319Z",
+    "assigned_to": [
+      "ALopez"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2025-04-21T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-05-16T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-05-16T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2184,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de procesos",
+    "description": "Diseño de los nuevos procesos de negocio.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.319Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2025-04-23T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-06-13T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-06-13T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2185,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración financiera",
+    "description": "Configuración de módulos financieros.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.320Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2025-04-25T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-07-12T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3360,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-07-12T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2186,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Configuración de compras",
+    "description": "Configuración de compras y proveedores.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.321Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 6,
+    "due_at": "2025-04-24T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-08-10T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-08-10T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2187,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Migración de datos",
+    "description": "Migración de información del sistema anterior.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.322Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2025-04-28T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-09-07T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-09-07T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2188,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Integración con sistemas externos",
+    "description": "Integración con aplicaciones corporativas.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.323Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2025-04-26T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-10-06T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-10-06T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2189,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas de integración",
+    "description": "Validación de las integraciones.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.324Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2025-04-22T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-11-04T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-11-04T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2190,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de usuario",
+    "description": "Validación por parte de usuarios finales.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.325Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2025-04-22T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-12-02T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-12-02T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2191,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Carga inicial",
+    "description": "Carga definitiva de información.",
+    "project": 7,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2025-04-18T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.326Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2025-04-21T07:30:00Z",
+    "started_at": "2025-04-18T07:30:00Z",
+    "completed_at": "2025-12-31T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-12-31T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2192,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de funcionalidades",
+    "description": "Definición de funcionalidades de la aplicación.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.328Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2025-02-09T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-02-05T08:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-02-05T08:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2193,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Diseño de navegación",
+    "description": "Definición de navegación y experiencia móvil.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.329Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2025-02-09T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-03-14T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-03-14T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2194,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de interfaz",
+    "description": "Diseño visual de la aplicación.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.329Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2025-02-10T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-04-20T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-04-20T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2195,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración del proyecto móvil",
+    "description": "Preparación de la estructura de la aplicación.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.330Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2025-02-08T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-05-28T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-05-28T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2196,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Implementación de autenticación",
+    "description": "Login y gestión de sesiones.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.331Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2025-02-11T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-07-05T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-07-05T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2197,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Implementación de funcionalidades",
+    "description": "Desarrollo de las funcionalidades principales.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.332Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2025-02-15T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-08-11T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-08-11T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2198,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Integración con API",
+    "description": "Integración con servicios backend.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.333Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2025-02-11T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-09-18T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-09-18T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2199,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas en dispositivos",
+    "description": "Pruebas en diferentes dispositivos y tamaños.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.334Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2025-02-10T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-10-26T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-10-26T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2200,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de rendimiento",
+    "description": "Comprobación del rendimiento de la aplicación.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.335Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2025-02-09T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2025-12-02T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-12-02T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2201,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Preparación de publicación",
+    "description": "Preparación para las tiendas de aplicaciones.",
+    "project": 6,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2025-02-05T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.336Z",
+    "assigned_to": [
+      "CGarcia"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2025-02-08T08:30:00Z",
+    "started_at": "2025-02-05T08:30:00Z",
+    "completed_at": "2026-01-09T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-01-09T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2202,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de funcionalidades",
+    "description": "Definición de funcionalidades de la aplicación.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.338Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2024-10-19T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2024-10-15T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-10-15T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2203,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Diseño de navegación",
+    "description": "Definición de navegación y experiencia móvil.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.339Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2024-10-19T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2024-11-15T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-11-15T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2204,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de interfaz",
+    "description": "Diseño visual de la aplicación.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.340Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2024-10-20T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2024-12-17T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-12-17T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2205,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración del proyecto móvil",
+    "description": "Preparación de la estructura de la aplicación.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.341Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2024-10-18T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-01-19T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-01-19T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2206,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Implementación de autenticación",
+    "description": "Login y gestión de sesiones.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.341Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2024-10-21T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-02-20T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-02-20T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2207,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Implementación de funcionalidades",
+    "description": "Desarrollo de las funcionalidades principales.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.342Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2024-10-25T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-03-24T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-03-24T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2208,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Integración con API",
+    "description": "Integración con servicios backend.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.343Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 6,
+    "due_at": "2024-10-21T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-04-25T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-04-25T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2209,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas en dispositivos",
+    "description": "Pruebas en diferentes dispositivos y tamaños.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.344Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 5,
+    "due_at": "2024-10-20T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-05-28T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-05-28T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2210,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de rendimiento",
+    "description": "Comprobación del rendimiento de la aplicación.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.345Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2024-10-19T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-06-29T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-06-29T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2211,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Preparación de publicación",
+    "description": "Preparación para las tiendas de aplicaciones.",
+    "project": 5,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-10-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.347Z",
+    "assigned_to": [
+      "ALopez"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2024-10-18T07:30:00Z",
+    "started_at": "2024-10-15T07:30:00Z",
+    "completed_at": "2025-07-31T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-07-31T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2212,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.349Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2024-05-06T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-05-01T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-05-01T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2213,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.349Z",
+    "assigned_to": [
+      "CGarcia"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 2,
+    "due_at": "2024-05-03T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-06-11T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 960,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-06-11T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2214,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.350Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2024-05-05T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-07-24T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-07-24T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2215,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.351Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2024-05-04T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-09-04T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-09-04T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2216,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.352Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2024-05-05T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-10-17T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-10-17T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2217,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.353Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2024-05-09T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2024-11-28T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-11-28T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2218,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.354Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2024-05-11T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2025-01-10T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-01-10T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2219,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.355Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 6,
+    "due_at": "2024-05-07T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2025-02-21T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-02-21T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2220,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.356Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2024-05-06T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2025-04-05T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-04-05T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2221,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "project": 4,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2024-05-01T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.357Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2024-05-04T07:30:00Z",
+    "started_at": "2024-05-01T07:30:00Z",
+    "completed_at": "2025-05-17T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-05-17T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2222,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Identificar indicadores",
+    "description": "Definición de los principales indicadores de negocio.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.359Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2024-01-13T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-01-10T08:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-01-10T08:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2223,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Analizar fuentes de datos",
+    "description": "Identificación y análisis de las fuentes disponibles.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.359Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2024-01-14T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-02-24T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-02-24T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2224,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseñar modelo de datos",
+    "description": "Diseño del modelo analítico.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.360Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2024-01-15T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-04-10T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-04-10T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2225,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseñar dashboard",
+    "description": "Diseño de la estructura de los cuadros de mando.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.361Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2024-01-14T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-05-27T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-05-27T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2226,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Construir ETL",
+    "description": "Implementación de procesos de extracción y transformación.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.362Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2024-01-18T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-07-12T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-07-12T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2227,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Construir modelo analítico",
+    "description": "Implementación del modelo de datos.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.363Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2024-01-17T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-08-27T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3360,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-08-27T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2228,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Crear indicadores",
+    "description": "Implementación de KPIs y métricas.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.364Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2024-01-15T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-10-12T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-10-12T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2229,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Validar datos",
+    "description": "Comprobación de calidad y consistencia.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.365Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2024-01-14T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2024-11-28T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-11-28T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2230,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Validación con usuarios",
+    "description": "Revisión de los informes con usuarios finales.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.366Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2024-01-13T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2025-01-13T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-01-13T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2231,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Publicación de dashboards",
+    "description": "Publicación de los cuadros de mando.",
+    "project": 3,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2024-01-10T08:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.367Z",
+    "assigned_to": [
+      "ALopez"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 2,
+    "due_at": "2024-01-12T08:30:00Z",
+    "started_at": "2024-01-10T08:30:00Z",
+    "completed_at": "2025-02-28T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 960,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2025-02-28T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2232,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de procesos",
+    "description": "Análisis de los procesos actuales de la organización.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.369Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2023-10-07T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2023-10-02T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-10-02T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2233,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Definición de módulos",
+    "description": "Identificación de los módulos necesarios.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.370Z",
+    "assigned_to": [
+      "CGarcia"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2023-10-05T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2023-11-14T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-11-14T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2234,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño de procesos",
+    "description": "Diseño de los nuevos procesos de negocio.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.371Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2023-10-07T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2023-12-28T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-12-28T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2235,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Configuración financiera",
+    "description": "Configuración de módulos financieros.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.372Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 7,
+    "due_at": "2023-10-09T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-02-10T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3360,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-02-10T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2236,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Configuración de compras",
+    "description": "Configuración de compras y proveedores.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.373Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 6,
+    "due_at": "2023-10-08T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-03-25T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-03-25T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2237,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Migración de datos",
+    "description": "Migración de información del sistema anterior.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.374Z",
+    "assigned_to": [
+      "PNavarro"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2023-10-12T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-05-08T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-05-08T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2238,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Integración con sistemas externos",
+    "description": "Integración con aplicaciones corporativas.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.375Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2023-10-10T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-06-21T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-06-21T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2239,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Pruebas de integración",
+    "description": "Validación de las integraciones.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.376Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2023-10-06T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-08-04T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-08-04T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2240,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Pruebas de usuario",
+    "description": "Validación por parte de usuarios finales.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.377Z",
+    "assigned_to": [
+      "MGil"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2023-10-06T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-09-17T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-09-17T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2241,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Carga inicial",
+    "description": "Carga definitiva de información.",
+    "project": 2,
+    "created_by": [
+      "CGarcia"
+    ],
+    "created_at": "2023-10-02T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.378Z",
+    "assigned_to": [
+      "ERuiz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 3,
+    "due_at": "2023-10-05T07:30:00Z",
+    "started_at": "2023-10-02T07:30:00Z",
+    "completed_at": "2024-10-31T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-10-31T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2242,
+  "fields": {
+    "sequence_number": 1,
+    "title": "Análisis de requisitos",
+    "description": "Reunión con cliente y recopilación de requisitos.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.380Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2023-09-20T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2023-09-15T07:30:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-09-15T07:30:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2243,
+  "fields": {
+    "sequence_number": 2,
+    "title": "Definición del alcance",
+    "description": "Validación funcional con el cliente.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.380Z",
+    "assigned_to": [
+      "ALopez"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 2,
+    "due_at": "2023-09-17T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2023-10-11T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 960,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-10-11T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2244,
+  "fields": {
+    "sequence_number": 3,
+    "title": "Diseño UX",
+    "description": "Wireframes y navegación.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.381Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 4,
+    "due_at": "2023-09-19T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2023-11-08T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-11-08T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2245,
+  "fields": {
+    "sequence_number": 4,
+    "title": "Diseño UI",
+    "description": "Diseño visual de pantallas.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.382Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2023-09-18T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2023-12-05T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2023-12-05T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2246,
+  "fields": {
+    "sequence_number": 5,
+    "title": "Arquitectura Backend",
+    "description": "Diseño de la arquitectura del sistema.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.383Z",
+    "assigned_to": [
+      "DMartin"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 4,
+    "due_at": "2023-09-19T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-01-01T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1920,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-01-01T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2247,
+  "fields": {
+    "sequence_number": 6,
+    "title": "Implementación Login",
+    "description": "Sistema de autenticación.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.384Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 8,
+    "due_at": "2023-09-23T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-01-29T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 3840,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-01-29T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2248,
+  "fields": {
+    "sequence_number": 7,
+    "title": "Gestión de Clientes",
+    "description": "CRUD completo de clientes.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.385Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 10,
+    "due_at": "2023-09-25T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-02-25T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 4800,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-02-25T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2249,
+  "fields": {
+    "sequence_number": 8,
+    "title": "Panel de administración",
+    "description": "Gestión de usuarios y permisos.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.386Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 6,
+    "due_at": "2023-09-21T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-03-23T23:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2880,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-03-23T23:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2250,
+  "fields": {
+    "sequence_number": 9,
+    "title": "Integración API",
+    "description": "Integración con servicios externos.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.387Z",
+    "assigned_to": [
+      "JSanz"
+    ],
+    "status": "DONE",
+    "priority": "HIGH",
+    "time_estimated": 5,
+    "due_at": "2023-09-20T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-04-20T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 2400,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-04-20T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2251,
+  "fields": {
+    "sequence_number": 10,
+    "title": "Pruebas unitarias",
+    "description": "Cobertura de pruebas.",
+    "project": 1,
+    "created_by": [
+      "ALopez"
+    ],
+    "created_at": "2023-09-15T07:30:00Z",
+    "deleted_at": null,
+    "updated_at": "2026-08-31T11:31:47.388Z",
+    "assigned_to": [
+      "LMoreno"
+    ],
+    "status": "DONE",
+    "priority": "MEDIUM",
+    "time_estimated": 3,
+    "due_at": "2023-09-18T07:30:00Z",
+    "started_at": "2023-09-15T07:30:00Z",
+    "completed_at": "2024-05-17T22:00:00Z",
+    "cancelled_at": null,
+    "elapsed_minutes": 1440,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2024-05-17T22:00:00Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2252,
+  "fields": {
+    "sequence_number": 11,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:12:13.250Z",
+    "deleted_at": "2026-09-02T11:27:16.869Z",
+    "updated_at": "2026-09-02T11:27:16.869Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:27:16.869Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2253,
+  "fields": {
+    "sequence_number": 12,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:13:15.128Z",
+    "deleted_at": "2026-09-02T11:27:21.842Z",
+    "updated_at": "2026-09-02T11:27:21.843Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:27:21.842Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2254,
+  "fields": {
+    "sequence_number": 13,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:15:22.592Z",
+    "deleted_at": "2026-09-02T11:27:25.460Z",
+    "updated_at": "2026-09-02T11:27:25.461Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:27:25.460Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2255,
+  "fields": {
+    "sequence_number": 14,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:18:20.501Z",
+    "deleted_at": "2026-09-02T11:27:30.055Z",
+    "updated_at": "2026-09-02T11:27:30.056Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:27:30.055Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2256,
+  "fields": {
+    "sequence_number": 15,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:19:25.017Z",
+    "deleted_at": "2026-09-02T11:27:34.221Z",
+    "updated_at": "2026-09-02T11:27:34.222Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:27:34.221Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2257,
+  "fields": {
+    "sequence_number": 16,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-02T11:29:28.413Z",
+    "deleted_at": "2026-09-02T11:31:33.016Z",
+    "updated_at": "2026-09-02T11:31:33.017Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-02T11:31:33.016Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2258,
+  "fields": {
+    "sequence_number": 17,
+    "title": "Inventario de infraestructura",
+    "description": "Inventario de servidores, redes y servicios.",
+    "project": 11,
+    "created_by": [
+      "DMartin"
+    ],
+    "created_at": "2026-09-08T09:49:43.331Z",
+    "deleted_at": "2026-09-08T09:50:49.501Z",
+    "updated_at": "2026-09-08T09:50:49.502Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": "2026-09-08T09:50:49.501Z",
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2260,
+  "fields": {
+    "sequence_number": 18,
+    "title": "Inventario de infraestructura",
+    "description": "Inventario de servidores, redes y servicios.",
+    "project": 11,
+    "created_by": [
+      "DMartin"
+    ],
+    "created_at": "2026-09-10T21:50:08.899Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-10T21:50:08.900Z",
+    "assigned_to": null,
+    "status": "TODO",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": null,
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": null,
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2261,
+  "fields": {
+    "sequence_number": 19,
+    "title": "Identificar procesos automatizables",
+    "description": "Identificación de procesos candidatos a automatización.",
+    "project": 11,
+    "created_by": [
+      "SLobato"
+    ],
+    "created_at": "2026-09-11T22:31:11.920Z",
+    "deleted_at": null,
+    "updated_at": "2026-09-11T22:36:59.092Z",
+    "assigned_to": null,
+    "status": "IN_PROGRESS",
+    "priority": "HIGH",
+    "time_estimated": null,
+    "due_at": null,
+    "started_at": "2026-09-11T22:36:59.091Z",
+    "completed_at": null,
+    "cancelled_at": null,
+    "elapsed_minutes": 0,
+    "active_started_at": "2026-09-11T22:36:59.091Z",
+    "remaining_minutes": null,
+    "frozen_at": null,
+    "watchers": []
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 247,
+  "fields": {
+    "task": 2247,
+    "user": [
+      "JSanz"
+    ],
+    "text": "Backend terminado.",
+    "created_at": "2023-10-30T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 248,
+  "fields": {
+    "task": 2247,
+    "user": [
+      "DMartin"
+    ],
+    "text": "Revisa el control de sesiones.",
+    "created_at": "2023-11-01T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 249,
+  "fields": {
+    "task": 2247,
+    "user": [
+      "ALopez"
+    ],
+    "text": "Por favor revisa la autenticación. @LMoreno",
+    "created_at": "2023-11-04T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "IMPROVEMENT",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 250,
+  "fields": {
+    "task": 2247,
+    "user": [
+      "ALopez"
+    ],
+    "text": "Añade documentación del login. @LMoreno",
+    "created_at": "2023-11-14T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "OPTIONAL",
+    "resolved": true,
+    "resolved_at": "2023-11-19T07:30:00Z"
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 251,
+  "fields": {
+    "task": 2217,
+    "user": [
+      "LMoreno"
+    ],
+    "text": "Backend terminado.",
+    "created_at": "2024-06-15T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 252,
+  "fields": {
+    "task": 2217,
+    "user": [
+      "ERuiz"
+    ],
+    "text": "Revisa el control de sesiones.",
+    "created_at": "2024-06-17T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 253,
+  "fields": {
+    "task": 2217,
+    "user": [
+      "CGarcia"
+    ],
+    "text": "Por favor revisa la autenticación. @LMoreno",
+    "created_at": "2024-06-20T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "IMPROVEMENT",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 254,
+  "fields": {
+    "task": 2217,
+    "user": [
+      "CGarcia"
+    ],
+    "text": "Añade documentación del login. @LMoreno",
+    "created_at": "2024-06-30T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "OPTIONAL",
+    "resolved": true,
+    "resolved_at": "2024-07-05T07:30:00Z"
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 255,
+  "fields": {
+    "task": 2147,
+    "user": [
+      "MGil"
+    ],
+    "text": "Backend terminado.",
+    "created_at": "2026-07-21T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 256,
+  "fields": {
+    "task": 2147,
+    "user": [
+      "DMartin"
+    ],
+    "text": "Revisa el control de sesiones.",
+    "created_at": "2026-07-23T07:30:00Z",
+    "type": "COMMENT",
+    "request_kind": "",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 257,
+  "fields": {
+    "task": 2147,
+    "user": [
+      "ALopez"
+    ],
+    "text": "Por favor revisa la autenticación. @MGil",
+    "created_at": "2026-07-26T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "IMPROVEMENT",
+    "resolved": false,
+    "resolved_at": null
+  }
+},
+{
+  "model": "tasks.taskcomment",
+  "pk": 258,
+  "fields": {
+    "task": 2147,
+    "user": [
+      "ALopez"
+    ],
+    "text": "Añade documentación del login. @MGil",
+    "created_at": "2026-08-05T07:30:00Z",
+    "type": "REQUEST",
+    "request_kind": "OPTIONAL",
+    "resolved": true,
+    "resolved_at": "2026-08-10T07:30:00Z"
+  }
+}
+]

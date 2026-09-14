@@ -142,3 +142,5 @@ backup_db.sqlite3
 staticfiles/
 
 static/react/
+
+production_data.json

@@ -17,11 +17,29 @@ class Command(BaseCommand):
     User = get_user_model()
 
     self.stdout.write(
-        f"Usuarios actuales: {list(User.objects.values_list('username', flat=True))}"
+      f"Usuarios actuales: {list(User.objects.values_list('username', flat=True))}"
     )
 
     # Si los datos ya fueron importados, no hacemos nada.
-    if User.objects.filter(username="SLobato").exists():
+    existing_users = list(
+      User.objects.values_list("username", flat=True)
+    )
+
+    if existing_users == ["SLobato"]:
+      user = User.objects.get(username="SLobato")
+
+      if user.is_superuser:
+        user.delete()
+        self.stdout.write(
+          "Superusuario temporal SLobato eliminado."
+        )
+      else:
+        self.stdout.write(
+          "SLobato ya existe como usuario normal. "
+          "No se realiza la importación."
+        )
+        return
+    elif "SLobato" in existing_users:
       self.stdout.write(
         "Los datos de producción ya están importados."
       )

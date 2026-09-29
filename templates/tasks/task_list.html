@@ -187,30 +187,38 @@
         </h4>
         <!-- Grid de tareas del proyecto -->
         <div class="collapse" id="project{{ project.pk }}">
-          <div class="row g-3">
+          <div class="row g-3" data-reorder-url="{% url 'task_reorder' %}">
             {% for task in tasks %}
               {% if task.project == project %}
               <div class="col-sm-6 col-md-4 col-xl-3">
                 <div class="card h-100 shadow-sm">
-                  <div class="card-body
+                  <div class="card-body task-drag-item
                     {% if task.is_overdue %}
                       bg-danger bg-opacity-10
                     {% elif task.is_on_time %}
                       bg-success bg-opacity-10
-                    {% endif %}">
+                    {% endif %}"
+                    {% if not filters_active %}draggable="true"{% endif %}
+                    data-task-id="{{ task.pk }}"
+                    data-project-id="{{ project.pk }}"
+                    data-sequence="{{ task.sequence_number }}">
                     <!-- Título de la tarea -->
-                    <a href="{% url 'task_update' task.pk %}"
-                      class="badge py-2 w-100 text-center text-decoration-none fs-6 text-wrap
+                    <a
+                      href="{% url 'task_update' task.pk %}"
+                      draggable="false"
+                      class="badge py-2 w-100 text-center fs-6 text-wrap text-decoration-none
                       {% if task.status == 'TODO' %}
-                        card bg-warning-subtle text-dark
+                        bg-warning-subtle text-dark
                       {% elif task.status == 'IN_PROGRESS' %}
-                        card bg-info-subtle text-dark
+                        bg-info-subtle text-dark
                       {% elif task.status == 'DONE' %}
-                        card bg-light text-dark
+                        bg-light text-dark
                       {% elif task.status == 'CANCELLED' %}
-                        card bg-white text-danger
-                      {% endif %}" title="{{ task.title }}">
-                      {{ task.title|truncatechars:30 }}</a>
+                        bg-white text-danger
+                      {% endif %}"
+                      title="{{ task.title }}">
+                      #{{ task.sequence_number }} {{ task.title|truncatechars:26 }}
+                    </a>
                     <!-- Datos de la tarea -->
                     <div class="text-dark small mt-3">
                       <p class="mb-1" style="font-size: 16px;"><strong>Creada por: </strong>{{ task.created_by.username }}</p>

@@ -11,7 +11,6 @@
 // y fecha límite.
 // =========================================
 
-
 document.addEventListener("DOMContentLoaded", function () {
   const discardBtn = document.getElementById("discardCommentBtn");
   const textarea = document.getElementById("commentText");

@@ -53,7 +53,7 @@
                 <tr>
                   <!-- Proyecto -->
                   <td>
-                    <a href="{% url 'task_list' %}?project={{ p.id }}"
+                    <a href="{% url 'project_update' p.id %}?next={{ request.path }}"
                       class="text-dark text-decoration-none">
                       {{ p.code }}
                       {% if p.is_followed %}
@@ -77,13 +77,16 @@
                   <td>
                     {% if p.total_tasks %}
                       {% widthratio p.completed_tasks p.total_tasks 100 as progress %}
-                      <div style="width: 95%" class="progress">
-                        <div class="progress-bar"
-                            role="progressbar"
-                            style="width: {{ progress }}%;">
-                          {{ progress }}%
+                      <a href="{% url 'task_list' %}?project={{ p.id }}&created_by=&assigned_to=&status=DONE&delivery_all=&priority_all=&search="
+                        class="text-decoration-none">
+                        <div style="width: 95%; cursor: pointer;" class="progress">
+                          <div class="progress-bar"
+                              role="progressbar"
+                              style="width: {{ progress }}%;">
+                            {{ progress }}%
+                          </div>
                         </div>
-                      </div>
+                      </a>
                     {% else %}
                       -
                     {% endif %}

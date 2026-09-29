@@ -8,6 +8,7 @@ from urllib.parse import urlencode
 # Librerías externas (Django, requests, openpyxl, reportlab, etc.)
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
+from django.db import transaction
 from django.db.models import Case, Count, IntegerField, Q, Value, When
 from django.db.models.functions import Cast, Substr
 from django.shortcuts import get_object_or_404, redirect, render
@@ -174,7 +175,7 @@ def task_list(request):
         output_field=IntegerField(),
       )
     )
-    .order_by("project__code", "status_order", "id")
+    .order_by("project__code", "sequence_number", "id")
     .distinct()
   )
 
@@ -278,6 +279,76 @@ def task_list(request):
       "filtered_tasks_exist": filtered_tasks_exist,
     },
   )
+
+
+# Reordenar las tareas activas de un proyecto
+@login_required
+def task_reorder(request):
+
+  if request.method != "POST":
+    return JsonResponse(
+      {"success": False},
+      status=405
+    )
+
+  task_ids = request.POST.getlist("task_ids")
+
+  if not task_ids:
+    return JsonResponse(
+      {"success": False, "error": "No se han recibido tareas."},
+      status=400
+    )
+
+  tasks = list(
+    Task.objects.filter(
+      pk__in=task_ids,
+      deleted_at__isnull=True,
+    ).select_related("project")
+  )
+
+  if len(tasks) != len(task_ids):
+    return JsonResponse(
+      {"success": False, "error": "Hay tareas no válidas."},
+      status=400
+    )
+
+  project_ids = {task.project_id for task in tasks}
+
+  if len(project_ids) != 1:
+    return JsonResponse(
+      {"success": False, "error": "Las tareas deben pertenecer al mismo proyecto."},
+      status=400
+    )
+
+  for task in tasks:
+    if not user_can_edit_task(request.user, task):
+      return JsonResponse(
+        {"success": False},
+        status=403
+      )
+
+  with transaction.atomic():
+
+    for sequence_number, task_id in enumerate(task_ids, start=1):
+
+      task = next(
+        task
+        for task in tasks
+        if str(task.pk) == str(task_id)
+      )
+
+      task.sequence_number = sequence_number
+
+      task.save(
+        update_fields=[
+          "sequence_number",
+        ]
+      )
+
+  return JsonResponse({
+    "success": True,
+    "task_ids": task_ids,
+  })
 
 
 # Editar una tarea y gestionar sus comentarios y solicitudes
@@ -399,8 +470,9 @@ def task_update(request, pk):
 
   # navegación
   project_tasks = Task.objects.filter(
-    project=task.project
-  ).order_by("id")
+    project=task.project,
+    deleted_at__isnull=True,
+  ).order_by("sequence_number")
 
   project_tasks = [
     t for t in project_tasks

@@ -456,13 +456,21 @@ class Task(models.Model):
   def save(self, *args, **kwargs):
 
     if self.sequence_number is None:
-      last_number = Task.objects.filter(
-        project=self.project
-      ).aggregate(
-        models.Max("sequence_number")
-      )["sequence_number__max"]
+      used_numbers = set(
+        Task.objects.filter(
+          project=self.project,
+          deleted_at__isnull=True,
+        )
+        .exclude(pk=self.pk)
+        .values_list("sequence_number", flat=True)
+      )
 
-      self.sequence_number = (last_number or 0) + 1
+      sequence_number = 1
+
+      while sequence_number in used_numbers:
+        sequence_number += 1
+
+      self.sequence_number = sequence_number
 
     if self.pk:
 

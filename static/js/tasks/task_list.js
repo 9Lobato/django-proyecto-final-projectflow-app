@@ -10,6 +10,14 @@
 // del scroll del listado.
 // =========================================
 
+document.addEventListener("dragover", function (event) {
+  event.preventDefault();
+
+  if (event.dataTransfer) {
+    event.dataTransfer.dropEffect = "move";
+  }
+});
+
 document.addEventListener("DOMContentLoaded", function () {
   // Estados -->
   const allStatus = document.getElementById("status_all");
@@ -126,7 +134,11 @@ function restoreScroll() {
 }
 // Guardar scroll
 function saveScroll() {
-  sessionStorage.setItem(`task_list_scroll_${userId}`, window.scrollY);
+  const userId = "{{ request.user.id }}";
+  sessionStorage.setItem(
+    `task_list_scroll_${userId}`,
+    window.scrollY
+  );
 }
 document.addEventListener("DOMContentLoaded", function () {
   restoreScroll();
@@ -138,4 +150,183 @@ window.addEventListener("pageshow", function () {
 // Guardar antes de salir
 window.addEventListener("beforeunload", function () {
   saveScroll();
+});
+
+
+// =========================================
+// PRUEBA ARRASTRAR TAREAS
+// =========================================
+
+function getCookie(name) {
+
+  const cookies = document.cookie.split(";");
+
+  for (const cookie of cookies) {
+
+    const [key, value] = cookie.trim().split("=");
+
+    if (key === name) {
+      return decodeURIComponent(value);
+    }
+
+  }
+
+  return null;
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  const draggableTasks =
+    document.querySelectorAll(".task-drag-item");
+
+  draggableTasks.forEach(task => {
+
+    task.addEventListener("dragstart", function (event) {
+
+      event.dataTransfer.setData(
+        "text/plain",
+        this.dataset.taskId
+      );
+
+      event.dataTransfer.effectAllowed = "move";
+
+      this.classList.add("task-dragging");
+
+    });
+
+    task.addEventListener("dragend", function () {
+
+      this.classList.remove("task-dragging");
+
+    });
+
+  });
+
+
+  const taskColumns =
+    document.querySelectorAll(
+      ".col-sm-6.col-md-4.col-xl-3"
+    );
+
+  taskColumns.forEach(column => {
+
+    column.addEventListener("dragover", function (event) {
+
+      event.preventDefault();
+
+      if (event.dataTransfer) {
+        event.dataTransfer.dropEffect = "move";
+      }
+
+    });
+
+    column.addEventListener("drop", function (event) {
+
+      event.preventDefault();
+
+      const draggedTaskId =
+        event.dataTransfer.getData("text/plain");
+
+      const draggedTask =
+        document.querySelector(
+          `.task-drag-item[data-task-id="${draggedTaskId}"]`
+        );
+
+      const draggedColumn =
+        draggedTask.closest(".col-sm-6.col-md-4.col-xl-3");
+
+      const targetTask =
+        this.querySelector(".task-drag-item");
+
+      if (!draggedTask || !draggedColumn || !targetTask) {
+        return;
+      }
+
+      if (draggedColumn === this) {
+        return;
+      }
+
+      this.parentNode.insertBefore(
+        draggedColumn,
+        this
+      );
+
+      const taskColumnsInProject =
+        this.parentNode.querySelectorAll(
+          ".col-sm-6.col-md-4.col-xl-3"
+        );
+
+      taskColumnsInProject.forEach((column, index) => {
+
+        const task =
+          column.querySelector(".task-drag-item");
+
+        if (!task) {
+          return;
+        }
+
+        const newSequence = index + 1;
+
+        task.dataset.sequence = newSequence;
+
+        const title =
+          task.querySelector("a");
+
+        if (title) {
+
+          const currentText =
+            title.textContent.trim();
+
+          title.textContent =
+            currentText.replace(
+              /^#\d+/,
+              `#${newSequence}`
+            );
+
+        }
+
+      });
+
+      const reorderUrl =
+        this.parentNode.dataset.reorderUrl;
+
+      const formData = new FormData();
+
+      taskColumnsInProject.forEach(column => {
+
+        const task =
+          column.querySelector(".task-drag-item");
+
+        if (!task) {
+          return;
+        }
+
+        formData.append(
+          "task_ids",
+          task.dataset.taskId
+        );
+
+      });
+
+      fetch(reorderUrl, {
+        method: "POST",
+        headers: {
+          "X-CSRFToken": getCookie("csrftoken"),
+        },
+        body: formData,
+      })
+      .then(response => response.json())
+      .catch(error => {
+
+        console.error(
+          "ERROR AL GUARDAR EL ORDEN:",
+          error
+        );
+
+      });
+
+    });
+
+  });
+
 });

@@ -5,6 +5,12 @@ Django proporciona el backend, la lógica de negocio, la persistencia y la API u
 La aplicación permite organizar proyectos mediante tareas y tableros Kanban, gestionar equipos y roles, controlar permisos de acceso, utilizar plantillas reutilizables y consultar información sobre el progreso mediante informes y métricas.
 El objetivo del proyecto es consolidar el desarrollo de una aplicación web completa con Django, aplicando una arquitectura modular, gestión de usuarios y permisos, persistencia de datos mediante ORM, formularios, plantillas, servicios y funcionalidades de seguimiento y análisis.
 
+🌐 Aplicación desplegada
+
+ProjectFlow está disponible en producción en 👉 https://projectflow-uoj0.onrender.com
+La aplicación está desplegada utilizando Render y utiliza PostgreSQL como base de datos en el entorno de producción.
+Las variables de configuración sensibles, como la SECRET_KEY y las credenciales de la base de datos, se gestionan mediante variables de entorno y no se almacenan en el repositorio.
+
 ✨ Características
 
 - Gestión de proyectos
@@ -132,7 +138,8 @@ Esto permite preparar rápidamente un entorno con proyectos, usuarios, tareas, c
   - Django Templates
   - Django Forms
   - Django Migrations
-  - SQLite
+  - SQLite (desarrollo)
+  - PostgreSQL (producción)
 2. Frontend
   - React
   - JavaScript
@@ -165,11 +172,11 @@ ProjectFlow/
 │   ├── accounts/
 │   ├── core/
 │   ├── home/
-│   ├── kanban/
-│   ├── manage/
 │   ├── projects/
-│   ├── reports/
-│   └── tasks/
+│   ├── tasks/
+│   ├── kanban/
+│   ├── report/
+│   └── manage/
 │
 ├── config/
 │   ├── settings.py
@@ -193,7 +200,7 @@ La separación por aplicaciones permite mantener las diferentes áreas funcional
 🚀 Instalación
 
 1. Clonar el repositorio
-  git clone https://github.com/TU_USUARIO/django-proyecto-final-projectflow-app.git
+  git clone https://github.com/9Lobato/django-proyecto-final-projectflow-app.git
   cd django-proyecto-final-projectflow-app
 2. Crear el entorno virtual
   python -m venv env
@@ -258,4 +265,4 @@ Sergio Lobato Gallego
 
 📅 Fecha
 
-? de septiembre de 2026
+5 de octubre de 2026

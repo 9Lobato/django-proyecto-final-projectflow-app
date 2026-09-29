@@ -14,6 +14,8 @@ from . import views
 urlpatterns = [
   # Listar todas las tareas
   path("", views.task_list, name="task_list"),
+  # Reordenar tareas
+  path("reorder/", views.task_reorder, name="task_reorder"),
   # Editar tarea
   path("<int:pk>/edit/", views.task_update, name="task_update"),
   # Duplicar tarea

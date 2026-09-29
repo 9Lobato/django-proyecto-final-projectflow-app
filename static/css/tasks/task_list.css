@@ -16,6 +16,23 @@ input[name="search"]:not(:placeholder-shown) {
 
 
 /* ==========================================================
+   ARRASTRAR TAREAS
+   ========================================================== */
+
+.task-drag-item {
+  cursor: grab;
+}
+
+.task-drag-item:active {
+  cursor: grabbing;
+}
+
+.task-dragging {
+  opacity: 0.5;
+}
+
+
+/* ==========================================================
    COMENTARIOS
    ========================================================== */
 

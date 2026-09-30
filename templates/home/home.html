@@ -202,7 +202,7 @@
                         data-id="{{ comment.id }}"
                         data-project="{{ project.pk }}"
                         style="cursor:pointer;"></i>
-                      <a class="text-dark text-decoration-none" href="{% url 'task_update' comment.task.pk %}">
+                      <a class="text-dark text-decoration-none" href="{% url 'task_update' comment.task.pk %}?next=/">
                         {{ comment.text|truncatechars:60 }}
                       </a>
                     </td>

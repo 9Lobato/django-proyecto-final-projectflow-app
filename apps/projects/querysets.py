@@ -18,8 +18,8 @@ def get_projects_queryset(search=None):
     .select_related("owner", "template")
     .prefetch_related("assignments", "tasks")
     .annotate(
-      total_tasks=Count("tasks"),
-      completed_tasks=Count("tasks", filter=Q(tasks__status="DONE")),
+      total_tasks=Count("tasks", filter=Q(tasks__deleted_at__isnull=True)),
+      completed_tasks=Count("tasks", filter=Q(tasks__deleted_at__isnull=True, tasks__status="DONE")),
       project_year=Cast(Substr("code", 1, 2), IntegerField()),
       project_number=Cast(Substr("code", 4, 3), IntegerField()),
     )

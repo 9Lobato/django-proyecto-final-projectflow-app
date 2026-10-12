@@ -265,4 +265,4 @@ Sergio Lobato Gallego
 
 📅 Fecha
 
-5 de octubre de 2026
+12 de octubre de 2026

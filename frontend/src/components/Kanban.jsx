@@ -7,10 +7,10 @@ import { useEffect, useRef, useState } from "react";
 
 
 const columns = [
-  { key: "TODO", label: "To do" },
-  { key: "IN_PROGRESS", label: "In progress" },
-  { key: "DONE", label: "Done" },
-  { key: "CANCELLED", label: "Cancelled" },
+  { key: "TODO", label: "A realizar" },
+  { key: "IN_PROGRESS", label: "En curso" },
+  { key: "DONE", label: "Finalizada" },
+  { key: "CANCELLED", label: "Cancelada" },
 ];
 
 function getCookie(name) {

@@ -21,10 +21,10 @@
     {% if board %}
       <div class="kanban-header">
         <a class="kanban-project-col"></a>
-        <a href="{% url 'task_list' %}?status=TODO" class="kanban-col text-center text-decoration-none text-dark">To do</a>
-        <a href="{% url 'task_list' %}?status=IN_PROGRESS" class="kanban-col text-center text-decoration-none text-dark">In progress</a>
-        <a href="{% url 'task_list' %}?status=DONE" class="kanban-col text-center text-decoration-none text-dark">Done</a>
-        <a href="{% url 'task_list' %}?status=CANCELLED" class="kanban-col text-center text-decoration-none text-dark">Cancelled</a>
+        <a href="{% url 'task_list' %}?status=TODO" class="kanban-col text-center text-decoration-none text-dark">A realizar</a>
+        <a href="{% url 'task_list' %}?status=IN_PROGRESS" class="kanban-col text-center text-decoration-none text-dark">En curso</a>
+        <a href="{% url 'task_list' %}?status=DONE" class="kanban-col text-center text-decoration-none text-dark">Finalizada</a>
+        <a href="{% url 'task_list' %}?status=CANCELLED" class="kanban-col text-center text-decoration-none text-dark">Cancelada</a>
       </div>
     {% endif %}
     {% for row in board %}

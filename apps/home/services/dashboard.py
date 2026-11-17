@@ -23,9 +23,11 @@ def get_dashboard_context(user):
     ).exists()
   )
 
+  is_system_owner = user.is_superuser
+
   projects = get_projects_queryset()
 
-  if is_owner:
+  if is_system_owner:
     dashboard_projects = projects
   else:
     dashboard_projects = (
@@ -44,7 +46,7 @@ def get_dashboard_context(user):
     pk=OuterRef("pk")
   )
 
-  if is_owner:
+  if is_system_owner:
     dashboard_projects = (
       projects
       .annotate(is_followed=Exists(followed))

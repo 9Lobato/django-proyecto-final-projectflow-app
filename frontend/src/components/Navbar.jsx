@@ -160,8 +160,8 @@ function Navbar() {
   }
 
   return (
-    <nav className="navbar navbar-dark bg-dark"
-      style={{ minHeight: "80px", display: "block" }}>
+    <nav className="navbar navbar-dark bg-dark py-0"
+      style={{ minHeight: "80px" }}>
       <div
         className="d-flex align-items-center w-100"
         style={{maxWidth: "1296px", height: "80px", margin: "0 auto"}}
@@ -232,7 +232,7 @@ function Navbar() {
                 className="form-control form-control-sm me-2"
                 type="search"
                 name="search"
-                placeholder={navbarData.translations.search_placeholder}
+                placeholder={searchAction === "/projects/"? navbarData.translations.search_projects: searchAction === "/tasks/"? navbarData.translations.search_tasks: searchAction === "/kanban/"? navbarData.translations.search_kanban: ""}
                 style={{ width: "410px" }}
                 disabled={!searchAction}
               />

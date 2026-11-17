@@ -116,9 +116,9 @@
                 class="form-control form-control-sm me-2"
                 type="search"
                 name="search"
-                placeholder="{% translate 'Buscar en proyectos...' %}"
+                placeholder="{% if request.path|slice:':10' == '/projects/' %}{% translate 'Buscar en Proyectos...' %}{% elif request.path|slice:':7' == '/tasks/' %}{% translate 'Buscar en Tareas...' %}{% elif request.path|slice:':8' == '/kanban/' %}{% translate 'Buscar en Kanban...' %}{% endif %}"
                 value="{{ request.GET.search }}"
-                style="width: 410px;"
+                style="width: 410px; {% if not request.path|slice:':10' == '/projects/' and not request.path|slice:':7' == '/tasks/' and not request.path|slice:':8' == '/kanban/' %}background-color: #e9ecef; cursor: not-allowed;{% endif %}"
                 {% if not request.path|slice:':10' == '/projects/' and not request.path|slice:':7' == '/tasks/' and not request.path|slice:':8' == '/kanban/' %}
                   disabled
                 {% endif %}

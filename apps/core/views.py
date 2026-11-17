@@ -69,7 +69,9 @@ def navbar_api(request):
       "manage": gettext("Gestión"),
       "logout": gettext("Salir"),
       "search": gettext("Buscar"),
-      "search_placeholder": gettext("Buscar en proyectos..."),
+      "search_projects": gettext("Buscar en Proyectos..."),
+      "search_tasks": gettext("Buscar en Tareas..."),
+      "search_kanban": gettext("Buscar en Kanban..."),
     },
   })
 

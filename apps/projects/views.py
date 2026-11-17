@@ -102,6 +102,8 @@ def project_update(request, pk):
   )
   
   user_role = get_user_role(request.user, project)
+  if is_manager and is_followed and not is_assigned:
+    user_role = "MANAGER"
   can_change_owner = user_can_change_owner(request.user, project)
   can_edit = (
     user_can_edit_project(user, project)

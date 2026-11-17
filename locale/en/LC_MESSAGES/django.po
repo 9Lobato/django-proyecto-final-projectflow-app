@@ -47,8 +47,14 @@ msgid "Iniciar"
 msgstr "Login"
 
 #: templates/base.html:100
-msgid "Buscar en proyectos..."
-msgstr "Search in projects..."
+msgid "Buscar en Proyectos..."
+msgstr "Search in Projects..."
+
+msgid "Buscar en Tareas..."
+msgstr "Search in Tasks..."
+
+msgid "Buscar en Kanban..."
+msgstr "Search in Kanban..."
 
 #: templates/base.html:102
 msgid "Buscar"

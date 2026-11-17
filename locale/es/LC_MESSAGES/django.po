@@ -23,6 +23,12 @@ msgstr ""
 msgid "Proyectos"
 msgstr "Proyectos"
 
+msgid "Buscar en Tareas..."
+msgstr "Buscar en Tareas..."
+
+msgid "Buscar en Kanban..."
+msgstr "Buscar en Kanban..."
+
 #: templates/base.html:52
 msgid "Tareas"
 msgstr "Tareas"
@@ -48,8 +54,8 @@ msgid "Iniciar"
 msgstr "Login"
 
 #: templates/base.html:100
-msgid "Buscar en proyectos..."
-msgstr "Buscar en proyectos..."
+msgid "Buscar en Proyectos..."
+msgstr "Buscar en Proyectos..."
 
 #: templates/base.html:102
 msgid "Buscar"

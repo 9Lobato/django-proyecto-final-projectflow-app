@@ -365,9 +365,49 @@ npm run build
 
 El resultado se genera en:
 
-frontend/dist/
+static/react/
 
-Este directorio no forma parte del código fuente y se mantiene fuera del control de versiones cuando así lo establece .gitignore.
+Esta ruta está configurada en frontend/vite.config.js como directorio de salida de la compilación.
+
+### 14.1. Compilación y archivos estáticos en Django
+
+ProjectFlow utiliza Vite para compilar React y Django para gestionar y servir los archivos estáticos tanto en producción como en las pruebas locales realizadas mediante Django.
+
+El proceso de compilación genera los archivos frontend en:
+
+`static/react/`
+
+Cuando se utiliza Django para servir la aplicación React en local, es necesario recopilar los archivos estáticos mediante el comando:
+
+```bash
+python manage.py collectstatic --noinput
+```
+
+Este comando copia los archivos a `STATIC_ROOT`, que en la configuración actual corresponde a `staticfiles/`.
+
+**Procedimiento para actualizar React en el entorno local utilizando Django:**
+
+Desde la raíz del proyecto:
+
+```bash
+cd frontend
+npm run build
+cd ..
+python manage.py collectstatic --noinput
+```
+
+Después se puede acceder a la aplicación desde Django, por ejemplo:
+
+`http://127.0.0.1:8000/kanban/`
+
+**Importante:**
+
+- `npm run build` genera la compilación de React.
+- `collectstatic` recopila los archivos para que Django pueda servirlos.
+- Cuando se utiliza el servidor de desarrollo de Vite (`npm run dev`), este procedimiento de recopilación no es necesario.
+- Si se modifica React y se quiere probar la nueva compilación utilizando Django, deben repetirse ambos pasos.
+
+Este procedimiento permite mantener sincronizados el frontend React y los archivos estáticos servidos por Django.
 
 ---
 
@@ -515,7 +555,7 @@ Entre ellos:
 db.sqlite3
 __pycache__/
 node_modules/
-frontend/dist/
+static/react/
 
 según las reglas establecidas en .gitignore.
 

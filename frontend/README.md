@@ -37,9 +37,19 @@ Para generar una compilación de producción:
 
 npm run build
 
-Los archivos generados se almacenan en `dist/`.
+Los archivos generados se almacenan en:
 
-La carpeta `dist/` y `node_modules/` están excluidas del control de versiones mediante `.gitignore`.
+../static/react/
+
+Esta carpeta contiene los recursos compilados que Django utiliza para servir la aplicación React.
+
+Cuando se quiera probar la compilación desde Django en local, hay que volver a la raíz del proyecto y ejecutar:
+
+python manage.py collectstatic --noinput
+
+Este comando recopila los archivos estáticos en STATIC_ROOT y únicamente es necesario cuando se quiere probar la compilación mediante Django. No es necesario para utilizar el servidor de desarrollo de Vite.
+
+La carpeta `node_modules/` contiene las dependencias del proyecto. Los archivos generados en `../static/react/` son compilados automáticamente por Vite y no deben editarse manualmente.
 
 
 ## Tecnologías principales
